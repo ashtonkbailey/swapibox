@@ -4,9 +4,9 @@ import './Navigation.css'
 const Navigation = () => {
    return (
        <div className="nav-container">
-           <button> people </button>
-           <button> planets </button>
-           <button> vehicles </button>
+           <button className="nav-button"> people </button>
+           <button className="nav-button"> planets </button>
+           <button className="nav-button"> vehicles </button>
        </div>
    )
 }

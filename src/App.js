@@ -36,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1> SWAPIBOX </h1>
+          <h1> SWAPIBOX </h1>
         <Navigation />
         <Favorites />
         <ContentContainer 

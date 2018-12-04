@@ -1,0 +1,37 @@
+import 
+
+.favorites-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 200px;
+    background-color: red;
+}
+
+.favorites-button, .num-favorites {
+    background: none;
+    border: none;
+    position: absolute;
+    font-family: Roboto;
+    font-size: 18px;
+    text-align: justify;
+    color: #F3E355;
+    height: 60px;
+    top: 8%;
+    right: 2%;
+    z-index: 1;
+}
+
+.lightsaber {
+    width: 60px;
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    z-index: 0;
+}
+
+.num-favorites {
+    top: 1%;
+    right: 4%;
+    font-size: 60px;
+}
