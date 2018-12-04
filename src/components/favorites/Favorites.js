@@ -9,9 +9,9 @@ class Favorites extends Component {
         return(
             <div className="favorites-container"> 
                 <div className="num-favorites"> 0 </div>
-                <div className="favorites-button"> show favorites
-                </div>
                 <img className="lightsaber" src={lightsabers}/>
+                <button className="favorites-button"> view favorites
+                </button>
             </div>
         )
     }

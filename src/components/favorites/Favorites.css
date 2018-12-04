@@ -1,37 +1,32 @@
-import 
-
-.favorites-container {
+ .favorites-container {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     top: 10px;
     right: 10px;
-    width: 200px;
-    background-color: red;
+    z-index: 6;
 }
 
-.favorites-button, .num-favorites {
+.favorites-button {
     background: none;
     border: none;
-    position: absolute;
+    color: #F3E355;
     font-family: Roboto;
     font-size: 18px;
-    text-align: justify;
-    color: #F3E355;
     height: 60px;
-    top: 8%;
-    right: 2%;
-    z-index: 1;
+    text-align: justify;
 }
 
 .lightsaber {
-    width: 60px;
-    position: absolute;
-    top: 2%;
-    right: 4%;
+    width: 80px;
     z-index: 0;
 }
 
 .num-favorites {
-    top: 1%;
-    right: 4%;
+    color: #F3E355;
     font-size: 60px;
+    position: absolute;
+    text-shadow: 3px 4px 4px black;
+    z-index: 2;
 }
