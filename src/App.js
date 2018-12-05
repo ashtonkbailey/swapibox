@@ -9,6 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      errorStatus: '',
       favorites: [],
       displayedContent: [],
       currFilm: {
@@ -39,25 +40,27 @@ class App extends Component {
     return Math.floor(Math.random() * 6) + 1;
   }
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
     //generateRandomNum()
     let randomNum = this.generateRandomNum();
     //fetch film(randomNum)
-    fetch(`https://swapi.co/api/films/${randomNum}`)
-    .then(response => response.json())
-    .then(film => this.cleanFilm(film))
-    .then(cleanFilm => {
+    try  {
+      const response = await fetch(`https://swapi.co/api/films/${randomNum}`)
+      const film = await response.json()
+      const cleanFilm = await this.cleanFilm(film)
+        this.setState({
+          currFilm: {
+            title: cleanFilm.title,
+            crawl: cleanFilm.crawl,
+            year: cleanFilm.year
+          }
+        })
+    } catch (error) {
       this.setState({
-        currFilm: {
-          title: cleanFilm.title,
-          crawl: cleanFilm.crawl,
-          year: cleanFilm.year
-        }
+        errorStatus: `Error: ${error.message}`
       })
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    }
+    
   }
 
   displayChosenContent = (e) => {
@@ -66,26 +69,31 @@ class App extends Component {
     this.fetchChosenContent(contentToFetch);
   }
 
-  cleanPeopleData = (people) => {
-    const peopleArr = people.results;
-    return peopleArr.map(person => {
-      let obj = {}
-      obj.name = person.name;
-      obj.homeworld = person.homeworld;
-      obj.species = person.species;
-      return obj;
-    })
-  }
+    fetchHomeworld = async (url) => {
+         const response = await fetch(url)
+         const homeworldObj = await response.json();
+         return homeworldObj.name;
+      }
 
-  fetchChosenContent = (name) => {
+  cleanPeopleData = (people) => {
+    return Promise.all(people.results.map( async (person) =>  {
+      const homeworldName = await this.fetchHomeworld(person.homeworld)  
+      const obj = {
+        name: person.name,
+        homeworld: homeworldName
+      }
+      return obj;
+    }))
+  }
+  
+  fetchChosenContent = async (name) => {
     const url = `https://swapi.co/api/${name}/`;
-    fetch(url)
-      .then(response => response.json())
-      .then(people => this.cleanPeopleData(people))
-      .then(cleanedPeople => {this.setState({
+    const response = await fetch(url);
+    const people = await response.json();
+    const cleanedPeople = await this.cleanPeopleData(people)
+      await this.setState({
         displayedContent: cleanedPeople
       })      
-    })
   }
 
   incrementCarousel = () => {
