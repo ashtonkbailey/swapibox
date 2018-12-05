@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import lightsabers from '../../images/lightsabers.png';
 import './peopleCard.css'
+
 
 const peopleCard = ({card, cardClass}) => {
     
@@ -10,6 +12,7 @@ const peopleCard = ({card, cardClass}) => {
             <p> species: {card.species} </p>
             <p> homeworld: {card.homeworld} </p>
             <p> population: {card.population} </p>
+            <img className="saber" src={lightsabers}/>
         </article>
     )
 }

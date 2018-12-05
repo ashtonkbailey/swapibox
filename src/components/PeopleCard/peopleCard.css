@@ -1,20 +1,39 @@
 article {
   color:  #FBF230;
   font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saber {
+  width: 10%;
 }
 
 .name {
+  margin: 0;
   font-family: Roboto;
   font-style: normal;
-  font-size: 32px;
+  font-size: 40px;
   text-align: center;
-  color:  #FBF230;
+  color: white;
+  text-shadow:
+  -2px -2px 0 #000,  
+  1px -2px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
 
 p {
-  
+  text-align: left;
+  margin-left: 10px;
 }
 
 .small-card .name {
     font-size:  20px; 
+}
+
+.card2 {
+  font-size: 32px;
 }
