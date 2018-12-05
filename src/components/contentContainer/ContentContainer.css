@@ -29,8 +29,73 @@
     color: yellow;
 }
 
+
+.card2 {
+    width: 303px;
+    height: 338px;
+    background: rgba(0, 0, 0, 0.66);
+border: 4px solid #EDE748;
+box-sizing: border-box;
+box-shadow: 0px 4px 40px #E3DA87;
+border-radius: 66px;
+}
+
 @keyframes autoscroll{
     to {
         margin-top:-50000px;
     }    
 }
+
+.card1, .card3 {
+    width: 24%;
+    height: 240px;
+    background: rgba(0, 0, 0, 0.66);
+    border: 2px solid #EDE748;
+    box-sizing: border-box;
+    /* box-shadow: 0px 4px 40px #E3DA87; */
+    border-radius: 66px;
+}
+
+.name {
+font-family: Roboto;
+font-style: normal;
+font-size: 32px;
+text-align: center;
+color:  #FBF230;
+}
+
+.people-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.component-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.arrow-button {
+    height: 40px;
+    width: 40px;
+    margin: 50px 20px 0 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: 'Poller One', cursive;
+    background-color: rgb(244, 217, 68);
+    box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.25), inset 15px 5px 3px rgba(255, 255, 255, 0.25);
+}
+
+.arrow-button:hover {
+    background-color:  rgb(220, 210, 158);
+    cursor: pointer;
+}
+
+.none {
+    display: none;
+}
+
