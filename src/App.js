@@ -12,6 +12,7 @@ class App extends Component {
     super();
     this.state = {
       favorites: [],
+      displayedContent: [],
       currFilm: {
         title: '',
         crawl: '',
@@ -68,14 +69,26 @@ class App extends Component {
     this.fetchChosenContent(contentToFetch);
   }
 
-  fetchChosenContent = (name) => {
-    const url = `https://swapi.co/api/${name}/`;
-    fetch(url);
-      .then(response => response.json())
-      .then(people => p)
+  cleanPeopleData = (people) => {
+    const peopleArr = people.results;
+    return peopleArr.map(person => {
+      let obj = {}
+      obj.name = person.name;
+      return obj;
+    })
   }
 
-  cleanPeopel
+  fetchChosenContent = (name) => {
+    const url = `https://swapi.co/api/${name}/`;
+    fetch(url)
+      .then(response => response.json())
+      .then(people => this.cleanPeopleData(people))
+      .then(cleanedPeople => {this.setState({
+        displayedContent: cleanedPeople
+      })      
+    })
+  }
+
 
   render() {
     return (
@@ -85,6 +98,7 @@ class App extends Component {
         <Favorites />
         <ContentContainer 
           film={this.state.currFilm}
+          contents={this.state.displayedContent}
         //<FilmText />
         //<ContentCards 
         //    <Card />
