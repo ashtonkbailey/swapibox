@@ -10,6 +10,7 @@ class App extends Component {
     super();
     this.state = {
       favorites: [],
+      displayedContent: [],
       currFilm: {
         title: '',
         crawl: '',
@@ -58,14 +59,43 @@ class App extends Component {
     })
   }
 
+  displayChosenContent = (e) => {
+    e.preventDefault();
+    const contentToFetch = e.target.name;
+    this.fetchChosenContent(contentToFetch);
+  }
+
+  cleanPeopleData = (people) => {
+    const peopleArr = people.results;
+    return peopleArr.map(person => {
+      let obj = {}
+      obj.name = person.name;
+      return obj;
+    })
+  }
+
+  fetchChosenContent = (name) => {
+    const url = `https://swapi.co/api/${name}/`;
+    fetch(url)
+      .then(response => response.json())
+      .then(people => this.cleanPeopleData(people))
+      .then(cleanedPeople => {this.setState({
+        displayedContent: cleanedPeople
+      })      
+    })
+  }
+
+
   render() {
     return (
       <div className="App">
           <h1 className="header"> SWAPIBOX </h1>
-        <Navigation />
+
+        <Navigation displayChosenContent={this.displayChosenContent}/>
         <Favorites faves={this.state.favorites} />
         <ContentContainer 
           film={this.state.currFilm}
+          contents={this.state.displayedContent}
         //<FilmText />
         //<ContentCards 
         //    <Card />
