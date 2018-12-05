@@ -29,6 +29,20 @@
     color: yellow;
 }
 
+.person-container {
+    color: white;
+}
+
+.people-card {
+    width: 303px;
+    height: 338px;
+    background: rgba(0, 0, 0, 0.66);
+border: 4px solid #EDE748;
+box-sizing: border-box;
+box-shadow: 0px 4px 40px #E3DA87;
+border-radius: 66px;
+}
+
 @keyframes autoscroll{
     to {
         margin-top:-50000px;
