@@ -29,11 +29,8 @@
     color: yellow;
 }
 
-.person-container {
-    color: white;
-}
 
-.people-card {
+.card2 {
     width: 303px;
     height: 338px;
     background: rgba(0, 0, 0, 0.66);
@@ -47,4 +44,36 @@ border-radius: 66px;
     to {
         margin-top:-50000px;
     }    
+}
+
+.card1, .card3 {
+    width: 24%;
+    height: 240px;
+    background: rgba(0, 0, 0, 0.66);
+    border: 2px solid #EDE748;
+    box-sizing: border-box;
+    /* box-shadow: 0px 4px 40px #E3DA87; */
+    border-radius: 66px;
+}
+
+.name {
+font-family: Roboto;
+font-style: normal;
+font-size: 32px;
+text-align: center;
+color:  #FBF230;
+}
+
+.people-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.component-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }

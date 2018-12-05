@@ -6,6 +6,7 @@ import PeopleCard from '../PeopleCard/PeopleCard.js';
 const ContentContainer = ({film, contents}) => {
     let displayedContents;
     let containerClassName;
+    let count = 1;
     if (!contents.length) {
         displayedContents = (
                 <div className="crawl"><div>
@@ -16,20 +17,26 @@ const ContentContainer = ({film, contents}) => {
         containerClassName = "content-container";
     }
     else {
-        const peopleCards = contents.map(person => {
-            return <PeopleCard info={person} /> 
-        })
+        // const peopleCards = contents.map(person => {
+        //     return <PeopleCard info={person} /> 
+        // })
+        const peopleCards = [
+        <PeopleCard cardClass="card1" card={contents[0]} />, 
+        <PeopleCard cardClass="card2" card={contents[1]} />, 
+        <PeopleCard cardClass="card3" card={contents[2]} /> ]
         displayedContents = (
-            <ul>
+            <div className="people-container">
                 {peopleCards}
-            </ul>
+            </div>
         );
-        containerClassName = "person-container"
+        containerClassName = "component-container";
     }
     return (
         <div className={containerClassName}>
+            <button className="arrow-button"> - </button>
             {displayedContents}
-            </div>
+            <button className="arrow-button"> - </button>
+         </div>
     )
 }
 
