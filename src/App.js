@@ -69,20 +69,23 @@ class App extends Component {
     this.fetchChosenContent(contentToFetch);
   }
 
-    fetchHomeworld = async (url) => {
-         const response = await fetch(url)
-         const homeworldObj = await response.json();
-         return homeworldObj.name;
+    fetchPropertyObj = async (url) => {
+         const response = await fetch(url);
+         const propertyObj = await response.json();
+         return propertyObj;
       }
 
   cleanPeopleData = (people) => {
     return Promise.all(people.results.map( async (person) =>  {
-      const homeworldName = await this.fetchHomeworld(person.homeworld)  
-      const obj = {
+      const currHomeworld = await this.fetchPropertyObj(person.homeworld);
+      const currSpecies = await this.fetchPropertyObj(person.species[0]);
+      const personObject = {
         name: person.name,
-        homeworld: homeworldName
+        homeworld: currHomeworld.name,
+        population: currHomeworld.population,
+        species: currSpecies.name
       }
-      return obj;
+      return personObject;
     }))
   }
   

@@ -29,9 +29,9 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
     }
     else {
         const peopleCards = [
-        <PeopleCard cardClass="card1" card={contents[carouselIndex]} />, 
+        <PeopleCard cardClass="small-card card1" card={contents[carouselIndex]} />, 
         <PeopleCard cardClass="card2" card={contents[card2]} />, 
-        <PeopleCard cardClass="card3" card={contents[card3]} /> ]
+        <PeopleCard cardClass="small-card card3" card={contents[card3]} /> ]
         displayedContents = (
             <div className="people-container">
                 {peopleCards}
