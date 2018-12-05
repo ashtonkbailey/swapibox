@@ -1,4 +1,4 @@
-.crawl{
+.crawl {
     position:absolute;
     top:-3500px;
     bottom:0;
@@ -9,7 +9,7 @@
     text-align:center;
     font-family: 'Nanum Gothic', sans-serif;
 }
-.crawl>div{
+.crawl>div {
     padding-top:3500px;
     animation:autoscroll 1000s linear;
 }
@@ -18,7 +18,7 @@
     font-size: 100px;
 }
 
-.content-container{
+.content-container {
     position: absolute;
     bottom:0;
     left:0;
@@ -27,7 +27,6 @@
     transform:perspective(200px) rotateX(20deg);
     color: yellow;
 }
-
 
 .card2 {
     min-width: 300px;
@@ -88,4 +87,3 @@
 .none {
     display: none;
 }
-
