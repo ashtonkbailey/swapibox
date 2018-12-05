@@ -71,6 +71,8 @@ class App extends Component {
     return peopleArr.map(person => {
       let obj = {}
       obj.name = person.name;
+      obj.homeworld = person.homeworld;
+      obj.species = person.species;
       return obj;
     })
   }

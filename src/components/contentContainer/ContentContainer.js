@@ -6,7 +6,6 @@ import PeopleCard from '../PeopleCard/PeopleCard.js';
 const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, film, contents}) => {
     let displayedContents;
     let containerClassName;
-    let card1 = carouselIndex;
     let card2;
     let card3;
     if (carouselIndex < 9) {
