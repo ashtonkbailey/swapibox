@@ -62,11 +62,26 @@ class App extends Component {
     })
   }
 
+  displayChosenContent = (e) => {
+    e.preventDefault();
+    const contentToFetch = e.target.name;
+    this.fetchChosenContent(contentToFetch);
+  }
+
+  fetchChosenContent = (name) => {
+    const url = `https://swapi.co/api/${name}/`;
+    fetch(url);
+      .then(response => response.json())
+      .then(people => p)
+  }
+
+  cleanPeopel
+
   render() {
     return (
       <div className="App">
           <h1 className="header"> SWAPIBOX </h1>
-        <Navigation />
+        <Navigation displayChosenContent={this.displayChosenContent}/>
         <Favorites />
         <ContentContainer 
           film={this.state.currFilm}
