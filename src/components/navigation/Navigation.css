@@ -18,5 +18,7 @@
 .nav-button:hover {
     background-color:  rgb(220, 210, 158);
     cursor: pointer;
+    transition:  .3s ease-in-out;
+    font-size: 22px;
 }
 

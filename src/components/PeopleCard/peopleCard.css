@@ -5,18 +5,20 @@ article {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition:  .5s ease-in-out;
 }
 
 .saber {
   width: 18%;
   position: relative;
   bottom: 16px;
+  margin-top: 10px;
 }
 
 .saber:hover {
   opacity: 30;
-  width: 20%;
   cursor: pointer;
+  transition:  .5s ease-in-out;
 }
 
 .name {
