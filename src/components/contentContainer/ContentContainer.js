@@ -8,6 +8,7 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
     let containerClassName;
     let card2;
     let card3;
+
     if (carouselIndex < 9) {
         card2 = carouselIndex + 1;
     } else {
@@ -18,13 +19,18 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
     } else {
         card3 = carouselIndex - 8;
     }
+
     if (!contents.length) {
         displayedContents = (
-                <div className="crawl"><div>
-                    <h1 className="title"> {film.title.toUpperCase()} </h1>
+            <div>    
+                <div className="crawl">
+                    <div>
                     {film.crawl}
-                    </div></div>
-                );
+                    </div>
+                </div>
+                <h3 className="title"> {film.title} {film.year} </h3>
+            </div>
+        );
         containerClassName = "content-container";
     }
     else {
@@ -39,11 +45,12 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
         );
         containerClassName = "component-container";
     }
+
     return (
         <div className={containerClassName}>
-            <button className={contents.length ? "arrow-button" : "none"} onClick={decrementCarousel}> <i class="fas fa-arrow-left"></i> </button>
+            <button className={contents.length ? "arrow-button" : "none"} onClick={decrementCarousel}> <i className="fas fa-arrow-left"></i> </button>
             {displayedContents}
-            <button className={contents.length ? "arrow-button" : "none"} onClick={incrementCarousel}> <i class="fas fa-arrow-right"></i> </button>
+            <button className={contents.length ? "arrow-button" : "none"} onClick={incrementCarousel}> <i className="fas fa-arrow-right"></i> </button>
          </div>
     )
 }

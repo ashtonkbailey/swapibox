@@ -1,33 +1,56 @@
-.crawl {
+
+// Film Crawl
+.crawl{
+
     position:absolute;
     top:-3500px;
     bottom:0;
     left:0;
     right:0;
     overflow:hidden;
-    font-size:80px;
     text-align:center;
     font-family: 'Nanum Gothic', sans-serif;
 }
-.crawl>div {
-    padding-top:3500px;
+
+
+.crawl>div{
+    font-size:60px;
+    padding-top:1000px;
     animation:autoscroll 1000s linear;
 }
-.title {
-    font-family: 'Nanum Gothic', sans-serif;
-    font-size: 100px;
-}
 
-.content-container {
-    position: absolute;
+.crawl:after{
+    content:'';
+    position:absolute;
+    top:0;
     bottom:0;
     left:0;
     right:0;
+    background:linear-gradient(top,rgba(0,0,0,1),rgba(0,0,0,0) 100%);
+    background:linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0) 100%);
+    pointer-events:none;
+}
+
+.content-container{
+    position:absolute;
+    top:-160px;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
     transform-origin:50% 100%;
     transform:perspective(200px) rotateX(20deg);
     color: yellow;
 }
 
+.title{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+// People, Planets, Vehicles Cards
 .card2 {
     min-width: 300px;
     height: 460px;
