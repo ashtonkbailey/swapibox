@@ -76,4 +76,26 @@ color:  #FBF230;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    align-items: center;
 }
+
+.arrow-button {
+    height: 40px;
+    width: 40px;
+    margin: 50px 20px 0 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: 'Poller One', cursive;
+    background-color: rgb(244, 217, 68);
+    box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.25), inset 15px 5px 3px rgba(255, 255, 255, 0.25);
+}
+
+.arrow-button:hover {
+    background-color:  rgb(220, 210, 158);
+    cursor: pointer;
+}
+
+.none {
+    display: none;
+}
+

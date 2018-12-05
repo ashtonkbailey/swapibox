@@ -7,6 +7,7 @@ const peopleCard = ({card, cardClass}) => {
         <article className={cardClass}>
             <h3 className="name"> {card.name}
             </h3>
+            <p> {card.homeworld} </p>
         </article>
     )
 }

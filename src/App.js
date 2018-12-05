@@ -15,7 +15,8 @@ class App extends Component {
         title: '',
         crawl: '',
         year: ''
-      }
+      },
+      carouselIndex: 0
     }
   }
 
@@ -85,6 +86,25 @@ class App extends Component {
     })
   }
 
+  incrementCarousel = () => {
+    let newIndex = 0;
+    if (this.state.carouselIndex < 9) {
+       newIndex = this.state.carouselIndex +1;
+    }
+    this.setState({carouselIndex: newIndex})
+  }
+
+  decrementCarousel = () => {
+    let newIndex;
+    if (this.state.carouselIndex < 1) {
+       newIndex = 9;
+    } else {
+      newIndex = this.state.carouselIndex - 1;
+    }
+    this.setState({carouselIndex: newIndex})
+
+  }
+
 
   render() {
     return (
@@ -96,6 +116,9 @@ class App extends Component {
         <ContentContainer 
           film={this.state.currFilm}
           contents={this.state.displayedContent}
+          incrementCarousel = {this.incrementCarousel}
+          decrementCarousel = {this.decrementCarousel}
+          carouselIndex = {this.state.carouselIndex}
         //<FilmText />
         //<ContentCards 
         //    <Card />

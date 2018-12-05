@@ -3,10 +3,22 @@ import PropTypes from 'prop-types';
 import './ContentContainer.css';
 import PeopleCard from '../PeopleCard/PeopleCard.js';
 
-const ContentContainer = ({film, contents}) => {
+const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, film, contents}) => {
     let displayedContents;
     let containerClassName;
-    let count = 1;
+    let card1 = carouselIndex;
+    let card2;
+    let card3;
+    if (carouselIndex < 9) {
+        card2 = carouselIndex + 1;
+    } else {
+        card2 = carouselIndex - 9;
+    }
+    if (carouselIndex < 8) {
+        card3 = carouselIndex + 2;
+    } else {
+        card3 = carouselIndex - 8;
+    }
     if (!contents.length) {
         displayedContents = (
                 <div className="crawl"><div>
@@ -17,13 +29,10 @@ const ContentContainer = ({film, contents}) => {
         containerClassName = "content-container";
     }
     else {
-        // const peopleCards = contents.map(person => {
-        //     return <PeopleCard info={person} /> 
-        // })
         const peopleCards = [
-        <PeopleCard cardClass="card1" card={contents[0]} />, 
-        <PeopleCard cardClass="card2" card={contents[1]} />, 
-        <PeopleCard cardClass="card3" card={contents[2]} /> ]
+        <PeopleCard cardClass="card1" card={contents[carouselIndex]} />, 
+        <PeopleCard cardClass="card2" card={contents[card2]} />, 
+        <PeopleCard cardClass="card3" card={contents[card3]} /> ]
         displayedContents = (
             <div className="people-container">
                 {peopleCards}
@@ -33,9 +42,9 @@ const ContentContainer = ({film, contents}) => {
     }
     return (
         <div className={containerClassName}>
-            <button className="arrow-button"> - </button>
+            <button className={contents.length ? "arrow-button" : "none"} onClick={decrementCarousel}> <i class="fas fa-arrow-left"></i> </button>
             {displayedContents}
-            <button className="arrow-button"> - </button>
+            <button className={contents.length ? "arrow-button" : "none"} onClick={incrementCarousel}> <i class="fas fa-arrow-right"></i> </button>
          </div>
     )
 }
