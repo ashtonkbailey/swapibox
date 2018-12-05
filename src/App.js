@@ -22,7 +22,6 @@ class App extends Component {
 
   cleanFilm = (film) => {
     //clean up opening crawl and year
-    //take title from state/if it has '\r\n', replace with a space/if if has '\r\n \r\n', replace with line break
     const messyCrawl = film.opening_crawl;
     const cleanCrawl = messyCrawl.replace(/(\r\n|\n|\r)/gm," ");
     const messyYear = film.release_date;
@@ -111,8 +110,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <h1 className="header"> SWAPIBOX </h1>
-
+        <h1 className="header"> SWAPIBOX </h1>
         <Navigation displayChosenContent={this.displayChosenContent}/>
         <Favorites faves={this.state.favorites} />
         <ContentContainer 
