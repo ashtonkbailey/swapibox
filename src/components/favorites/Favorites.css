@@ -14,8 +14,16 @@
     color: #F3E355;
     font-family: Roboto;
     font-size: 18px;
-    height: 60px;
+    height: 40px;
     text-align: justify;
+    text-shadow: 1px 1px 1px yellow;
+    font-family: 'Poller One', cursive;
+    font-weight: 200;
+}
+
+.favorites-button:hover {
+    cursor: pointer;
+    text-shadow: 2px 2px 2px yellow;
 }
 
 .lightsaber {

@@ -1,0 +1,36 @@
+.crawl{
+    position:absolute;
+    top:-3500px;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+    font-size:80px;
+    text-align:center;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.crawl>div{
+    padding-top:3500px;
+    animation:autoscroll 1000s linear;
+}
+.title {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 100px;
+}
+
+.content-container{
+    position:absolute;
+    top:40;
+    bottom:0;
+    left:0;
+    right:0;
+    transform-origin:50% 100%;
+    transform:perspective(400px) rotateX(20deg);
+    color: yellow;
+}
+
+@keyframes autoscroll{
+    to {
+        margin-top:-50000px;
+    }    
+}
