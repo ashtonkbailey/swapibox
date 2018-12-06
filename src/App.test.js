@@ -20,7 +20,7 @@ describe('App', () => {
       opening_crawl: 'It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.',
       release_date: '1977-05-25'
     };
-      //////why does the test suite use escaped chars and react dev tools doesn't? do we even need to clean the text up?
+    
     const result = wrapper.instance().cleanFilm(film);
     const expected = {
       title: 'A New Hope',
@@ -31,15 +31,56 @@ describe('App', () => {
     expect(result).toEqual(expected);
   });
 
-  // it('calls fetch with the correct data when adding a new grocery', () => {
-  // });
+  describe('componentDidMount', () =>{
+    let generateRandomNum;
+    let mockCurrFilm;
 
-  it('resets the state after cleaning the film', () => {
-    
-  });
+    beforeEach(() => {
+      generateRandomNum = jest.fn();
+      mockCurrFilm = {
+        title: '',
+        crawl: '',
+        year: ''
+      }
+    });
 
-  // it('sets an error when the fetch fails', () => {
-  // });
+    it('calls generateRandom ', () => {
+      //Setup
+
+      //Execution
+
+      //Expectation
+      
+    });
+
+    it('calls fetch with the correct parameters', () => {
+      //Setup
+
+      //Execution
+
+      //Expectation
+      
+    });
+
+    it('sets the state after fetch is called', () => {
+      //Setup
+
+      //Execution
+
+      //Expectation
+      
+    });
+
+    it('on fetch error, errorStatus is set', () => {
+      //Setup
+
+      //Execution
+
+      //Expectation
+      
+    });
+
+  })
 
 })
   
