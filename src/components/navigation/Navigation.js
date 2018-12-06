@@ -6,19 +6,19 @@ const Navigation = (props) => {
    return (
        <div className="nav-container">
            <button 
-            className="nav-button" 
+            className="nav-button people" 
             name="people" 
             onClick={props.displayChosenContent}> 
             people 
            </button>
            <button 
-            className="nav-button" 
+            className="nav-button planets" 
             name="planets" 
             onClick={props.displayChosenContent}> 
             planets 
            </button>
            <button 
-            className="nav-button" 
+            className="nav-button vehicles" 
             name="vehicles" 
             onClick={props.displayChosenContent}> 
             vehicles 

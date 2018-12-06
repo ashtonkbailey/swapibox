@@ -94,9 +94,15 @@ class App extends Component {
     const url = `https://swapi.co/api/${name}/`;
     const response = await fetch(url);
     const people = await response.json();
-    const cleanedPeople = await this.cleanPeopleData(people)
+    let cleanedData;
+    if(name === "people") {
+       cleanedData = await this.cleanPeopleData(people)
+    }
+    // } else if (name === "planets") {
+    //    cleanedData = await this.cleanPlanetData(people)
+    // }
       await this.setState({
-        displayedContent: cleanedPeople
+        displayedContent: cleanedData
       })      
   }
 

@@ -60,16 +60,23 @@ describe ('content container', () => {
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
-  it('renders all of the contents', () => {
-    expect(wrapper.find(PeopleCard).length).toEqual(3);
-  })
   it ('should render the film scroll if no contents are passed in', () => {
+    wrapper = mount (<ContentContainer film={mockFilm}
+      contents={mockInitialContent}
+      addToFavorites = {jest.fn()}
+      incrementCarousel = {jest.fn()}
+      carouselIndex = {mockIndex}
+    /> )
+    expect(wrapper.find(PeopleCard).length).toEqual(0)
+  })
+  it('displays all of the people contents once they are fetched', () => {
     wrapper = mount (<ContentContainer film={mockFilm}
       contents={mockDisplayedContent}
       addToFavorites = {jest.fn()}
       incrementCarousel = {jest.fn()}
       carouselIndex = {mockIndex}
-      key={0}
     /> )
+    expect(wrapper.find(PeopleCard).length).toEqual(3);
   })
+
 })
