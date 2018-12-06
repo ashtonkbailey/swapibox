@@ -75,14 +75,16 @@ class App extends Component {
       }
 
   cleanPeopleData = (people) => {
-    return Promise.all(people.results.map( async (person) =>  {
+    return Promise.all(people.results.map( async (person, index) =>  {
       const currHomeworld = await this.fetchPropertyObj(person.homeworld);
       const currSpecies = await this.fetchPropertyObj(person.species[0]);
       const personObject = {
         name: person.name,
         homeworld: currHomeworld.name,
         population: currHomeworld.population,
-        species: currSpecies.name
+        species: currSpecies.name,
+        index: index,
+        favorite: false
       }
       return personObject;
     }))
@@ -109,31 +111,39 @@ class App extends Component {
   decrementCarousel = () => {
     let newIndex;
     if (this.state.carouselIndex < 1) {
-       newIndex = 9;
+      newIndex = 9;
     } else {
       newIndex = this.state.carouselIndex - 1;
     }
     this.setState({carouselIndex: newIndex})
-
   }
 
+  viewFavorites = () => {
+    console.log(this.state.favorites)
+  }
+
+  addToFavorites = (favoritedCard) => {
+    favoritedCard.card.favorite = true;
+    if(!this.state.favorites.includes(favoritedCard.card))
+    this.setState({
+      favorites: [...this.state.favorites, favoritedCard.card]
+    })
+  }
 
   render() {
     return (
       <div className="App">
         <h1 className="header"> SWAPIBOX </h1>
         <Navigation displayChosenContent={this.displayChosenContent}/>
-        <Favorites faves={this.state.favorites} />
+        <Favorites faves={this.state.favorites}
+        viewFavorites={this.viewFavorites} />
         <ContentContainer 
           film={this.state.currFilm}
           contents={this.state.displayedContent}
           incrementCarousel = {this.incrementCarousel}
           decrementCarousel = {this.decrementCarousel}
           carouselIndex = {this.state.carouselIndex}
-        //<FilmText />
-        //<ContentCards 
-        //    <Card />
-        // />
+          addToFavorites = {this.addToFavorites}
         />
       </div>
     );

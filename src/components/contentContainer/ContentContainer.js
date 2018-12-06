@@ -3,22 +3,10 @@ import PropTypes from 'prop-types';
 import './ContentContainer.css';
 import PeopleCard from '../PeopleCard/PeopleCard.js';
 
-const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, film, contents}) => {
+const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, film, contents, addToFavorites}) => {
     let displayedContents;
     let containerClassName;
-    let card2;
-    let card3;
-
-    if (carouselIndex < 9) {
-        card2 = carouselIndex + 1;
-    } else {
-        card2 = carouselIndex - 9;
-    }
-    if (carouselIndex < 8) {
-        card3 = carouselIndex + 2;
-    } else {
-        card3 = carouselIndex - 8;
-    }
+   
 
     if (!contents.length) {
         displayedContents = (
@@ -34,10 +22,11 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
         containerClassName = "content-container";
     }
     else {
-        const peopleCards = [
-        <PeopleCard cardClass="small-card card1" card={contents[carouselIndex]} />, 
-        <PeopleCard cardClass="card2" card={contents[card2]} />, 
-        <PeopleCard cardClass="small-card card3" card={contents[card3]} /> ]
+        const peopleCards = contents.map((currCard) => {
+            return (<PeopleCard card={currCard}
+            carouselIndex={carouselIndex} addToFavorites={addToFavorites}/> )
+        });
+
         displayedContents = (
             <div className="people-container">
                 {peopleCards}
@@ -53,6 +42,10 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
             <button className={contents.length ? "arrow-button" : "none"} onClick={incrementCarousel}> <i className="fas fa-arrow-right"></i> </button>
          </div>
     )
+}
+
+ContentContainer.propTypes = {
+    carouselIndex: PropTypes.number.isRequired
 }
 
 export default ContentContainer;

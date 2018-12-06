@@ -5,12 +5,16 @@ import './Favorites.css';
 import lightsabers from '../../images/lightsabers.png';
 
 class Favorites extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return(
       <div className="favorites-container"> 
         <div className="num-favorites">{this.props.faves.length}</div>
         <img className="lightsaber" src={lightsabers}/>
-        <button className="favorites-button"> view favorites
+        <button className="favorites-button" onClick={this.props.viewFavorites}> view favorites
         </button>
       </div>
     )
