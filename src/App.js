@@ -75,14 +75,15 @@ class App extends Component {
       }
 
   cleanPeopleData = (people) => {
-    return Promise.all(people.results.map( async (person) =>  {
+    return Promise.all(people.results.map( async (person, index) =>  {
       const currHomeworld = await this.fetchPropertyObj(person.homeworld);
       const currSpecies = await this.fetchPropertyObj(person.species[0]);
       const personObject = {
         name: person.name,
         homeworld: currHomeworld.name,
         population: currHomeworld.population,
-        species: currSpecies.name
+        species: currSpecies.name,
+        index: index
       }
       return personObject;
     }))
@@ -117,13 +118,17 @@ class App extends Component {
 
   }
 
+  viewFavorites = () => {
+    console.log(this.state.favorites)
+  }
 
   render() {
     return (
       <div className="App">
         <h1 className="header"> SWAPIBOX </h1>
         <Navigation displayChosenContent={this.displayChosenContent}/>
-        <Favorites faves={this.state.favorites} />
+        <Favorites faves={this.state.favorites}
+        viewFavorites={this.viewFavorites} />
         <ContentContainer 
           film={this.state.currFilm}
           contents={this.state.displayedContent}
