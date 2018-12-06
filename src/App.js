@@ -24,7 +24,7 @@ class App extends Component {
   cleanFilm = (film) => {
     //clean up opening crawl and year
     const messyCrawl = film.opening_crawl;
-    const cleanCrawl = messyCrawl.replace(/(\r\n|\n|\r)/gm," ");
+    const cleanCrawl = messyCrawl.replace(/(\r\n|\n|\r)/gm, " ");
     const messyYear = film.release_date;
     const cleanYear = messyYear.substring(0, 4);
     //return cleaned up film obj: cleancrawl, cleanyear, title

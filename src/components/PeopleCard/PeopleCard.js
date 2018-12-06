@@ -4,7 +4,7 @@ import lightsabers from '../../images/lightsabers.png';
 import './peopleCard.css';
 import luke from '../../images/luke.jpg'
 
-const peopleCard = ({card, carouselIndex, addToFavorites}) => {
+const PeopleCard = ({card, carouselIndex, addToFavorites}) => {
     let hiddenClass = 'hidden';
     let leftCardIndex = carouselIndex;
     let middleCardIndex = carouselIndex + 1;
@@ -40,4 +40,4 @@ const peopleCard = ({card, carouselIndex, addToFavorites}) => {
     )
 }
 
-export default peopleCard;
+export default PeopleCard;

@@ -1,5 +1,6 @@
 import React from 'react';
-import './Navigation.css'
+import './Navigation.css';
+import PropTypes from 'prop-types';
 
 const Navigation = (props) => {
    return (
@@ -24,6 +25,11 @@ const Navigation = (props) => {
             </button>
        </div>
    )
+}
+
+Navigation.propTypes = {
+  displayChosenContent: PropTypes.func.isRequired,
+  content: PropTypes.array
 }
 
 export default Navigation;
