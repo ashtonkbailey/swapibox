@@ -39,7 +39,7 @@ class App extends Component {
     return Math.floor(Math.random() * 6) + 1;
   }
 
-  componentDidMount = async () => {
+  fetchCurrFilm = async () => {
     //generateRandomNum()
     let randomNum = this.generateRandomNum();
     //fetch film(randomNum)
@@ -59,7 +59,10 @@ class App extends Component {
         errorStatus: `Error: ${error.message}`
       })
     }
-    
+  }
+
+  componentDidMount = () => {
+    this.fetchCurrFilm();
   }
 
   displayChosenContent = (e) => {
