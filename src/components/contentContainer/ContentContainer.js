@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './ContentContainer.css';
 import PeopleCard from '../PeopleCard/PeopleCard.js';
 
-const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, film, contents}) => {
+const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, film, contents, addToFavorites}) => {
     let displayedContents;
     let containerClassName;
    
@@ -24,7 +24,7 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
     else {
         const peopleCards = contents.map((currCard) => {
             return (<PeopleCard card={currCard}
-            carouselIndex={carouselIndex}/> )
+            carouselIndex={carouselIndex} addToFavorites={addToFavorites}/> )
         });
 
         displayedContents = (

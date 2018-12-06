@@ -51,6 +51,8 @@ article {
 
 .middle-card {
   grid-column: 2/3;
+  font-size: 28px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   min-width: 300px;
   height: 460px;
   background: rgba(227, 218, 135, 0.4);

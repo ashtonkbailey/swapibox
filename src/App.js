@@ -83,7 +83,8 @@ class App extends Component {
         homeworld: currHomeworld.name,
         population: currHomeworld.population,
         species: currSpecies.name,
-        index: index
+        index: index,
+        favorite: false
       }
       return personObject;
     }))
@@ -110,16 +111,23 @@ class App extends Component {
   decrementCarousel = () => {
     let newIndex;
     if (this.state.carouselIndex < 1) {
-       newIndex = 9;
+      newIndex = 9;
     } else {
       newIndex = this.state.carouselIndex - 1;
     }
     this.setState({carouselIndex: newIndex})
-
   }
 
   viewFavorites = () => {
     console.log(this.state.favorites)
+  }
+
+  addToFavorites = (favoritedCard) => {
+    favoritedCard.card.favorite = true;
+    if(!this.state.favorites.includes(favoritedCard.card))
+    this.setState({
+      favorites: [...this.state.favorites, favoritedCard.card]
+    })
   }
 
   render() {
@@ -135,10 +143,7 @@ class App extends Component {
           incrementCarousel = {this.incrementCarousel}
           decrementCarousel = {this.decrementCarousel}
           carouselIndex = {this.state.carouselIndex}
-        //<FilmText />
-        //<ContentCards 
-        //    <Card />
-        // />
+          addToFavorites = {this.addToFavorites}
         />
       </div>
     );
