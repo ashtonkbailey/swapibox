@@ -125,17 +125,7 @@ describe('App', () => {
   });
 
   describe('fetchPropertyObj', () => {
-    let mockCleanedPeople;
-
-    beforeEach(() => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(mockCleanedPeople),
-      }));
-      mockCleanedPeople = [];
-    });
-
-    it('calls fetch with the correct parameters', async () => {
+    it('calls fetch with the correct parameter', async () => {
       // Setup
 
       // Execution
@@ -146,7 +136,7 @@ describe('App', () => {
 
     it('returns the property object', async () => {
       // Setup
-
+      
       // Execution
 
       // Expectation
@@ -175,13 +165,23 @@ describe('App', () => {
   });
 
   describe('fetchChosenContent', () => {
-    it('calls fetch with the correct parameter', async () => {
+    let mockCleanedPeople;
+
+    beforeEach(() => {
+      mockCleanedPeople = [];
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockCleanedPeople),
+      }));
+    });
+
+    it('calls fetch with the correct parameters', async () => {
       // Setup
-
+      const expected = 'https://swapi.co/api/people/';
       // Execution
-
+      await wrapper.instance().fetchPropertyObj(expected);
       // Expectation
-
+      expect(window.fetch).toHaveBeenCalledWith(expected);
     });
 
     it('calls cleanPeopleData', async () => {
