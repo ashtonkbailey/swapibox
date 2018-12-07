@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import lightsabers from '../../images/lightsabers.png';
 import './peopleCard.css';
 import luke from '../../images/luke.jpg'
@@ -38,6 +39,11 @@ const peopleCard = ({card, carouselIndex, addToFavorites}) => {
         <img className="saber" src={lightsabers} onClick={() => addToFavorites({card})}/> 
       </article>
     )
-}
+};
+
+peopleCard.propTypes = {
+  card: PropTypes.object.isRequired,
+  cardClass: PropTypes.string.isRequired,
+};
 
 export default peopleCard;

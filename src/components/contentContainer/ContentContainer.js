@@ -1,7 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './ContentContainer.css';
-import PeopleCard from '../PeopleCard/PeopleCard.js';
+import PeopleCard from '../PeopleCard/PeopleCard';
+
+const ContentContainer = ({
+  carouselIndex,
+  incrementCarousel,
+  decrementCarousel,
+  film,
+  contents,
+}) => {
+  let displayedContents;
+  let containerClassName;
+  let card2;
+  let card3;
 
 const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, film, contents, addToFavorites}) => {
     let displayedContents;
@@ -35,17 +48,13 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
         containerClassName = "component-container";
     }
 
-    return (
-        <div className={containerClassName}>
-            <button className={contents.length ? "arrow-button" : "none"} onClick={decrementCarousel}> <i className="fas fa-arrow-left"></i> </button>
-            {displayedContents}
-            <button className={contents.length ? "arrow-button" : "none"} onClick={incrementCarousel}> <i className="fas fa-arrow-right"></i> </button>
-         </div>
-    )
-}
 
 ContentContainer.propTypes = {
-    carouselIndex: PropTypes.number.isRequired
-}
+  carouselIndex: PropTypes.number.isRequired,
+  incrementCarousel: PropTypes.func.isRequired,
+  decrementCarousel: PropTypes.func.isRequired,
+  film: PropTypes.object.isRequired,
+  contents: PropTypes.array.isRequired,
+};
 
 export default ContentContainer;

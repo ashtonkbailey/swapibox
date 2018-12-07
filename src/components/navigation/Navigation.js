@@ -1,29 +1,33 @@
 import React from 'react';
-import './Navigation.css'
+import './Navigation.css';
 
-const Navigation = (props) => {
-   return (
-       <div className="nav-container">
-           <button 
-            className="nav-button" 
-            name="people" 
-            onClick={props.displayChosenContent}> 
-            people 
-           </button>
-           <button 
-            className="nav-button" 
-            name="planets" 
-            onClick={props.displayChosenContent}> 
-            planets 
-           </button>
-           <button 
-            className="nav-button" 
-            name="vehicles" 
-            onClick={props.displayChosenContent}> 
-            vehicles 
-            </button>
-       </div>
-   )
-}
+const Navigation = displayChosenContent => (
+  <div className="nav-container">
+    <button
+      type="button"
+      className="nav-button"
+      name="people"
+      onClick={displayChosenContent}
+    >
+      people
+    </button>
+    <button
+      type="button"
+      className="nav-button"
+      name="planets"
+      onClick={displayChosenContent}
+    >
+      planets
+    </button>
+    <button
+      type="button"
+      className="nav-button"
+      name="vehicles"
+      onClick={displayChosenContent}
+    >
+      vehicles
+    </button>
+  </div>
+);
 
 export default Navigation;
