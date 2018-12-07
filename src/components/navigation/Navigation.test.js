@@ -11,10 +11,15 @@ describe ('nagivation', () => {
   beforeEach(() => {
     mockDisplayContent = jest.fn();
     wrapper = shallow (<Navigation displayChosenContent = {mockDisplayContent} />)
-    mockEvent = {preventDefault: () => {}}
   })
 
   it ('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  })
+
+  it('should display chosen content on button click', () => {
+    const button = wrapper.find('.people');
+    button.simulate('click');
+    expect(mockDisplayContent).toBeCalled();
   })
 })

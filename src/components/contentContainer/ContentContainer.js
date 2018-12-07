@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ContentContainer.css';
 import PeopleCard from '../PeopleCard/PeopleCard.js';
+import PlanetCard from '../PlanetCard/PlanetCard.js';
 
-const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, film, contents, addToFavorites}) => {
+
+const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, film, contents, addToFavorites, chosenContent}) => {
     let displayedContents;
     let containerClassName;
     if (!contents.length) {
@@ -19,15 +21,25 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
         );
         containerClassName = "content-container";
     }
-    else {
-        const peopleCards = contents.map((currCard) => {
-            return (<PeopleCard card={currCard}
-            carouselIndex={carouselIndex} addToFavorites={addToFavorites} key={currCard.name}/> )
+    else { 
+      let contentCards;
+      // if(chosenContent === 'people') {
+         contentCards = contents.map((currCard) => {
+              return (<PeopleCard card={currCard}
+            carouselIndex={carouselIndex} addToFavorites={addToFavorites} key={currCard.name} chosenContent={chosenContent} /> )
         });
+      // } 
+
+      // else if (chosenContent === 'planets') {
+      //   contentCards = contents.map((currCard) => {
+      //     return (<PlanetCard card={currCard}
+      //       carouselIndex={carouselIndex} addToFavorites={addToFavorites} key={currCard.name}/>)
+      //   });
+      // }
 
         displayedContents = (
             <div className="people-container">
-                {peopleCards}
+                {contentCards}
             </div>
         );
         containerClassName = "component-container";

@@ -12,6 +12,7 @@ class App extends Component {
       errorStatus: '',
       favorites: [],
       displayedContent: [],
+      chosenContent: '',
       currFilm: {
         title: '',
         crawl: '',
@@ -22,12 +23,8 @@ class App extends Component {
   }
 
   cleanFilm = (film) => {
-    //clean up opening crawl and year
-    const messyCrawl = film.opening_crawl;
-    const cleanCrawl = messyCrawl.replace(/(\r\n|\n|\r)/gm, " ");
-    const messyYear = film.release_date;
-    const cleanYear = messyYear.substring(0, 4);
-    //return cleaned up film obj: cleancrawl, cleanyear, title
+    const cleanCrawl = film.opening_crawl.replace(/(\r\n|\n|\r)/gm, " ");
+    const cleanYear = film.release_date.substring(0, 4);
     return { 
       title: film.title,
       crawl: cleanCrawl,
@@ -40,9 +37,7 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    //generateRandomNum()
     let randomNum = this.generateRandomNum();
-    //fetch film(randomNum)
     try  {
       const response = await fetch(`https://swapi.co/api/films/${randomNum}`)
       const film = await response.json()
@@ -59,26 +54,24 @@ class App extends Component {
         errorStatus: `Error: ${error.message}`
       })
     }
-    
   }
 
   displayChosenContent = (e) => {
-    e.preventDefault();
     const contentToFetch = e.target.name;
     this.fetchChosenContent(contentToFetch);
   }
 
-    fetchPropertyObj = async (url) => {
-         const response = await fetch(url);
-         const propertyObj = await response.json();
-         return propertyObj;
-      }
+  fetchPropertyObj = async (url) => {
+    const response = await fetch(url);
+    const propertyObj = await response.json();
+    return propertyObj;
+  }
 
   cleanPeopleData = (people) => {
     return Promise.all(people.results.map( async (person, index) =>  {
       const currHomeworld = await this.fetchPropertyObj(person.homeworld);
       const currSpecies = await this.fetchPropertyObj(person.species[0]);
-      const personObject = {
+      return {
         name: person.name,
         homeworld: currHomeworld.name,
         population: currHomeworld.population,
@@ -86,24 +79,44 @@ class App extends Component {
         index: index,
         favorite: false
       }
-      return personObject;
+    }))
+  }
+
+  cleanPlanetData = (planets) => {
+    return Promise.all(planets.results.map( async (planet, index) => {
+      let residentsObj;
+      // if(planet.residents) {
+      //  residentsObj = await this.fetchPropertyObj(planet.residents[0]);
+      // }  
+      return {
+        name: planet.name,
+        terrain: planet.terrain,
+        population: planet.population,
+        climate: planet.climate,
+        // residents: residentsObj.name,
+        index: index,
+        favorite: false
+      }
     }))
   }
   
   fetchChosenContent = async (name) => {
     const url = `https://swapi.co/api/${name}/`;
     const response = await fetch(url);
-    const people = await response.json();
+    const data = await response.json();
     let cleanedData;
     if(name === "people") {
-       cleanedData = await this.cleanPeopleData(people)
+       cleanedData = await this.cleanPeopleData(data)
     }
-    // } else if (name === "planets") {
-    //    cleanedData = await this.cleanPlanetData(people)
-    // }
-      await this.setState({
-        displayedContent: cleanedData
-      })      
+    else if (name === "planets") {
+      debugger
+       cleanedData = await this.cleanPlanetData(data)
+    }
+    await this.setState({
+      displayedContent: cleanedData,
+      chosenContent: name
+      
+    }) 
   }
 
   incrementCarousel = () => {
@@ -144,6 +157,7 @@ class App extends Component {
         <Favorites faves={this.state.favorites}
         viewFavorites={this.viewFavorites} />
         <ContentContainer 
+          chosenContent={this.state.chosenContent}
           film={this.state.currFilm}
           contents={this.state.displayedContent}
           incrementCarousel = {this.incrementCarousel}
@@ -155,6 +169,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;

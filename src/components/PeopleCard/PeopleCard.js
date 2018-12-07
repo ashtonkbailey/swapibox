@@ -4,11 +4,12 @@ import lightsabers from '../../images/lightsabers.png';
 import './peopleCard.css';
 import luke from '../../images/luke.jpg'
 
-const PeopleCard = ({card, carouselIndex, addToFavorites}) => {
+const PeopleCard = ({card, carouselIndex, addToFavorites, chosenContent}) => {
     let hiddenClass = 'hidden';
     let leftCardIndex = carouselIndex;
     let middleCardIndex = carouselIndex + 1;
     let rightCardIndex = carouselIndex + 2;
+    let allCards;
     if (carouselIndex === 9) {
       middleCardIndex = 0;
       rightCardIndex = carouselIndex - 8;
@@ -27,17 +28,26 @@ const PeopleCard = ({card, carouselIndex, addToFavorites}) => {
         hiddenClass = 'right-card small-card';
         break;
     }
-
-    return (
-      <article className={hiddenClass}>
+    if (chosenContent === 'people') {
+       return (<article className={hiddenClass}>
         <h3 className="name"> {card.name} </h3>
         <img src={luke} />
         <p> species: {card.species} </p>
         <p> homeworld: {card.homeworld} </p>
         <p> population: {card.population} </p>
         <img className="saber" src={lightsabers} onClick={() => addToFavorites({card})}/> 
+      </article>)
+    } else if (chosenContent === 'planets') {
+      return ( <article className={hiddenClass}>
+        <h3 className="name"> {card.name} </h3>
+        <img src={luke} />
+        <p> terrain: {card.terrain} </p>
+        <p> climate: {card.climate} </p>
+        <p> population: {card.population} </p>
+        <img className="saber" src={lightsabers} onClick={() => addToFavorites({card})}/>
       </article>
-    )
+      )
+    }
 }
 
 export default PeopleCard;

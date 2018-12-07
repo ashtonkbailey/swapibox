@@ -6,7 +6,6 @@ describe('people card', () => {
   let mockCard;
   let wrapper;
   let mockAddToFavorites;
-
   
   beforeEach(() => {
     mockCard = { card: {
