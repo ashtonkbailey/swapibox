@@ -18,14 +18,23 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1>
+        <h1
+          className="header"
+        >
            SWAPIBOX 
         </h1>,
-        <Navigation />,
+        <Navigation
+          displayChosenContent={[Function]}
+        />,
         <Favorites
           faves={Array []}
+          viewFavorites={[Function]}
         />,
         <ContentContainer
+          addToFavorites={[Function]}
+          carouselIndex={0}
+          contents={Array []}
+          decrementCarousel={[Function]}
           film={
             Object {
               "crawl": "",
@@ -33,6 +42,7 @@ ShallowWrapper {
               "year": "",
             }
           }
+          incrementCarousel={[Function]}
         />,
       ],
       "className": "App",
@@ -45,6 +55,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": " SWAPIBOX ",
+          "className": "header",
         },
         "ref": null,
         "rendered": " SWAPIBOX ",
@@ -54,7 +65,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "displayChosenContent": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -65,6 +78,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "faves": Array [],
+          "viewFavorites": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -75,11 +89,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "addToFavorites": [Function],
+          "carouselIndex": 0,
+          "contents": Array [],
+          "decrementCarousel": [Function],
           "film": Object {
             "crawl": "",
             "title": "",
             "year": "",
           },
+          "incrementCarousel": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -95,14 +114,23 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1>
+          <h1
+            className="header"
+          >
              SWAPIBOX 
           </h1>,
-          <Navigation />,
+          <Navigation
+            displayChosenContent={[Function]}
+          />,
           <Favorites
             faves={Array []}
+            viewFavorites={[Function]}
           />,
           <ContentContainer
+            addToFavorites={[Function]}
+            carouselIndex={0}
+            contents={Array []}
+            decrementCarousel={[Function]}
             film={
               Object {
                 "crawl": "",
@@ -110,6 +138,7 @@ ShallowWrapper {
                 "year": "",
               }
             }
+            incrementCarousel={[Function]}
           />,
         ],
         "className": "App",
@@ -122,6 +151,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": " SWAPIBOX ",
+            "className": "header",
           },
           "ref": null,
           "rendered": " SWAPIBOX ",
@@ -131,7 +161,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "displayChosenContent": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -142,6 +174,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "faves": Array [],
+            "viewFavorites": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -152,11 +185,16 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "addToFavorites": [Function],
+            "carouselIndex": 0,
+            "contents": Array [],
+            "decrementCarousel": [Function],
             "film": Object {
               "crawl": "",
               "title": "",
               "year": "",
             },
+            "incrementCarousel": [Function],
           },
           "ref": null,
           "rendered": null,
