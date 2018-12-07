@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Navigation from './components/navigation/Navigation';
-import Favorites from './components/favorites/Favorites';
-import ContentContainer from './components/contentContainer/ContentContainer';
+import Navigation from './components/navigation/Navigation.js';
+import Favorites from './components/favorites/Favorites.js';
+import ContentContainer from './components/contentContainer/ContentContainer.js';
 
 class App extends Component {
   constructor() {
@@ -16,10 +16,10 @@ class App extends Component {
       currFilm: {
         title: '',
         crawl: '',
-        year: '',
+        year: ''
       },
-      carouselIndex: 0,
-    };
+      carouselIndex: 0
+    }
   }
 
   cleanFilm = (film) => {
@@ -28,33 +28,32 @@ class App extends Component {
     return { 
       title: film.title,
       crawl: cleanCrawl,
-      year: cleanYear,
-    };
-  }
-
-  fetchCurrFilm = async () => {
-    const randomNum = this.generateRandomNum();
-
-    try {
-      const response = await fetch(`https://swapi.co/api/films/${randomNum}`);
-      const film = await response.json();
-      const cleanFilm = await this.cleanFilm(film);
-      this.setState({
-        currFilm: {
-          title: cleanFilm.title,
-          crawl: cleanFilm.crawl,
-          year: cleanFilm.year,
-        },
-      });
-    } catch (error) {
-      this.setState({
-        errorStatus: `Error: ${error.message}`,
-      });
+      year: cleanYear
     }
   }
 
-  componentDidMount = () => {
-    this.fetchCurrFilm();
+  generateRandomNum() {
+    return Math.floor(Math.random() * 6) + 1;
+  }
+
+  componentDidMount = async () => {
+    let randomNum = this.generateRandomNum();
+    try  {
+      const response = await fetch(`https://swapi.co/api/films/${randomNum}`)
+      const film = await response.json()
+      const cleanFilm = await this.cleanFilm(film)
+        this.setState({
+          currFilm: {
+            title: cleanFilm.title,
+            crawl: cleanFilm.crawl,
+            year: cleanFilm.year
+          }
+        })
+    } catch (error) {
+      this.setState({
+        errorStatus: `Error: ${error.message}`
+      })
+    }
   }
 
   displayChosenContent = (e) => {
@@ -68,7 +67,23 @@ class App extends Component {
     return propertyObj;
   }
 
-  cleanPlanetData = planets => Promise.all(planets.results.map( async (planet, index) => {
+  cleanPeopleData = (people) => {
+    return Promise.all(people.results.map( async (person, index) =>  {
+      const currHomeworld = await this.fetchPropertyObj(person.homeworld);
+      const currSpecies = await this.fetchPropertyObj(person.species[0]);
+      return {
+        name: person.name,
+        homeworld: currHomeworld.name,
+        population: currHomeworld.population,
+        species: currSpecies.name,
+        index: index,
+        favorite: false
+      }
+    }))
+  }
+
+  cleanPlanetData = (planets) => {
+    return Promise.all(planets.results.map( async (planet, index) => {
       let residentsObj;
       // if(planet.residents) {
       //  residentsObj = await this.fetchPropertyObj(planet.residents[0]);
@@ -83,60 +98,42 @@ class App extends Component {
         favorite: false
       }
     }))
-
-  cleanPeopleData = people => Promise.all(people.results.map(async (person) => {
-    const currHomeworld = await this.fetchPropertyObj(person.homeworld);
-    const currSpecies = await this.fetchPropertyObj(person.species[0]);
-    const personObject = {
-      name: person.name,
-      homeworld: currHomeworld.name,
-      population: currHomeworld.population,
-      species: currSpecies.name,
-    };
-    return personObject;
-  }))
-
+  }
+  
   fetchChosenContent = async (name) => {
     const url = `https://swapi.co/api/${name}/`;
     const response = await fetch(url);
     const data = await response.json();
     let cleanedData;
-    
     if(name === "people") {
        cleanedData = await this.cleanPeopleData(data)
     }
     else if (name === "planets") {
-//       debugger
+      debugger
        cleanedData = await this.cleanPlanetData(data)
     }
-    
     await this.setState({
       displayedContent: cleanedData,
       chosenContent: name
+      
     }) 
   }
 
   incrementCarousel = () => {
     let newIndex = 0;
-    const { carouselIndex } = this.state;
-
-    if (carouselIndex < 9) {
-      newIndex = carouselIndex + 1;
+    if (this.state.carouselIndex < 9) {
+       newIndex = this.state.carouselIndex +1;
     }
-
-    this.setState({ carouselIndex: newIndex });
+    this.setState({carouselIndex: newIndex})
   }
 
   decrementCarousel = () => {
     let newIndex;
-    const { carouselIndex } = this.state;
-
-    if (carouselIndex < 1) {
+    if (this.state.carouselIndex < 1) {
       newIndex = 9;
     } else {
-      newIndex = carouselIndex - 1;
+      newIndex = this.state.carouselIndex - 1;
     }
-
     this.setState({carouselIndex: newIndex})
   }
 
@@ -152,16 +149,7 @@ class App extends Component {
     })
   }
 
-  generateRandomNum = () => Math.floor(Math.random() * 6) + 1;
-
   render() {
-    const {
-      favorites,
-      currFilm,
-      displayedContent,
-      carouselIndex,
-    } = this.state;
-
     return (
       <div className="App">
         <h1 className="header"> SWAPIBOX </h1>
@@ -176,19 +164,6 @@ class App extends Component {
           decrementCarousel = {this.decrementCarousel}
           carouselIndex = {this.state.carouselIndex}
           addToFavorites = {this.addToFavorites}
-        />
-        <Navigation displayChosenContent={this.displayChosenContent} />
-        <Favorites favesLength={favorites.length} />
-        <ContentContainer
-          film={currFilm}
-          contents={displayedContent}
-          incrementCarousel={this.incrementCarousel}
-          decrementCarousel={this.decrementCarousel}
-          carouselIndex={carouselIndex}
-        // <FilmText />
-        // <ContentCards
-        //    <Card />
-        // />
         />
       </div>
     );

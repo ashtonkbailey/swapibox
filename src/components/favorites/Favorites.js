@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './Favorites.css';
 import lightsabers from '../../images/lightsabers.png';
 
-const Favorites = ({ favesLength, viewFavorites }) => (
-  <div className="favorites-container">
-    <div className="num-favorites">{favesLength}</div>
-    <img className="lightsaber" src={lightsabers} alt="click to save as a favorite" />
-    <button
-      type="button"
-      className="favorites-button"
-      onClick={viewFavorites}
-    >
-      view favorites
-    </button>
-  </div>
-);
+class Favorites extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return(
+      <div className="favorites-container"> 
+        <div className="num-favorites">{this.props.faves.length}</div>
+        <img className="lightsaber" src={lightsabers}/>
+        <button className="favorites-button" onClick={this.props.viewFavorites}> view favorites
+        </button>
+      </div>
+    )
+  }
+}
 
 Favorites.propTypes = {
-  favesLength: PropTypes.number.isRequired,
-  viewFavorites: PropTypes.func.isRequired,
-};
+  faves: PropTypes.array
+}
 
 export default Favorites;

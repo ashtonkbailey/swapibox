@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import './ContentContainer.css';
 import PeopleCard from '../PeopleCard/PeopleCard.js';
 import PlanetCard from '../PlanetCard/PlanetCard.js';
@@ -46,13 +45,14 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
         containerClassName = "component-container";
     }
 
-    displayedContents = (
-      <div className="people-container">
-      {peopleCards}
-      </div>
-      );
-    containerClassName = "component-container";
-  }
+    return (
+        <div className={containerClassName}>
+            <button className={contents.length ? "arrow-button" : "none"} onClick={decrementCarousel}> <i className="fas fa-arrow-left"></i> </button>
+            {displayedContents}
+            <button className={contents.length ? "arrow-button" : "none"} onClick={incrementCarousel}> <i className="fas fa-arrow-right"></i> </button>
+         </div>
+    )
+}
 
 ContentContainer.propTypes = {
     carouselIndex: PropTypes.number.isRequired,
