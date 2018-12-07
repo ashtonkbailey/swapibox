@@ -7,7 +7,6 @@ article {
   align-items: center;
   padding: 6px;
   transition: background-color, opacity .6s ease-in-out;
-  /* min-height: 400px; */
 }
 
 .saber {
@@ -42,6 +41,16 @@ article {
     font-size:  20px; 
 }
 
+.small-card {
+  height: 400px;
+  transition: background-color, opacity .6s ease-in-out;
+}
+
+.small-card>.saber {
+  width: 60px;
+}
+
+
 .left-card {
   grid-column: 1/2;
   opacity: .5;
@@ -54,9 +63,10 @@ article {
 
 .middle-card {
   grid-column: 2/3;
-  font-size: 28px;
+  font-size: 26px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   min-width: 300px;
+  max-width: 500px;
   /* height: 500px; */
   background: rgba(227, 218, 135, 0.4);
   border: 4px solid #EDE748;

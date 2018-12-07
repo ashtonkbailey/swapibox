@@ -27,9 +27,11 @@ ShallowWrapper {
           displayChosenContent={[Function]}
         />,
         <Favorites
-          favesLength={0}
+          faves={Array []}
+          viewFavorites={[Function]}
         />,
         <ContentContainer
+          addToFavorites={[Function]}
           carouselIndex={0}
           contents={Array []}
           decrementCarousel={[Function]}
@@ -75,7 +77,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "favesLength": 0,
+          "faves": Array [],
+          "viewFavorites": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -86,6 +89,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "addToFavorites": [Function],
           "carouselIndex": 0,
           "contents": Array [],
           "decrementCarousel": [Function],
@@ -119,9 +123,11 @@ ShallowWrapper {
             displayChosenContent={[Function]}
           />,
           <Favorites
-            favesLength={0}
+            faves={Array []}
+            viewFavorites={[Function]}
           />,
           <ContentContainer
+            addToFavorites={[Function]}
             carouselIndex={0}
             contents={Array []}
             decrementCarousel={[Function]}
@@ -167,7 +173,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "favesLength": 0,
+            "faves": Array [],
+            "viewFavorites": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -178,6 +185,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "addToFavorites": [Function],
             "carouselIndex": 0,
             "contents": Array [],
             "decrementCarousel": [Function],

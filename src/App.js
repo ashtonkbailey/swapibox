@@ -12,6 +12,7 @@ class App extends Component {
       errorStatus: '',
       favorites: [],
       displayedContent: [],
+      chosenContent: '',
       currFilm: {
         title: '',
         crawl: '',
@@ -22,12 +23,9 @@ class App extends Component {
   }
 
   cleanFilm = (film) => {
-    const messyCrawl = film.opening_crawl;
-    const cleanCrawl = messyCrawl.replace(/(\r\n|\n|\r)/gm, ' ');
-    const messyYear = film.release_date;
-    const cleanYear = messyYear.substring(0, 4);
-
-    return {
+    const cleanCrawl = film.opening_crawl.replace(/(\r\n|\n|\r)/gm, " ");
+    const cleanYear = film.release_date.substring(0, 4);
+    return { 
       title: film.title,
       crawl: cleanCrawl,
       year: cleanYear,
@@ -60,7 +58,6 @@ class App extends Component {
   }
 
   displayChosenContent = (e) => {
-    e.preventDefault();
     const contentToFetch = e.target.name;
     this.fetchChosenContent(contentToFetch);
   }
@@ -70,6 +67,22 @@ class App extends Component {
     const propertyObj = await response.json();
     return propertyObj;
   }
+
+  cleanPlanetData = planets => Promise.all(planets.results.map( async (planet, index) => {
+      let residentsObj;
+      // if(planet.residents) {
+      //  residentsObj = await this.fetchPropertyObj(planet.residents[0]);
+      // }  
+      return {
+        name: planet.name,
+        terrain: planet.terrain,
+        population: planet.population,
+        climate: planet.climate,
+        // residents: residentsObj.name,
+        index: index,
+        favorite: false
+      }
+    }))
 
   cleanPeopleData = people => Promise.all(people.results.map(async (person) => {
     const currHomeworld = await this.fetchPropertyObj(person.homeworld);
@@ -86,12 +99,21 @@ class App extends Component {
   fetchChosenContent = async (name) => {
     const url = `https://swapi.co/api/${name}/`;
     const response = await fetch(url);
-    const people = await response.json();
-    const cleanedPeople = await this.cleanPeopleData(people);
-
+    const data = await response.json();
+    let cleanedData;
+    
+    if(name === "people") {
+       cleanedData = await this.cleanPeopleData(data)
+    }
+    else if (name === "planets") {
+//       debugger
+       cleanedData = await this.cleanPlanetData(data)
+    }
+    
     await this.setState({
-      displayedContent: cleanedPeople,
-    });
+      displayedContent: cleanedData,
+      chosenContent: name
+    }) 
   }
 
   incrementCarousel = () => {
@@ -147,6 +169,7 @@ class App extends Component {
         <Favorites faves={this.state.favorites}
         viewFavorites={this.viewFavorites} />
         <ContentContainer 
+          chosenContent={this.state.chosenContent}
           film={this.state.currFilm}
           contents={this.state.displayedContent}
           incrementCarousel = {this.incrementCarousel}
@@ -171,6 +194,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
