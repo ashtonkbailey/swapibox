@@ -28,15 +28,7 @@ const ContentContainer = ({carouselIndex, incrementCarousel, decrementCarousel, 
               return (<PeopleCard card={currCard}
             carouselIndex={carouselIndex} addToFavorites={addToFavorites} key={currCard.name} chosenContent={chosenContent} /> )
         });
-      // } 
-
-      // else if (chosenContent === 'planets') {
-      //   contentCards = contents.map((currCard) => {
-      //     return (<PlanetCard card={currCard}
-      //       carouselIndex={carouselIndex} addToFavorites={addToFavorites} key={currCard.name}/>)
-      //   });
-      // }
-
+     
         displayedContents = (
             <div className="people-container">
                 {contentCards}
