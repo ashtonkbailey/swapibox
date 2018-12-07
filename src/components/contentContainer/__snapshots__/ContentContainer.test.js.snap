@@ -1,0 +1,2400 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`content container should match the snapshot 1`] = `
+ReactWrapper {
+  Symbol(enzyme.__unrendered__): <ContentContainer
+    addToFavorites={[MockFunction]}
+    carouselIndex={0}
+    contents={
+      Array [
+        Object {
+          "favorite": false,
+          "homeworld": "Tatooine",
+          "index": 0,
+          "name": "Luke Skywalker",
+          "population": "200000",
+          "species": "Human",
+        },
+        Object {
+          "favorite": false,
+          "homeworld": "Tatooine",
+          "index": 1,
+          "name": "C-3PO",
+          "population": "200000",
+          "species": "Droid",
+        },
+        Object {
+          "favorite": false,
+          "homeworld": "Naboo",
+          "index": 2,
+          "name": "R2-D2",
+          "population": "4500000000",
+          "species": "Droid",
+        },
+      ]
+    }
+    film={
+      Object {
+        "crawl": "It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.  Evading the dr…",
+        "title": "The Empire Strikes Back",
+        "year": "1980",
+      }
+    }
+    incrementCarousel={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "addToFavorites": [MockFunction],
+      "carouselIndex": 0,
+      "contents": Array [
+        Object {
+          "favorite": false,
+          "homeworld": "Tatooine",
+          "index": 0,
+          "name": "Luke Skywalker",
+          "population": "200000",
+          "species": "Human",
+        },
+        Object {
+          "favorite": false,
+          "homeworld": "Tatooine",
+          "index": 1,
+          "name": "C-3PO",
+          "population": "200000",
+          "species": "Droid",
+        },
+        Object {
+          "favorite": false,
+          "homeworld": "Naboo",
+          "index": 2,
+          "name": "R2-D2",
+          "population": "4500000000",
+          "species": "Droid",
+        },
+      ],
+      "film": Object {
+        "crawl": "It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.  Evading the dr…",
+        "title": "The Empire Strikes Back",
+        "year": "1980",
+      },
+      "incrementCarousel": [MockFunction],
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": <div
+        class="component-container"
+      >
+        <button
+          class="arrow-button"
+        >
+           
+          <i
+            class="fas fa-arrow-left"
+          />
+           
+        </button>
+        <div
+          class="people-container"
+        >
+          <article
+            class="left-card small-card"
+          >
+            <h3
+              class="name"
+            >
+               
+              Luke Skywalker
+               
+            </h3>
+            <img
+              src="luke.jpg"
+            />
+            <p>
+               species: 
+              Human
+               
+            </p>
+            <p>
+               homeworld: 
+              Tatooine
+               
+            </p>
+            <p>
+               population: 
+              200000
+               
+            </p>
+            <img
+              class="saber"
+              src="lightsabers.png"
+            />
+          </article>
+          <article
+            class="middle-card"
+          >
+            <h3
+              class="name"
+            >
+               
+              C-3PO
+               
+            </h3>
+            <img
+              src="luke.jpg"
+            />
+            <p>
+               species: 
+              Droid
+               
+            </p>
+            <p>
+               homeworld: 
+              Tatooine
+               
+            </p>
+            <p>
+               population: 
+              200000
+               
+            </p>
+            <img
+              class="saber"
+              src="lightsabers.png"
+            />
+          </article>
+          <article
+            class="right-card small-card"
+          >
+            <h3
+              class="name"
+            >
+               
+              R2-D2
+               
+            </h3>
+            <img
+              src="luke.jpg"
+            />
+            <p>
+               species: 
+              Droid
+               
+            </p>
+            <p>
+               homeworld: 
+              Naboo
+               
+            </p>
+            <p>
+               population: 
+              4500000000
+               
+            </p>
+            <img
+              class="saber"
+              src="lightsabers.png"
+            />
+          </article>
+        </div>
+        <button
+          class="arrow-button"
+        >
+           
+          <i
+            class="fas fa-arrow-right"
+          />
+           
+        </button>
+      </div>,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            className="arrow-button"
+          >
+             
+            <i
+              className="fas fa-arrow-left"
+            />
+             
+          </button>,
+          <div
+            className="people-container"
+          >
+            <PeopleCard
+              addToFavorites={[MockFunction]}
+              card={
+                Object {
+                  "favorite": false,
+                  "homeworld": "Tatooine",
+                  "index": 0,
+                  "name": "Luke Skywalker",
+                  "population": "200000",
+                  "species": "Human",
+                }
+              }
+              carouselIndex={0}
+            />
+            <PeopleCard
+              addToFavorites={[MockFunction]}
+              card={
+                Object {
+                  "favorite": false,
+                  "homeworld": "Tatooine",
+                  "index": 1,
+                  "name": "C-3PO",
+                  "population": "200000",
+                  "species": "Droid",
+                }
+              }
+              carouselIndex={0}
+            />
+            <PeopleCard
+              addToFavorites={[MockFunction]}
+              card={
+                Object {
+                  "favorite": false,
+                  "homeworld": "Naboo",
+                  "index": 2,
+                  "name": "R2-D2",
+                  "population": "4500000000",
+                  "species": "Droid",
+                }
+              }
+              carouselIndex={0}
+            />
+          </div>,
+          <button
+            className="arrow-button"
+            onClick={[MockFunction]}
+          >
+             
+            <i
+              className="fas fa-arrow-right"
+            />
+             
+          </button>,
+        ],
+        "className": "component-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": <button
+            class="arrow-button"
+          >
+             
+            <i
+              class="fas fa-arrow-left"
+            />
+             
+          </button>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              " ",
+              <i
+                className="fas fa-arrow-left"
+              />,
+              " ",
+            ],
+            "className": "arrow-button",
+            "onClick": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            " ",
+            Object {
+              "instance": <i
+                class="fas fa-arrow-left"
+              />,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "fas fa-arrow-left",
+              },
+              "ref": null,
+              "rendered": Array [
+                undefined,
+              ],
+              "type": "i",
+            },
+            " ",
+          ],
+          "type": "button",
+        },
+        Object {
+          "instance": <div
+            class="people-container"
+          >
+            <article
+              class="left-card small-card"
+            >
+              <h3
+                class="name"
+              >
+                 
+                Luke Skywalker
+                 
+              </h3>
+              <img
+                src="luke.jpg"
+              />
+              <p>
+                 species: 
+                Human
+                 
+              </p>
+              <p>
+                 homeworld: 
+                Tatooine
+                 
+              </p>
+              <p>
+                 population: 
+                200000
+                 
+              </p>
+              <img
+                class="saber"
+                src="lightsabers.png"
+              />
+            </article>
+            <article
+              class="middle-card"
+            >
+              <h3
+                class="name"
+              >
+                 
+                C-3PO
+                 
+              </h3>
+              <img
+                src="luke.jpg"
+              />
+              <p>
+                 species: 
+                Droid
+                 
+              </p>
+              <p>
+                 homeworld: 
+                Tatooine
+                 
+              </p>
+              <p>
+                 population: 
+                200000
+                 
+              </p>
+              <img
+                class="saber"
+                src="lightsabers.png"
+              />
+            </article>
+            <article
+              class="right-card small-card"
+            >
+              <h3
+                class="name"
+              >
+                 
+                R2-D2
+                 
+              </h3>
+              <img
+                src="luke.jpg"
+              />
+              <p>
+                 species: 
+                Droid
+                 
+              </p>
+              <p>
+                 homeworld: 
+                Naboo
+                 
+              </p>
+              <p>
+                 population: 
+                4500000000
+                 
+              </p>
+              <img
+                class="saber"
+                src="lightsabers.png"
+              />
+            </article>
+          </div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <PeopleCard
+                addToFavorites={[MockFunction]}
+                card={
+                  Object {
+                    "favorite": false,
+                    "homeworld": "Tatooine",
+                    "index": 0,
+                    "name": "Luke Skywalker",
+                    "population": "200000",
+                    "species": "Human",
+                  }
+                }
+                carouselIndex={0}
+              />,
+              <PeopleCard
+                addToFavorites={[MockFunction]}
+                card={
+                  Object {
+                    "favorite": false,
+                    "homeworld": "Tatooine",
+                    "index": 1,
+                    "name": "C-3PO",
+                    "population": "200000",
+                    "species": "Droid",
+                  }
+                }
+                carouselIndex={0}
+              />,
+              <PeopleCard
+                addToFavorites={[MockFunction]}
+                card={
+                  Object {
+                    "favorite": false,
+                    "homeworld": "Naboo",
+                    "index": 2,
+                    "name": "R2-D2",
+                    "population": "4500000000",
+                    "species": "Droid",
+                  }
+                }
+                carouselIndex={0}
+              />,
+            ],
+            "className": "people-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "Luke Skywalker",
+              "nodeType": "function",
+              "props": Object {
+                "addToFavorites": [MockFunction],
+                "card": Object {
+                  "favorite": false,
+                  "homeworld": "Tatooine",
+                  "index": 0,
+                  "name": "Luke Skywalker",
+                  "population": "200000",
+                  "species": "Human",
+                },
+                "carouselIndex": 0,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": <article
+                  class="left-card small-card"
+                >
+                  <h3
+                    class="name"
+                  >
+                     
+                    Luke Skywalker
+                     
+                  </h3>
+                  <img
+                    src="luke.jpg"
+                  />
+                  <p>
+                     species: 
+                    Human
+                     
+                  </p>
+                  <p>
+                     homeworld: 
+                    Tatooine
+                     
+                  </p>
+                  <p>
+                     population: 
+                    200000
+                     
+                  </p>
+                  <img
+                    class="saber"
+                    src="lightsabers.png"
+                  />
+                </article>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h3
+                      className="name"
+                    >
+                       
+                      Luke Skywalker
+                       
+                    </h3>,
+                    <img
+                      src="luke.jpg"
+                    />,
+                    <p>
+                       species: 
+                      Human
+                       
+                    </p>,
+                    <p>
+                       homeworld: 
+                      Tatooine
+                       
+                    </p>,
+                    <p>
+                       population: 
+                      200000
+                       
+                    </p>,
+                    <img
+                      className="saber"
+                      onClick={[Function]}
+                      src="lightsabers.png"
+                    />,
+                  ],
+                  "className": "left-card small-card",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <h3
+                      class="name"
+                    >
+                       
+                      Luke Skywalker
+                       
+                    </h3>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "Luke Skywalker",
+                        " ",
+                      ],
+                      "className": "name",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "Luke Skywalker",
+                      " ",
+                    ],
+                    "type": "h3",
+                  },
+                  Object {
+                    "instance": <img
+                      src="luke.jpg"
+                    />,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "src": "luke.jpg",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                    ],
+                    "type": "img",
+                  },
+                  Object {
+                    "instance": <p>
+                       species: 
+                      Human
+                       
+                    </p>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " species: ",
+                        "Human",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " species: ",
+                      "Human",
+                      " ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": <p>
+                       homeworld: 
+                      Tatooine
+                       
+                    </p>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " homeworld: ",
+                        "Tatooine",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " homeworld: ",
+                      "Tatooine",
+                      " ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": <p>
+                       population: 
+                      200000
+                       
+                    </p>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " population: ",
+                        "200000",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " population: ",
+                      "200000",
+                      " ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": <img
+                      class="saber"
+                      src="lightsabers.png"
+                    />,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "saber",
+                      "onClick": [Function],
+                      "src": "lightsabers.png",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                    ],
+                    "type": "img",
+                  },
+                ],
+                "type": "article",
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "C-3PO",
+              "nodeType": "function",
+              "props": Object {
+                "addToFavorites": [MockFunction],
+                "card": Object {
+                  "favorite": false,
+                  "homeworld": "Tatooine",
+                  "index": 1,
+                  "name": "C-3PO",
+                  "population": "200000",
+                  "species": "Droid",
+                },
+                "carouselIndex": 0,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": <article
+                  class="middle-card"
+                >
+                  <h3
+                    class="name"
+                  >
+                     
+                    C-3PO
+                     
+                  </h3>
+                  <img
+                    src="luke.jpg"
+                  />
+                  <p>
+                     species: 
+                    Droid
+                     
+                  </p>
+                  <p>
+                     homeworld: 
+                    Tatooine
+                     
+                  </p>
+                  <p>
+                     population: 
+                    200000
+                     
+                  </p>
+                  <img
+                    class="saber"
+                    src="lightsabers.png"
+                  />
+                </article>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h3
+                      className="name"
+                    >
+                       
+                      C-3PO
+                       
+                    </h3>,
+                    <img
+                      src="luke.jpg"
+                    />,
+                    <p>
+                       species: 
+                      Droid
+                       
+                    </p>,
+                    <p>
+                       homeworld: 
+                      Tatooine
+                       
+                    </p>,
+                    <p>
+                       population: 
+                      200000
+                       
+                    </p>,
+                    <img
+                      className="saber"
+                      onClick={[Function]}
+                      src="lightsabers.png"
+                    />,
+                  ],
+                  "className": "middle-card",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <h3
+                      class="name"
+                    >
+                       
+                      C-3PO
+                       
+                    </h3>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "C-3PO",
+                        " ",
+                      ],
+                      "className": "name",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "C-3PO",
+                      " ",
+                    ],
+                    "type": "h3",
+                  },
+                  Object {
+                    "instance": <img
+                      src="luke.jpg"
+                    />,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "src": "luke.jpg",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                    ],
+                    "type": "img",
+                  },
+                  Object {
+                    "instance": <p>
+                       species: 
+                      Droid
+                       
+                    </p>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " species: ",
+                        "Droid",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " species: ",
+                      "Droid",
+                      " ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": <p>
+                       homeworld: 
+                      Tatooine
+                       
+                    </p>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " homeworld: ",
+                        "Tatooine",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " homeworld: ",
+                      "Tatooine",
+                      " ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": <p>
+                       population: 
+                      200000
+                       
+                    </p>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " population: ",
+                        "200000",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " population: ",
+                      "200000",
+                      " ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": <img
+                      class="saber"
+                      src="lightsabers.png"
+                    />,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "saber",
+                      "onClick": [Function],
+                      "src": "lightsabers.png",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                    ],
+                    "type": "img",
+                  },
+                ],
+                "type": "article",
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "R2-D2",
+              "nodeType": "function",
+              "props": Object {
+                "addToFavorites": [MockFunction],
+                "card": Object {
+                  "favorite": false,
+                  "homeworld": "Naboo",
+                  "index": 2,
+                  "name": "R2-D2",
+                  "population": "4500000000",
+                  "species": "Droid",
+                },
+                "carouselIndex": 0,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": <article
+                  class="right-card small-card"
+                >
+                  <h3
+                    class="name"
+                  >
+                     
+                    R2-D2
+                     
+                  </h3>
+                  <img
+                    src="luke.jpg"
+                  />
+                  <p>
+                     species: 
+                    Droid
+                     
+                  </p>
+                  <p>
+                     homeworld: 
+                    Naboo
+                     
+                  </p>
+                  <p>
+                     population: 
+                    4500000000
+                     
+                  </p>
+                  <img
+                    class="saber"
+                    src="lightsabers.png"
+                  />
+                </article>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h3
+                      className="name"
+                    >
+                       
+                      R2-D2
+                       
+                    </h3>,
+                    <img
+                      src="luke.jpg"
+                    />,
+                    <p>
+                       species: 
+                      Droid
+                       
+                    </p>,
+                    <p>
+                       homeworld: 
+                      Naboo
+                       
+                    </p>,
+                    <p>
+                       population: 
+                      4500000000
+                       
+                    </p>,
+                    <img
+                      className="saber"
+                      onClick={[Function]}
+                      src="lightsabers.png"
+                    />,
+                  ],
+                  "className": "right-card small-card",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <h3
+                      class="name"
+                    >
+                       
+                      R2-D2
+                       
+                    </h3>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        "R2-D2",
+                        " ",
+                      ],
+                      "className": "name",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      "R2-D2",
+                      " ",
+                    ],
+                    "type": "h3",
+                  },
+                  Object {
+                    "instance": <img
+                      src="luke.jpg"
+                    />,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "src": "luke.jpg",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                    ],
+                    "type": "img",
+                  },
+                  Object {
+                    "instance": <p>
+                       species: 
+                      Droid
+                       
+                    </p>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " species: ",
+                        "Droid",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " species: ",
+                      "Droid",
+                      " ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": <p>
+                       homeworld: 
+                      Naboo
+                       
+                    </p>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " homeworld: ",
+                        "Naboo",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " homeworld: ",
+                      "Naboo",
+                      " ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": <p>
+                       population: 
+                      4500000000
+                       
+                    </p>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " population: ",
+                        "4500000000",
+                        " ",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " population: ",
+                      "4500000000",
+                      " ",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": <img
+                      class="saber"
+                      src="lightsabers.png"
+                    />,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "saber",
+                      "onClick": [Function],
+                      "src": "lightsabers.png",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                    ],
+                    "type": "img",
+                  },
+                ],
+                "type": "article",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <button
+            class="arrow-button"
+          >
+             
+            <i
+              class="fas fa-arrow-right"
+            />
+             
+          </button>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              " ",
+              <i
+                className="fas fa-arrow-right"
+              />,
+              " ",
+            ],
+            "className": "arrow-button",
+            "onClick": [MockFunction],
+          },
+          "ref": null,
+          "rendered": Array [
+            " ",
+            Object {
+              "instance": <i
+                class="fas fa-arrow-right"
+              />,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "fas fa-arrow-right",
+              },
+              "ref": null,
+              "rendered": Array [
+                undefined,
+              ],
+              "type": "i",
+            },
+            " ",
+          ],
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "addToFavorites": [MockFunction],
+        "carouselIndex": 0,
+        "contents": Array [
+          Object {
+            "favorite": false,
+            "homeworld": "Tatooine",
+            "index": 0,
+            "name": "Luke Skywalker",
+            "population": "200000",
+            "species": "Human",
+          },
+          Object {
+            "favorite": false,
+            "homeworld": "Tatooine",
+            "index": 1,
+            "name": "C-3PO",
+            "population": "200000",
+            "species": "Droid",
+          },
+          Object {
+            "favorite": false,
+            "homeworld": "Naboo",
+            "index": 2,
+            "name": "R2-D2",
+            "population": "4500000000",
+            "species": "Droid",
+          },
+        ],
+        "film": Object {
+          "crawl": "It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.  Evading the dr…",
+          "title": "The Empire Strikes Back",
+          "year": "1980",
+        },
+        "incrementCarousel": [MockFunction],
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": <div
+          class="component-container"
+        >
+          <button
+            class="arrow-button"
+          >
+             
+            <i
+              class="fas fa-arrow-left"
+            />
+             
+          </button>
+          <div
+            class="people-container"
+          >
+            <article
+              class="left-card small-card"
+            >
+              <h3
+                class="name"
+              >
+                 
+                Luke Skywalker
+                 
+              </h3>
+              <img
+                src="luke.jpg"
+              />
+              <p>
+                 species: 
+                Human
+                 
+              </p>
+              <p>
+                 homeworld: 
+                Tatooine
+                 
+              </p>
+              <p>
+                 population: 
+                200000
+                 
+              </p>
+              <img
+                class="saber"
+                src="lightsabers.png"
+              />
+            </article>
+            <article
+              class="middle-card"
+            >
+              <h3
+                class="name"
+              >
+                 
+                C-3PO
+                 
+              </h3>
+              <img
+                src="luke.jpg"
+              />
+              <p>
+                 species: 
+                Droid
+                 
+              </p>
+              <p>
+                 homeworld: 
+                Tatooine
+                 
+              </p>
+              <p>
+                 population: 
+                200000
+                 
+              </p>
+              <img
+                class="saber"
+                src="lightsabers.png"
+              />
+            </article>
+            <article
+              class="right-card small-card"
+            >
+              <h3
+                class="name"
+              >
+                 
+                R2-D2
+                 
+              </h3>
+              <img
+                src="luke.jpg"
+              />
+              <p>
+                 species: 
+                Droid
+                 
+              </p>
+              <p>
+                 homeworld: 
+                Naboo
+                 
+              </p>
+              <p>
+                 population: 
+                4500000000
+                 
+              </p>
+              <img
+                class="saber"
+                src="lightsabers.png"
+              />
+            </article>
+          </div>
+          <button
+            class="arrow-button"
+          >
+             
+            <i
+              class="fas fa-arrow-right"
+            />
+             
+          </button>
+        </div>,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <button
+              className="arrow-button"
+            >
+               
+              <i
+                className="fas fa-arrow-left"
+              />
+               
+            </button>,
+            <div
+              className="people-container"
+            >
+              <PeopleCard
+                addToFavorites={[MockFunction]}
+                card={
+                  Object {
+                    "favorite": false,
+                    "homeworld": "Tatooine",
+                    "index": 0,
+                    "name": "Luke Skywalker",
+                    "population": "200000",
+                    "species": "Human",
+                  }
+                }
+                carouselIndex={0}
+              />
+              <PeopleCard
+                addToFavorites={[MockFunction]}
+                card={
+                  Object {
+                    "favorite": false,
+                    "homeworld": "Tatooine",
+                    "index": 1,
+                    "name": "C-3PO",
+                    "population": "200000",
+                    "species": "Droid",
+                  }
+                }
+                carouselIndex={0}
+              />
+              <PeopleCard
+                addToFavorites={[MockFunction]}
+                card={
+                  Object {
+                    "favorite": false,
+                    "homeworld": "Naboo",
+                    "index": 2,
+                    "name": "R2-D2",
+                    "population": "4500000000",
+                    "species": "Droid",
+                  }
+                }
+                carouselIndex={0}
+              />
+            </div>,
+            <button
+              className="arrow-button"
+              onClick={[MockFunction]}
+            >
+               
+              <i
+                className="fas fa-arrow-right"
+              />
+               
+            </button>,
+          ],
+          "className": "component-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": <button
+              class="arrow-button"
+            >
+               
+              <i
+                class="fas fa-arrow-left"
+              />
+               
+            </button>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                <i
+                  className="fas fa-arrow-left"
+                />,
+                " ",
+              ],
+              "className": "arrow-button",
+              "onClick": undefined,
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              Object {
+                "instance": <i
+                  class="fas fa-arrow-left"
+                />,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fas fa-arrow-left",
+                },
+                "ref": null,
+                "rendered": Array [
+                  undefined,
+                ],
+                "type": "i",
+              },
+              " ",
+            ],
+            "type": "button",
+          },
+          Object {
+            "instance": <div
+              class="people-container"
+            >
+              <article
+                class="left-card small-card"
+              >
+                <h3
+                  class="name"
+                >
+                   
+                  Luke Skywalker
+                   
+                </h3>
+                <img
+                  src="luke.jpg"
+                />
+                <p>
+                   species: 
+                  Human
+                   
+                </p>
+                <p>
+                   homeworld: 
+                  Tatooine
+                   
+                </p>
+                <p>
+                   population: 
+                  200000
+                   
+                </p>
+                <img
+                  class="saber"
+                  src="lightsabers.png"
+                />
+              </article>
+              <article
+                class="middle-card"
+              >
+                <h3
+                  class="name"
+                >
+                   
+                  C-3PO
+                   
+                </h3>
+                <img
+                  src="luke.jpg"
+                />
+                <p>
+                   species: 
+                  Droid
+                   
+                </p>
+                <p>
+                   homeworld: 
+                  Tatooine
+                   
+                </p>
+                <p>
+                   population: 
+                  200000
+                   
+                </p>
+                <img
+                  class="saber"
+                  src="lightsabers.png"
+                />
+              </article>
+              <article
+                class="right-card small-card"
+              >
+                <h3
+                  class="name"
+                >
+                   
+                  R2-D2
+                   
+                </h3>
+                <img
+                  src="luke.jpg"
+                />
+                <p>
+                   species: 
+                  Droid
+                   
+                </p>
+                <p>
+                   homeworld: 
+                  Naboo
+                   
+                </p>
+                <p>
+                   population: 
+                  4500000000
+                   
+                </p>
+                <img
+                  class="saber"
+                  src="lightsabers.png"
+                />
+              </article>
+            </div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <PeopleCard
+                  addToFavorites={[MockFunction]}
+                  card={
+                    Object {
+                      "favorite": false,
+                      "homeworld": "Tatooine",
+                      "index": 0,
+                      "name": "Luke Skywalker",
+                      "population": "200000",
+                      "species": "Human",
+                    }
+                  }
+                  carouselIndex={0}
+                />,
+                <PeopleCard
+                  addToFavorites={[MockFunction]}
+                  card={
+                    Object {
+                      "favorite": false,
+                      "homeworld": "Tatooine",
+                      "index": 1,
+                      "name": "C-3PO",
+                      "population": "200000",
+                      "species": "Droid",
+                    }
+                  }
+                  carouselIndex={0}
+                />,
+                <PeopleCard
+                  addToFavorites={[MockFunction]}
+                  card={
+                    Object {
+                      "favorite": false,
+                      "homeworld": "Naboo",
+                      "index": 2,
+                      "name": "R2-D2",
+                      "population": "4500000000",
+                      "species": "Droid",
+                    }
+                  }
+                  carouselIndex={0}
+                />,
+              ],
+              "className": "people-container",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "Luke Skywalker",
+                "nodeType": "function",
+                "props": Object {
+                  "addToFavorites": [MockFunction],
+                  "card": Object {
+                    "favorite": false,
+                    "homeworld": "Tatooine",
+                    "index": 0,
+                    "name": "Luke Skywalker",
+                    "population": "200000",
+                    "species": "Human",
+                  },
+                  "carouselIndex": 0,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": <article
+                    class="left-card small-card"
+                  >
+                    <h3
+                      class="name"
+                    >
+                       
+                      Luke Skywalker
+                       
+                    </h3>
+                    <img
+                      src="luke.jpg"
+                    />
+                    <p>
+                       species: 
+                      Human
+                       
+                    </p>
+                    <p>
+                       homeworld: 
+                      Tatooine
+                       
+                    </p>
+                    <p>
+                       population: 
+                      200000
+                       
+                    </p>
+                    <img
+                      class="saber"
+                      src="lightsabers.png"
+                    />
+                  </article>,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <h3
+                        className="name"
+                      >
+                         
+                        Luke Skywalker
+                         
+                      </h3>,
+                      <img
+                        src="luke.jpg"
+                      />,
+                      <p>
+                         species: 
+                        Human
+                         
+                      </p>,
+                      <p>
+                         homeworld: 
+                        Tatooine
+                         
+                      </p>,
+                      <p>
+                         population: 
+                        200000
+                         
+                      </p>,
+                      <img
+                        className="saber"
+                        onClick={[Function]}
+                        src="lightsabers.png"
+                      />,
+                    ],
+                    "className": "left-card small-card",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": <h3
+                        class="name"
+                      >
+                         
+                        Luke Skywalker
+                         
+                      </h3>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " ",
+                          "Luke Skywalker",
+                          " ",
+                        ],
+                        "className": "name",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " ",
+                        "Luke Skywalker",
+                        " ",
+                      ],
+                      "type": "h3",
+                    },
+                    Object {
+                      "instance": <img
+                        src="luke.jpg"
+                      />,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "src": "luke.jpg",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                      ],
+                      "type": "img",
+                    },
+                    Object {
+                      "instance": <p>
+                         species: 
+                        Human
+                         
+                      </p>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " species: ",
+                          "Human",
+                          " ",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " species: ",
+                        "Human",
+                        " ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": <p>
+                         homeworld: 
+                        Tatooine
+                         
+                      </p>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " homeworld: ",
+                          "Tatooine",
+                          " ",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " homeworld: ",
+                        "Tatooine",
+                        " ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": <p>
+                         population: 
+                        200000
+                         
+                      </p>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " population: ",
+                          "200000",
+                          " ",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " population: ",
+                        "200000",
+                        " ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": <img
+                        class="saber"
+                        src="lightsabers.png"
+                      />,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "saber",
+                        "onClick": [Function],
+                        "src": "lightsabers.png",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                      ],
+                      "type": "img",
+                    },
+                  ],
+                  "type": "article",
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "C-3PO",
+                "nodeType": "function",
+                "props": Object {
+                  "addToFavorites": [MockFunction],
+                  "card": Object {
+                    "favorite": false,
+                    "homeworld": "Tatooine",
+                    "index": 1,
+                    "name": "C-3PO",
+                    "population": "200000",
+                    "species": "Droid",
+                  },
+                  "carouselIndex": 0,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": <article
+                    class="middle-card"
+                  >
+                    <h3
+                      class="name"
+                    >
+                       
+                      C-3PO
+                       
+                    </h3>
+                    <img
+                      src="luke.jpg"
+                    />
+                    <p>
+                       species: 
+                      Droid
+                       
+                    </p>
+                    <p>
+                       homeworld: 
+                      Tatooine
+                       
+                    </p>
+                    <p>
+                       population: 
+                      200000
+                       
+                    </p>
+                    <img
+                      class="saber"
+                      src="lightsabers.png"
+                    />
+                  </article>,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <h3
+                        className="name"
+                      >
+                         
+                        C-3PO
+                         
+                      </h3>,
+                      <img
+                        src="luke.jpg"
+                      />,
+                      <p>
+                         species: 
+                        Droid
+                         
+                      </p>,
+                      <p>
+                         homeworld: 
+                        Tatooine
+                         
+                      </p>,
+                      <p>
+                         population: 
+                        200000
+                         
+                      </p>,
+                      <img
+                        className="saber"
+                        onClick={[Function]}
+                        src="lightsabers.png"
+                      />,
+                    ],
+                    "className": "middle-card",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": <h3
+                        class="name"
+                      >
+                         
+                        C-3PO
+                         
+                      </h3>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " ",
+                          "C-3PO",
+                          " ",
+                        ],
+                        "className": "name",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " ",
+                        "C-3PO",
+                        " ",
+                      ],
+                      "type": "h3",
+                    },
+                    Object {
+                      "instance": <img
+                        src="luke.jpg"
+                      />,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "src": "luke.jpg",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                      ],
+                      "type": "img",
+                    },
+                    Object {
+                      "instance": <p>
+                         species: 
+                        Droid
+                         
+                      </p>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " species: ",
+                          "Droid",
+                          " ",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " species: ",
+                        "Droid",
+                        " ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": <p>
+                         homeworld: 
+                        Tatooine
+                         
+                      </p>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " homeworld: ",
+                          "Tatooine",
+                          " ",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " homeworld: ",
+                        "Tatooine",
+                        " ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": <p>
+                         population: 
+                        200000
+                         
+                      </p>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " population: ",
+                          "200000",
+                          " ",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " population: ",
+                        "200000",
+                        " ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": <img
+                        class="saber"
+                        src="lightsabers.png"
+                      />,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "saber",
+                        "onClick": [Function],
+                        "src": "lightsabers.png",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                      ],
+                      "type": "img",
+                    },
+                  ],
+                  "type": "article",
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "R2-D2",
+                "nodeType": "function",
+                "props": Object {
+                  "addToFavorites": [MockFunction],
+                  "card": Object {
+                    "favorite": false,
+                    "homeworld": "Naboo",
+                    "index": 2,
+                    "name": "R2-D2",
+                    "population": "4500000000",
+                    "species": "Droid",
+                  },
+                  "carouselIndex": 0,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": <article
+                    class="right-card small-card"
+                  >
+                    <h3
+                      class="name"
+                    >
+                       
+                      R2-D2
+                       
+                    </h3>
+                    <img
+                      src="luke.jpg"
+                    />
+                    <p>
+                       species: 
+                      Droid
+                       
+                    </p>
+                    <p>
+                       homeworld: 
+                      Naboo
+                       
+                    </p>
+                    <p>
+                       population: 
+                      4500000000
+                       
+                    </p>
+                    <img
+                      class="saber"
+                      src="lightsabers.png"
+                    />
+                  </article>,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <h3
+                        className="name"
+                      >
+                         
+                        R2-D2
+                         
+                      </h3>,
+                      <img
+                        src="luke.jpg"
+                      />,
+                      <p>
+                         species: 
+                        Droid
+                         
+                      </p>,
+                      <p>
+                         homeworld: 
+                        Naboo
+                         
+                      </p>,
+                      <p>
+                         population: 
+                        4500000000
+                         
+                      </p>,
+                      <img
+                        className="saber"
+                        onClick={[Function]}
+                        src="lightsabers.png"
+                      />,
+                    ],
+                    "className": "right-card small-card",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": <h3
+                        class="name"
+                      >
+                         
+                        R2-D2
+                         
+                      </h3>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " ",
+                          "R2-D2",
+                          " ",
+                        ],
+                        "className": "name",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " ",
+                        "R2-D2",
+                        " ",
+                      ],
+                      "type": "h3",
+                    },
+                    Object {
+                      "instance": <img
+                        src="luke.jpg"
+                      />,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "src": "luke.jpg",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                      ],
+                      "type": "img",
+                    },
+                    Object {
+                      "instance": <p>
+                         species: 
+                        Droid
+                         
+                      </p>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " species: ",
+                          "Droid",
+                          " ",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " species: ",
+                        "Droid",
+                        " ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": <p>
+                         homeworld: 
+                        Naboo
+                         
+                      </p>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " homeworld: ",
+                          "Naboo",
+                          " ",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " homeworld: ",
+                        "Naboo",
+                        " ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": <p>
+                         population: 
+                        4500000000
+                         
+                      </p>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          " population: ",
+                          "4500000000",
+                          " ",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        " population: ",
+                        "4500000000",
+                        " ",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": <img
+                        class="saber"
+                        src="lightsabers.png"
+                      />,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "saber",
+                        "onClick": [Function],
+                        "src": "lightsabers.png",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                      ],
+                      "type": "img",
+                    },
+                  ],
+                  "type": "article",
+                },
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <button
+              class="arrow-button"
+            >
+               
+              <i
+                class="fas fa-arrow-right"
+              />
+               
+            </button>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                <i
+                  className="fas fa-arrow-right"
+                />,
+                " ",
+              ],
+              "className": "arrow-button",
+              "onClick": [MockFunction],
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              Object {
+                "instance": <i
+                  class="fas fa-arrow-right"
+                />,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fas fa-arrow-right",
+                },
+                "ref": null,
+                "rendered": Array [
+                  undefined,
+                ],
+                "type": "i",
+              },
+              " ",
+            ],
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
