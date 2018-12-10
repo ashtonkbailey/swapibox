@@ -3,9 +3,9 @@ import './App.css';
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
 import ContentContainer from './components/contentContainer/ContentContainer';
-import People from './components/Helpers/People.js';
-import Planets from './components/Helpers/Planets.js';
-import Vehicles from './components/Helpers/Vehicles.js';
+import People from './components/Helpers/People';
+import Planets from './components/Helpers/Planets';
+import Vehicles from './components/Helpers/Vehicles';
 
 class App extends Component {
   constructor() {
@@ -52,6 +52,7 @@ class App extends Component {
         errorStatus: `Error: ${error.message}`,
       });
     }
+    localStorage.setItem('current film', JSON.stringify(this.state.currFilm));
   }
 
   displayChosenContent = (e) => {
@@ -69,10 +70,13 @@ class App extends Component {
     let cleanedData;
     if (name === 'people') {
       cleanedData = await new People();
+      localStorage.setItem('people', JSON.stringify([...cleanedData]));
     } else if (name === 'planets') {
       cleanedData = await new Planets();
+      localStorage.setItem('planets', JSON.stringify([...cleanedData]));
     } else if (name === 'vehicles') {
       cleanedData = await new Vehicles();
+      localStorage.setItem('vehicles', JSON.stringify([...cleanedData]));
     }
     await this.setState({
       displayedContent: cleanedData,
