@@ -66,7 +66,6 @@ class App extends Component {
   cleanPeopleData = people => Promise.all(people.results.map(async (person, index) => {
     const currHomeworld = await this.fetchPropertyObj(person.homeworld);
     const currSpecies = await this.fetchPropertyObj(person.species[0]);
-
     return {
       name: person.name,
       homeworld: currHomeworld.name,
@@ -78,19 +77,29 @@ class App extends Component {
   }))
 
   cleanPlanetData = planets => Promise.all(planets.results.map(async (planet, index) => {
-    // let residentsObj;
-    // if(planet.residents) {
-    //  residentsObj = await this.fetchPropertyObj(planet.residents[0]);
-    // }
-    return {
+    let residentName;
+    let planetData = {
       name: planet.name,
       terrain: planet.terrain,
       population: planet.population,
       climate: planet.climate,
-      // residents: residentsObj.name,
       index,
       favorite: false,
     };
+    if (planet.residents.length > 0) {
+     residentName = await this.fetchPropertyObj(planet.residents[0]);
+     planetData.residents = residentName.name;
+    }
+    return planetData;
+  }))
+
+  cleanVehicleData = vehicles => Promise.all(vehicles.results.map(async (vehicle,index) => {
+    return {
+      name: vehicle.name,
+      model: vehicle.model,
+      class: vehicle.vehicle_class,
+      passengers: vehicle.passengers
+    }
   }))
 
   fetchChosenContent = async (name) => {
@@ -102,10 +111,10 @@ class App extends Component {
     if (name === 'people') {
       cleanedData = await this.cleanPeopleData(data);
     } else if (name === 'planets') {
-      // debugger
       cleanedData = await this.cleanPlanetData(data);
+    } else if (name === 'vehicles') {
+      cleanedData = await this.cleanVehicleData(data);
     }
-
     await this.setState({
       displayedContent: cleanedData,
       chosenContent: name,
