@@ -53,11 +53,7 @@ class App extends Component {
       });
     }
     localStorage.setItem('current film', JSON.stringify(this.state.currFilm));
-  }
-
-  displayChosenContent = (e) => {
-    const contentToFetch = e.target.name;
-    this.fetchChosenContent(contentToFetch);
+    this.fetchChosenContent();
   }
 
   fetchPropertyObj = async (url) => {
@@ -66,31 +62,25 @@ class App extends Component {
     return propertyObj;
   }
 
-  displayData = (name) => {
-    if (Object.keys(localStorage).includes(name)) {
-      this.getDataFromStorage(name);
-    } else {
-      this.fetchChosenContent(name);
-    }
-  }
-
   getDataFromStorage = (name) => {
     const data = JSON.parse(localStorage.getItem(name));
   }
 
-  fetchChosenContent = async (name) => {
-    let cleanedData;
-    if (name === 'people') {
-      cleanedData = await new People();
-    } else if (name === 'planets') {
-      cleanedData = await new Planets();
-    } else if (name === 'vehicles') {
-      cleanedData = await new Vehicles();
-    }
-    localStorage.setItem(`${name}`, JSON.stringify([...cleanedData]));
-    await this.setState({
-      displayedContent: cleanedData,
-      chosenContent: name,
+  fetchChosenContent = async () => {
+    const peopleData = await new People();
+    localStorage.setItem('people', JSON.stringify([...peopleData]));
+    const planetData = await new Planets();
+    localStorage.setItem('planets', JSON.stringify([...planetData]));
+    const vehicleData = await new Vehicles();
+    localStorage.setItem('vehicles', JSON.stringify([...vehicleData]));
+  }
+
+  displayChosenContent =  (e) => {
+    const contentName = e.target.name;
+    const data = JSON.parse(localStorage.getItem(contentName));
+    this.setState({
+      displayedContent: data,
+      chosenContent: contentName
     });
   }
 
