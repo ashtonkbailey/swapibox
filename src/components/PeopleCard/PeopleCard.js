@@ -38,6 +38,7 @@ const PeopleCard = ({
     default:
       hiddenClass = 'hidden';
   }
+  
   if (chosenContent === 'people') {
     return (
       <article className={hiddenClass}>
