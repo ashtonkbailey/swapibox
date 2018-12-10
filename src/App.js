@@ -85,11 +85,12 @@ class App extends Component {
       climate: planet.climate,
       index,
       favorite: false,
+      residents: "none"
     };
     if (planet.residents.length > 0) {
      residentName = await this.fetchPropertyObj(planet.residents[0]);
      planetData.residents = residentName.name;
-    }
+    } 
     return planetData;
   }))
 
@@ -98,7 +99,8 @@ class App extends Component {
       name: vehicle.name,
       model: vehicle.model,
       class: vehicle.vehicle_class,
-      passengers: vehicle.passengers
+      passengers: vehicle.passengers,
+      index
     }
   }))
 

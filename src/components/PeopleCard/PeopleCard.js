@@ -38,16 +38,6 @@ const PeopleCard = ({
     default:
       hiddenClass = 'hidden';
   }
-  let residents = (<p>residents: none</p>);
-  if (card.residents) {
-    residents = (
-      <p>
-        residents:
-        {card.residents}
-      </p>
-    )
-  }
-
   if (chosenContent === 'people') {
     return (
       <article className={hiddenClass}>
@@ -102,8 +92,8 @@ const PeopleCard = ({
           {card.population}
         </p>
         <p>
-        {residents}
-
+          residents:
+          {card.residents}
         </p>
         <img
           className="saber"

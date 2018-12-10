@@ -62,7 +62,7 @@ article {
 }
 
 .middle-card {
-  grid-column: 2/3;
+  /* grid-column: 2/3; */
   font-size: 26px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   min-width: 300px;
