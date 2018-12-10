@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
 import ContentContainer from './components/contentContainer/ContentContainer';
+import People from './components/Helpers/People';
+import Planets from './components/Helpers/Planets';
+import Vehicles from './components/Helpers/Vehicles';
 
 class App extends Component {
   constructor() {
@@ -50,6 +52,7 @@ class App extends Component {
         errorStatus: `Error: ${error.message}`,
       });
     }
+    localStorage.setItem('current film', JSON.stringify(this.state.currFilm));
   }
 
   displayChosenContent = (e) => {
@@ -63,49 +66,28 @@ class App extends Component {
     return propertyObj;
   }
 
-  cleanPeopleData = people => Promise.all(people.results.map(async (person, index) => {
-    const currHomeworld = await this.fetchPropertyObj(person.homeworld);
-    const currSpecies = await this.fetchPropertyObj(person.species[0]);
+  displayData = (name) => {
+    if (Object.keys(localStorage).includes(name)) {
+      this.getDataFromStorage(name);
+    } else {
+      this.fetchChosenContent(name);
+    }
+  }
 
-    return {
-      name: person.name,
-      homeworld: currHomeworld.name,
-      population: currHomeworld.population,
-      species: currSpecies.name,
-      index,
-      favorite: false,
-    };
-  }))
-
-  cleanPlanetData = planets => Promise.all(planets.results.map(async (planet, index) => {
-    // let residentsObj;
-    // if(planet.residents) {
-    //  residentsObj = await this.fetchPropertyObj(planet.residents[0]);
-    // }
-    return {
-      name: planet.name,
-      terrain: planet.terrain,
-      population: planet.population,
-      climate: planet.climate,
-      // residents: residentsObj.name,
-      index,
-      favorite: false,
-    };
-  }))
+  getDataFromStorage = (name) => {
+    const data = JSON.parse(localStorage.getItem(name));
+  }
 
   fetchChosenContent = async (name) => {
-    const url = `https://swapi.co/api/${name}/`;
-    const response = await fetch(url);
-    const data = await response.json();
     let cleanedData;
-
     if (name === 'people') {
-      cleanedData = await this.cleanPeopleData(data);
+      cleanedData = await new People();
     } else if (name === 'planets') {
-      // debugger
-      cleanedData = await this.cleanPlanetData(data);
+      cleanedData = await new Planets();
+    } else if (name === 'vehicles') {
+      cleanedData = await new Vehicles();
     }
-
+    localStorage.setItem(`${name}`, JSON.stringify([...cleanedData]));
     await this.setState({
       displayedContent: cleanedData,
       chosenContent: name,

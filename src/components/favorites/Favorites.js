@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import './Favorites.css';
 import lightsabers from '../../images/lightsabers.png';
 

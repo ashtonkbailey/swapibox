@@ -9,7 +9,7 @@ const PeopleCard = ({
   card,
   carouselIndex,
   addToFavorites,
-  chosenContent,
+  chosenContent
 }) => {
   let hiddenClass;
   const leftCardIndex = carouselIndex;
@@ -38,7 +38,6 @@ const PeopleCard = ({
     default:
       hiddenClass = 'hidden';
   }
-
   if (chosenContent === 'people') {
     return (
       <article className={hiddenClass}>
@@ -70,7 +69,7 @@ const PeopleCard = ({
       </article>
     );
   }
-  if (chosenContent === 'planets') {
+  else if (chosenContent === 'planets') {
     return (
       <article className={hiddenClass}>
         <h3 className="name">
@@ -92,6 +91,10 @@ const PeopleCard = ({
           population:
           {card.population}
         </p>
+        <p>
+          residents:
+          {card.residents}
+        </p>
         <img
           className="saber"
           src={lightsabers}
@@ -100,6 +103,37 @@ const PeopleCard = ({
         />
       </article>
     );
+  }
+    else if (chosenContent === 'vehicles') {
+      return (
+        <article className={hiddenClass}>
+          <h3 className="name">
+            {card.name}
+          </h3>
+          <img
+            src={luke}
+            alt="vehicle"
+          />
+          <p>
+            model:
+            {card.model}
+          </p>
+          <p>
+            class:
+            {card.class}
+          </p>
+          <p>
+            passengers:
+            {card.passengers}
+          </p>
+          <img
+            className="saber"
+            src={lightsabers}
+            onClick={() => addToFavorites({ card })}
+            alt="click to add to favorites"
+          />
+        </article>
+      );
   }
 };
 

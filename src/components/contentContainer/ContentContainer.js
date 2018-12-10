@@ -63,7 +63,7 @@ const ContentContainer = ({
     <div className={containerClassName}>
       <button
         type="button"
-        className={contents.length ? 'arrow-button' : 'none'}
+        className={contents.length ? 'arrow-button left-arrow' : 'none'}
         onClick={decrementCarousel}
       >
         <i className="fas fa-arrow-left" />
@@ -71,7 +71,7 @@ const ContentContainer = ({
       {displayedContents}
       <button
         type="button"
-        className={contents.length ? 'arrow-button' : 'none'}
+        className={contents.length ? 'arrow-button right-arrow' : 'none'}
         onClick={incrementCarousel}
       >
         <i className="fas fa-arrow-right" />
