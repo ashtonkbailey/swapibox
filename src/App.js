@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
 import ContentContainer from './components/contentContainer/ContentContainer';
@@ -67,11 +66,7 @@ class App extends Component {
   }
 
   fetchChosenContent = async (name) => {
-    // const url = `https://swapi.co/api/${name}/`;
-    // const response = await fetch(url);
-    // const data = await response.json();
     let cleanedData;
-
     if (name === 'people') {
       cleanedData = await new People();
     } else if (name === 'planets') {

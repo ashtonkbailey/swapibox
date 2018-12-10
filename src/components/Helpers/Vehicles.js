@@ -3,7 +3,7 @@ const Vehicles = async () => {
   const response = await fetch(url);
   const data = await response.json();
 
- return Promise.all(data.results.map(async (vehicle,index) => {
+  return Promise.all(data.results.map(async (vehicle,index) => {
     return {
       name: vehicle.name,
       model: vehicle.model,
