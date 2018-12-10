@@ -4,6 +4,9 @@ import './App.css';
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
 import ContentContainer from './components/contentContainer/ContentContainer';
+import People from './components/Helpers/People.js';
+import Planets from './components/Helpers/Planets.js';
+import Vehicles from './components/Helpers/Vehicles.js';
 
 class App extends Component {
   constructor() {
@@ -63,59 +66,18 @@ class App extends Component {
     return propertyObj;
   }
 
-  cleanPeopleData = people => Promise.all(people.results.map(async (person, index) => {
-    const currHomeworld = await this.fetchPropertyObj(person.homeworld);
-    const currSpecies = await this.fetchPropertyObj(person.species[0]);
-    return {
-      name: person.name,
-      homeworld: currHomeworld.name,
-      population: currHomeworld.population,
-      species: currSpecies.name,
-      index,
-      favorite: false,
-    };
-  }))
-
-  cleanPlanetData = planets => Promise.all(planets.results.map(async (planet, index) => {
-    let residentName;
-    let planetData = {
-      name: planet.name,
-      terrain: planet.terrain,
-      population: planet.population,
-      climate: planet.climate,
-      index,
-      favorite: false,
-      residents: "none"
-    };
-    if (planet.residents.length > 0) {
-     residentName = await this.fetchPropertyObj(planet.residents[0]);
-     planetData.residents = residentName.name;
-    } 
-    return planetData;
-  }))
-
-  cleanVehicleData = vehicles => Promise.all(vehicles.results.map(async (vehicle,index) => {
-    return {
-      name: vehicle.name,
-      model: vehicle.model,
-      class: vehicle.vehicle_class,
-      passengers: vehicle.passengers,
-      index
-    }
-  }))
-
   fetchChosenContent = async (name) => {
-    const url = `https://swapi.co/api/${name}/`;
-    const response = await fetch(url);
-    const data = await response.json();
+    // const url = `https://swapi.co/api/${name}/`;
+    // const response = await fetch(url);
+    // const data = await response.json();
     let cleanedData;
 
     if (name === 'people') {
-      cleanedData = await this.cleanPeopleData(data);
+      cleanedData = await new People();
     } else if (name === 'planets') {
-      cleanedData = await this.cleanPlanetData(data);
+      cleanedData = await new Planets();
     } else if (name === 'vehicles') {
-      cleanedData = await this.cleanVehicleData(data);
+      cleanedData = await new Vehicles();
     }
     await this.setState({
       displayedContent: cleanedData,
