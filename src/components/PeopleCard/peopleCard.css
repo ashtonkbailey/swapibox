@@ -3,13 +3,17 @@ article {
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   padding: 6px;
   transition: background-color, opacity .6s ease-in-out;
 }
 
+article>img {
+  margin: 1em;
+}
+
 .saber {
+  height: 60px;
   width: 18%;
   position: relative;
   bottom: 16px;
@@ -18,9 +22,9 @@ article {
 
 .saber:hover {
   /* opacity: 30; */
-  width: 19%;
   cursor: pointer;
-  transition:  .5s ease-in-out;
+  transition: .3s ease-in-out;
+  transform: scale(1.1);
 }
 
 .name {
@@ -38,7 +42,7 @@ article {
 }
 
 .small-card .name {
-    font-size:  20px; 
+  font-size:  20px; 
 }
 
 .small-card {
@@ -55,11 +59,14 @@ article {
 .left-card {
   grid-column: 1/2;
   opacity: .5;
+  grid-row: 1;
 }
 
 .right-card {
   grid-column: 3/4;
   opacity: .5;
+  grid-row: 1;
+
 }
 
 .middle-card {
@@ -68,7 +75,7 @@ article {
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   min-width: 300px;
   max-width: 500px;
-  height: 500px;
+  height: 460px;
   background: rgba(227, 218, 135, 0.4);
   border: 4px solid #EDE748;
   /* box-sizing: border-box; */
@@ -76,6 +83,8 @@ article {
   border-radius: 40px;
   margin: 20px;
   /* padding: 5px; */
+  grid-row: 1;
+
 }
 
 .small-card>img {
