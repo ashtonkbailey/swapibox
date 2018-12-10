@@ -110,13 +110,16 @@ class App extends Component {
 
   viewFavorites = () => {
     console.log(this.state.favorites);
+    this.setState({
+      displayedContent: this.state.favorites
+    })
   }
 
   addToFavorites = (favoritedCard) => {
     const clickedCard = favoritedCard;
     clickedCard.card.favorite = true;
     const { favorites } = this.state;
-
+    // clickedCard.card.index = favorites.length;
     if (!favorites.includes(clickedCard.card)) {
       this.setState({
         favorites: [...favorites, clickedCard.card],
