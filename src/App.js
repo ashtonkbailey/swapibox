@@ -66,18 +66,28 @@ class App extends Component {
     return propertyObj;
   }
 
+  displayData = (name) => {
+    if (Object.keys(localStorage).includes(name)) {
+      this.getDataFromStorage(name);
+    } else {
+      this.fetchChosenContent(name);
+    }
+  }
+
+  getDataFromStorage = (name) => {
+    const data = JSON.parse(localStorage.getItem(name));
+  }
+
   fetchChosenContent = async (name) => {
     let cleanedData;
     if (name === 'people') {
       cleanedData = await new People();
-      localStorage.setItem('people', JSON.stringify([...cleanedData]));
     } else if (name === 'planets') {
       cleanedData = await new Planets();
-      localStorage.setItem('planets', JSON.stringify([...cleanedData]));
     } else if (name === 'vehicles') {
       cleanedData = await new Vehicles();
-      localStorage.setItem('vehicles', JSON.stringify([...cleanedData]));
     }
+    localStorage.setItem(`${name}`, JSON.stringify([...cleanedData]));
     await this.setState({
       displayedContent: cleanedData,
       chosenContent: name,

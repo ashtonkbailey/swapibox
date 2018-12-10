@@ -1,9 +1,18 @@
 const People = async () => {
-  const url = `https://swapi.co/api/people/`;
+  const url = "https://swapi.co/api/people/";
   const response = await fetch(url);
   const data = await response.json();
+  return createDataSet(data);
+};
 
-  return Promise.all(data.results.map(async (person, index) => {
+const fetchPropertyObj = async (url) => {
+  const response = await fetch(url);
+  const propertyObj = await response.json();
+  return propertyObj;
+};
+
+const createDataSet = async (data) => 
+  Promise.all(data.results.map(async (person, index) => {
     const currHomeworld = await fetchPropertyObj(person.homeworld);
     const currSpecies = await fetchPropertyObj(person.species[0]);
     return {
@@ -15,12 +24,6 @@ const People = async () => {
       favorite: false,
     };
   }))
-}
 
-const fetchPropertyObj = async (url) => {
-  const response = await fetch(url);
-  const propertyObj = await response.json();
-  return propertyObj;
-}
 
 export default People;

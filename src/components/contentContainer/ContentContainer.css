@@ -56,9 +56,10 @@
 .people-container {
   display: grid;
   grid-template-columns: .6fr 1fr .6fr;
+  height: 60vh;
   /* grid-template-rows: 1fr; */
   align-items: center;
-  margin-top: 20px;
+  margin: 20px 80px 50px 80px;
   min-width: 800px;
 }
 

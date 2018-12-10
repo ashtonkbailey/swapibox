@@ -2,8 +2,17 @@ const Planets = async () => {
   const url = `https://swapi.co/api/planets/`;
   const response = await fetch(url);
   const data = await response.json();
+  return createDataSet(data);
+};
 
-  return Promise.all(data.results.map(async (planet, index) => {
+const fetchPropertyObj = async (url) => {
+  const response = await fetch(url);
+  const propertyObj = await response.json();
+  return propertyObj;
+};
+
+const createDataSet = async (data) => 
+  Promise.all(data.results.map(async (planet, index) => {
     let residentName;
     let planetData = {
       name: planet.name,
@@ -19,12 +28,7 @@ const Planets = async () => {
      planetData.residents = residentName.name;
     } 
     return planetData;
-  }))
-}
-const fetchPropertyObj = async (url) => {
-  const response = await fetch(url);
-  const propertyObj = await response.json();
-  return propertyObj;
-}
+  }));
+
 
 export default Planets;
