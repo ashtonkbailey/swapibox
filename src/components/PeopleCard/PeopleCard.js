@@ -62,7 +62,7 @@ const PeopleCard = ({
           {card.population}
         </p>
         <img
-          className="saber"
+          className={ card.favorite ? "saber active" : "saber" }
           src={lightsabers}
           onClick={() => addToFavorites({ card })}
           alt="click to add to favorites"
@@ -97,7 +97,7 @@ const PeopleCard = ({
           {card.residents}
         </p>
         <img
-          className="saber"
+          className={ card.favorite ? "saber active" : "saber" }
           src={lightsabers}
           onClick={() => addToFavorites({ card })}
           alt="click to add to favorites"
@@ -128,7 +128,7 @@ const PeopleCard = ({
             {card.passengers}
           </p>
           <img
-            className="saber"
+            className={ card.favorite ? "saber active" : "saber" }
             src={lightsabers}
             onClick={() => addToFavorites({ card })}
             alt="click to add to favorites"
