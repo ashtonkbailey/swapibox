@@ -121,7 +121,7 @@ class App extends Component {
     })
   }
 
-  updateFavePeople = (card) => {
+  addFavePeople = (card) => {
     const peopleData = JSON.parse(localStorage.getItem('people'));
     const updatedFavorites = peopleData.map(personObj => {
       if (card.name === personObj.name) {
@@ -132,7 +132,7 @@ class App extends Component {
     localStorage.setItem('people', JSON.stringify([...peopleData]));
   }
 
-  updateFaveVehicles = (card) => {
+  addFaveVehicles = (card) => {
     const vehicleData = JSON.parse(localStorage.getItem('vehicles'));
     const updatedFavorites = vehicleData.map(vehicleObj => {
       if (card.name === vehicleObj.name) {
@@ -143,7 +143,7 @@ class App extends Component {
     localStorage.setItem('vehicles', JSON.stringify([...vehicleData]));
   }
 
-  updateFavePlanets = (card) => {
+  addFavePlanets = (card) => {
     const planetData = JSON.parse(localStorage.getItem('planets'));
     const updatedFavorites = planetData.map(planetObj => {
       if (card.name === planetObj.name) {
@@ -154,31 +154,80 @@ class App extends Component {
     localStorage.setItem('planets', JSON.stringify([...planetData]));
   }
 
+  deleteFavePeople = (card) => {
+    const peopleData = JSON.parse(localStorage.getItem('people'));
+    const updatedFavorites = peopleData.map(personObj => {
+      if (card.name === personObj.name) {
+        personObj.favorite = false;
+      }
+      return personObj;
+    });
+    localStorage.setItem('people', JSON.stringify([...peopleData]));
+  }
+
+  deleteFaveVehicles = (card) => {
+    const vehicleData = JSON.parse(localStorage.getItem('vehicles'));
+    const updatedFavorites = vehicleData.map(vehicleObj => {
+      if (card.name === vehicleObj.name) {
+        vehicleObj.favorite = false;
+      }
+      return vehicleObj;
+    });
+    localStorage.setItem('vehicles', JSON.stringify([...vehicleData]));
+  }
+
+  deleteFavePlanets = (card) => {
+    const planetData = JSON.parse(localStorage.getItem('planets'));
+    const updatedFavorites = planetData.map(planetObj => {
+      if (card.name === planetObj.name) {
+        planetObj.favorite = false;
+      }
+      return planetObj;
+    });
+    localStorage.setItem('planets', JSON.stringify([...planetData]));
+  }
+
+  updateStateFaves = (card, favorites) => {
+    card.favorite = false;
+    const newFavorites = favorites.filter(favoriteCard => {
+      return (favoriteCard.name !== card.name)
+    })
+    this.setState({
+      favorites: newFavorites
+    });
+  }
+
   addToFavorites = (favoritedCard) => {
-    const { favorites } = this.state;
     const clickedCard = favoritedCard;
+    const { favorites } = this.state;
     const allFavorites = favorites.map(favorite => favorite.name);
 
     if (clickedCard.homeworld) {
-      this.updateFavePeople(clickedCard);
-    } else if (clickedCard.model) {
-      this.updateFaveVehicles(clickedCard);
-    } else if (clickedCard.terrain) {
-      this.updateFavePlanets(clickedCard);
-    }
-
-    if (allFavorites.includes(clickedCard.name)) {
-      clickedCard.favorite = false;
-      const newFavorites = favorites.filter(favoriteCard => {
-        return (favoriteCard.name !== clickedCard.name)
-      })
-      this.setState({
-        favorites: newFavorites
-      });
-    } else {
+      this.addFavePeople(clickedCard);
       this.setState({
         favorites: [...favorites, clickedCard]
       });
+    } else if (clickedCard.model) {
+      this.addFaveVehicles(clickedCard);
+      this.setState({
+        favorites: [...favorites, clickedCard]
+      });
+    } else if (clickedCard.terrain) {
+      this.addFavePlanets(clickedCard);
+      this.setState({
+        favorites: [...favorites, clickedCard]
+      });
+    }
+
+    if (allFavorites.includes(clickedCard.name) && clickedCard.homeworld) {
+      this.deleteFavePeople(clickedCard);
+      this.updateStateFaves(clickedCard, favorites);
+    } else if (allFavorites.includes(clickedCard.name) && clickedCard.model) {
+      this.deleteFaveVehicles(clickedCard);
+      this.updateStateFaves(clickedCard, favorites);
+    } else if (allFavorites.includes(clickedCard.name) && clickedCard.terrain) {
+      this.deleteFavePlanets(clickedCard);
+      this.updateStateFaves(clickedCard, favorites);
     }
   }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../PeopleCard/peopleCard.css';
+import '../People/people.css';
 import lightsabers from '../../images/lightsabers.png';
 import contentImages from '../../contentImages.js';
 
@@ -40,7 +40,7 @@ const Vehicles = ({carouselIndex, addToFavorites}) => {
     let imagePath = matchingImage[1];
 
     return (
-    <article className={hiddenClass}>
+    <article className={hiddenClass} key={vehicle.name}>
     <h3 className="name">
       {vehicle.name}
     </h3>
@@ -61,7 +61,7 @@ const Vehicles = ({carouselIndex, addToFavorites}) => {
       {vehicle.passengers}
     </p>
     <img
-      className="saber"
+      className={`saber ${vehicle.favorite}`}
       src={lightsabers}
       onClick={() => addToFavorites(vehicle)}
       alt="click to add to favorites"
