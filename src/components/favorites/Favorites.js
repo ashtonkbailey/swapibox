@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Favorites.css';
 import '../contentContainer/ContentContainer.css'
+import './Favorites.css';
 import lightsabers from '../../images/lightsabers.png';
 import { Route, NavLink } from 'react-router-dom';
 
@@ -58,7 +58,7 @@ const Favorites = ({ favorites }) => {
        <NavLink to='/people' className="nav-button hide-faves" >
           X
         </NavLink>
-      <h1> FAVORITES </h1>
+      <h1 className="favorite-header"> FAVORITES </h1>
       <span className="favorites-message">  {favoritesMessage} </span>
       {allFavorites}
     </div>
