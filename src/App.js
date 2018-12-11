@@ -4,10 +4,11 @@ import { Route, NavLink } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
-import ContentContainer from './components/contentContainer/ContentContainer';
+// import ContentContainer from './components/contentContainer/ContentContainer';
 import People from './components/Helpers/People';
 import Planets from './components/Helpers/Planets';
 import Vehicles from './components/Helpers/Vehicles';
+import Main from './components/Main/Main';
 
 class App extends Component {
   constructor() {
@@ -161,14 +162,15 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="header"> SWAPIBOX </h1>
-        <Navigation displayChosenContent={this.displayChosenContent} 
-        returnHome={this.returnHome}
+        <Navigation 
+          displayChosenContent={this.displayChosenContent}
+          returnHome={this.returnHome}
         />
-        <Favorites
+        {/* <Favorites
           faves={favorites}
           viewFavorites={this.viewFavorites}
-        />
-        <ContentContainer
+        /> */}
+        {/* <ContentContainer
           chosenContent={chosenContent}
           film={currFilm}
           contents={displayedContent}
@@ -176,7 +178,8 @@ class App extends Component {
           decrementCarousel={this.decrementCarousel}
           carouselIndex={carouselIndex}
           addToFavorites={this.addToFavorites}
-        />
+        /> */}
+        <Main displayedContent = {this.state.displayedContent}/>
       </div>
     );
   }

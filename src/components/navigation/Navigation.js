@@ -1,36 +1,52 @@
 import React from 'react';
-
 import './Navigation.css';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+// import PeopleCard from '../PeopleCard/PeopleCard';
+
 
 const Navigation = props => (
-  <div className="nav-container">
-    <button className="reset-btn" onClick={props.returnHome}> home </button>
-    <button
-      type="button"
-      className="nav-button people"
-      name="people"
-      onClick={props.displayChosenContent}
-    >
-      people
-    </button>
-    <button
-      type="button"
-      className="nav-button planets"
-      name="planets"
-      onClick={props.displayChosenContent}
-    >
-      planets
-    </button>
-    <button
-      type="button"
-      className="nav-button vehicles"
-      name="vehicles"
-      onClick={props.displayChosenContent}
-    >
-      vehicles
-    </button>
+  <div className="nav-container" >
+    <NavLink to='/people' className="nav-button people" >
+    people
+    </NavLink>
+    <NavLink to='/planets' className="nav-button planets" >
+    planets
+    </NavLink>
+    <NavLink to='/vehicles' className="nav-button vehicle" >
+    vehicle
+    </NavLink>
   </div>
+
+
+
+  // <div className="nav-container">
+  //   <button className="reset-btn" onClick={props.returnHome}> home </button>
+  //   <button
+  //     type="button"
+  //     className="nav-button people"
+  //     name="people"
+  //     onClick={props.displayChosenContent}
+  //   >
+  //     people
+  //   </button>
+  //   <button
+  //     type="button"
+  //     className="nav-button planets"
+  //     name="planets"
+  //     onClick={props.displayChosenContent}
+  //   >
+  //     planets
+  //   </button>
+  //   <button
+  //     type="button"
+  //     className="nav-button vehicles"
+  //     name="vehicles"
+  //     onClick={props.displayChosenContent}
+  //   >
+  //     vehicles
+  //   </button>
+  // </div>
 );
 
 
