@@ -4,8 +4,9 @@ import Planets from '../Planets/Planets';
 import People from '../People/People';
 import Vehicles from '../Vehicles/Vehicles';
 import Home from '../Home/Home';
+import Favorites from '../favorites/Favorites.js'
 
-const Main = ({incrementCarousel, decrementCarousel, carouselIndex, addToFavorites, film}) => {
+const Main = ({incrementCarousel, decrementCarousel, carouselIndex, addToFavorites, film, favorites}) => {
   return (
   <main>
     <div className="component-container">
@@ -21,6 +22,7 @@ const Main = ({incrementCarousel, decrementCarousel, carouselIndex, addToFavorit
         <Route path="/people" render = {(props) => <People {...props}  carouselIndex={carouselIndex} addToFavorites={addToFavorites}/>} />
         <Route path="/planets" render = {(props) => <Planets {...props} carouselIndex = {carouselIndex} addToFavorites={addToFavorites}/> } />
         <Route path="/vehicles" render = {(props) => <Vehicles {...props} carouselIndex = {carouselIndex} addToFavorites={addToFavorites} /> } />
+        <Route path='/favorites' render = {(props) => <Favorites {...props} favorites={favorites} />} />
       </Switch>
       <button
       type="button"

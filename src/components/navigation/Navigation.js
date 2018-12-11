@@ -2,10 +2,9 @@ import React from 'react';
 import './Navigation.css';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-// import PeopleCard from '../PeopleCard/PeopleCard';
+import lightsabers from '../../images/lightsabers.png';
 
-
-const Navigation = props => (
+const Navigation = ({favorites}) => (
   <div className="nav-container" >
     <NavLink to='/people' className="nav-button people" >
     people
@@ -16,37 +15,22 @@ const Navigation = props => (
     <NavLink to='/vehicles' className="nav-button vehicle" >
     vehicle
     </NavLink>
+    <NavLink to="/favorites" className="favorites-container" >
+          <div
+              className="num-favorites"
+              // onClick={viewFavorites}
+            >
+              {favorites.length}
+            </div>
+            <img
+              className="lightsaber"
+              src={lightsabers}
+              alt="favorites"
+            />
+              view favorites
+    </NavLink>
+            
   </div>
-
-
-
-  // <div className="nav-container">
-  //   <button className="reset-btn" onClick={props.returnHome}> home </button>
-  //   <button
-  //     type="button"
-  //     className="nav-button people"
-  //     name="people"
-  //     onClick={props.displayChosenContent}
-  //   >
-  //     people
-  //   </button>
-  //   <button
-  //     type="button"
-  //     className="nav-button planets"
-  //     name="planets"
-  //     onClick={props.displayChosenContent}
-  //   >
-  //     planets
-  //   </button>
-  //   <button
-  //     type="button"
-  //     className="nav-button vehicles"
-  //     name="vehicles"
-  //     onClick={props.displayChosenContent}
-  //   >
-  //     vehicles
-  //   </button>
-  // </div>
 );
 
 

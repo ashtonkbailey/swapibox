@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../contentContainer/ContentContainer.css'
+// import '../contentContainer/ContentContainer.css';
+import './Home.css';
 
 const Home = ({film}) => {
   // const film = JSON.parse(localStorage.getItem('current film'));
@@ -12,8 +13,8 @@ const Home = ({film}) => {
           </div>
         </div>
         <h3 className="title">
-          {film.title}
-          {film.year}
+          <span> {film.title}</span>
+          <span> {film.year} </span>
         </h3>
       </div>
     </div>
