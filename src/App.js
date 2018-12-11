@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, NavLink } from 'react-router-dom'
 import './App.css';
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
@@ -35,6 +36,11 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
+    this.fetchRandomFilm();
+    this.fetchChosenContent();
+  }
+
+  fetchRandomFilm = async () => {
     const randomNum = this.generateRandomNum();
     try {
       const response = await fetch(`https://swapi.co/api/films/${randomNum}`);
@@ -53,8 +59,8 @@ class App extends Component {
       });
     }
     localStorage.setItem('current film', JSON.stringify(this.state.currFilm));
-    this.fetchChosenContent();
   }
+
 
   fetchPropertyObj = async (url) => {
     const response = await fetch(url);
@@ -109,7 +115,6 @@ class App extends Component {
   }
 
   viewFavorites = () => {
-    console.log(this.state.favorites);
     this.setState({
       displayedContent: this.state.favorites
     })
@@ -133,6 +138,13 @@ class App extends Component {
     }
   }
 
+  returnHome = async () => {
+     this.fetchRandomFilm();
+     this.setState({
+      chosenContent: ""
+    })
+  }
+
   generateRandomNum = () => Math.floor(Math.random() * 6) + 1;
 
   render() {
@@ -147,7 +159,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="header"> SWAPIBOX </h1>
-        <Navigation displayChosenContent={this.displayChosenContent} />
+        <Navigation displayChosenContent={this.displayChosenContent} 
+        returnHome={this.returnHome}
+        />
         <Favorites
           faves={favorites}
           viewFavorites={this.viewFavorites}

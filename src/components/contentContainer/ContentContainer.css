@@ -46,12 +46,7 @@
   }    
 }
 
-.left-card, .right-card {
-  height: 300px;
-  background: rgba(0, 0, 0, 0.66);
-  border: 2px solid #EDE748;
-  border-radius: 40px;
-}
+
 
 .people-container {
   display: grid;

@@ -22,3 +22,22 @@
     font-size: 22px;
 }
 
+.reset-btn {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  background: none;
+  border: none;
+  color: #F3E355;
+  font-family: Roboto;
+  font-size: 18px;
+  height: 40px;
+  text-align: justify;
+  text-shadow: 1px 1px 1px yellow;
+  font-family: 'Poller One', cursive;
+  font-weight: 200;
+}
+
+.reset-btn:hover {
+  
+}

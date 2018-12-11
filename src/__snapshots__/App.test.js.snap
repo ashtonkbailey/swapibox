@@ -25,6 +25,7 @@ ShallowWrapper {
         </h1>,
         <Navigation
           displayChosenContent={[Function]}
+          returnHome={[Function]}
         />,
         <Favorites
           faves={Array []}
@@ -33,6 +34,7 @@ ShallowWrapper {
         <ContentContainer
           addToFavorites={[Function]}
           carouselIndex={0}
+          chosenContent=""
           contents={Array []}
           decrementCarousel={[Function]}
           film={
@@ -67,6 +69,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "displayChosenContent": [Function],
+          "returnHome": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -75,7 +78,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "faves": Array [],
           "viewFavorites": [Function],
@@ -91,6 +94,7 @@ ShallowWrapper {
         "props": Object {
           "addToFavorites": [Function],
           "carouselIndex": 0,
+          "chosenContent": "",
           "contents": Array [],
           "decrementCarousel": [Function],
           "film": Object {
@@ -121,6 +125,7 @@ ShallowWrapper {
           </h1>,
           <Navigation
             displayChosenContent={[Function]}
+            returnHome={[Function]}
           />,
           <Favorites
             faves={Array []}
@@ -129,6 +134,7 @@ ShallowWrapper {
           <ContentContainer
             addToFavorites={[Function]}
             carouselIndex={0}
+            chosenContent=""
             contents={Array []}
             decrementCarousel={[Function]}
             film={
@@ -163,6 +169,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "displayChosenContent": [Function],
+            "returnHome": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -171,7 +178,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "faves": Array [],
             "viewFavorites": [Function],
@@ -187,6 +194,7 @@ ShallowWrapper {
           "props": Object {
             "addToFavorites": [Function],
             "carouselIndex": 0,
+            "chosenContent": "",
             "contents": Array [],
             "decrementCarousel": [Function],
             "film": Object {
