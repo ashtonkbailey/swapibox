@@ -116,11 +116,17 @@ class App extends Component {
   }
 
   addToFavorites = (favoritedCard) => {
+    const { favorites } = this.state;
     const clickedCard = favoritedCard;
     clickedCard.card.favorite = true;
-    const { favorites } = this.state;
-    // clickedCard.card.index = favorites.length;
-    if (!favorites.includes(clickedCard.card)) {
+
+    if (favorites.includes(clickedCard.card)) {
+      clickedCard.card.favorite = false;
+      const newFavorites = favorites.filter(favorite => favorite.favorite);
+      this.setState({
+        favorites: newFavorites,
+      });
+    } else {
       this.setState({
         favorites: [...favorites, clickedCard.card],
       });

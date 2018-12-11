@@ -87,7 +87,7 @@ ContentContainer.propTypes = {
   film: PropTypes.object.isRequired,
   contents: PropTypes.arrayOf(PropTypes.object).isRequired,
   addToFavorites: PropTypes.func.isRequired,
-  chosenContent: PropTypes.array.isRequired,
+  chosenContent: PropTypes.string.isRequired,
 };
 
 export default ContentContainer;
