@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
-
 import './App.css';
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
