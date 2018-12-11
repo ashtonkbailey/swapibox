@@ -5,15 +5,15 @@
 }
 
 .nav-button {
-    width: 160px;
-    height: 70px;
-    font-size: 20px;
-    border-radius: 20px;
-    color: black;
+  width: 160px;
+  height: 70px;
+  font-size: 20px;
+  border-radius: 20px;
+  color: black;
     text-decoration: none;
-    font-family: 'Poller One', cursive;
-    background-color: rgb(244, 217, 68);
-    box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.25), inset 15px 5px 3px rgba(255, 255, 255, 0.25);
+  font-family: 'Poller One', cursive;
+  background-color: rgb(244, 217, 68);
+  box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.25), inset 15px 5px 3px rgba(255, 255, 255, 0.25);
     z-index: 4;
     outline: none;
     display: flex;
@@ -45,6 +45,7 @@
 }
 
 .active {
-  background-color: rgb(74, 182, 240);
+  background-color:   rgb(245, 220, 75);;
+  box-shadow: unset;
   text-decoration: underline;
 }
