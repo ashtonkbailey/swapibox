@@ -126,6 +126,9 @@ class App extends Component {
     const clickedCard = favoritedCard;
     clickedCard.favorite = true;
     const allFavorites = favorites.map(favorite => favorite.name);
+
+    console.log(clickedCard)
+
     if (allFavorites.includes(clickedCard.name)) {
       clickedCard.favorite = false;
       const newFavorites = favorites.filter(favoriteCard => {

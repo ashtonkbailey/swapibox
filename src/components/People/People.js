@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import '../PeopleCard/peopleCard.css';
+
+import './people.css';
 import lightsabers from '../../images/lightsabers.png';
-import luke from '../../images/luke.jpg'
+import contentImages from '../../contentImages.js';
 
 const People = ({carouselIndex, addToFavorites}) => {
   let hiddenClass;
@@ -19,6 +20,7 @@ const People = ({carouselIndex, addToFavorites}) => {
   }
   
   const peopleData = JSON.parse(localStorage.getItem('people'));
+
   const peopleDisplay = peopleData.map(person => {
     switch (person.index) {
       case middleCardIndex:
@@ -32,13 +34,19 @@ const People = ({carouselIndex, addToFavorites}) => {
         break;
       default:
         hiddenClass = 'hidden';
-    }
-    return (<article className={hiddenClass} key={person.name}>
+    };
+
+    let images = Object.entries(contentImages);
+    let matchingImage = images.find(image => person.name === image[0]);
+    let imagePath = matchingImage[1];
+
+    return (
+      <article className={hiddenClass} key={person.name}>
         <h3 className="name">
           {person.name}
         </h3>
         <img
-          src={luke}
+          src={imagePath}
           alt="character"
         />
         <p>
@@ -54,21 +62,20 @@ const People = ({carouselIndex, addToFavorites}) => {
           {person.population}
         </p>
         <img
-          className="saber"
+          className={`saber ${person.favorite}`}
           src={lightsabers}
           onClick={() => addToFavorites( person )}
           alt="click to add to favorites"
         />
-      </article>)
+      </article>
+    );
   });
   
   return (
      <div>
        {peopleDisplay}
-     </div>
-    
-  )
+     </div>   
+  );
 }
-
 
 export default People;

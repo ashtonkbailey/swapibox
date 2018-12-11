@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+
 import '../PeopleCard/peopleCard.css';
 import lightsabers from '../../images/lightsabers.png';
-import luke from '../../images/luke.jpg';
+import contentImages from '../../contentImages.js';
 
 const Vehicles = ({carouselIndex, addToFavorites}) => {
   const vehicleData = JSON.parse(localStorage.getItem('vehicles'));
@@ -18,6 +19,7 @@ const Vehicles = ({carouselIndex, addToFavorites}) => {
   if (carouselIndex === 8) {
     rightCardIndex = carouselIndex - 8;
   }
+
   const vehicleDisplay = vehicleData.map(vehicle => {
     switch (vehicle.index) {
       case middleCardIndex:
@@ -32,13 +34,18 @@ const Vehicles = ({carouselIndex, addToFavorites}) => {
       default:
         hiddenClass = 'hidden';
     }
+
+    let images = Object.entries(contentImages);
+    let matchingImage = images.find(image => vehicle.name === image[0]);
+    let imagePath = matchingImage[1];
+
     return (
     <article className={hiddenClass}>
     <h3 className="name">
       {vehicle.name}
     </h3>
     <img
-      src={luke}
+      src={imagePath}
       alt="vehicle"
     />
     <p>
