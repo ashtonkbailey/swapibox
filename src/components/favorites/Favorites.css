@@ -46,16 +46,19 @@
 .faves-display {
   overflow: scroll;
   position: absolute;
-  border: solid 2px black;
+  border: solid 2px white;
   display: grid;
-  grid-auto-columns: auto;
+  grid-template-columns: 1fr 1fr;
   top: 10%;
   z-index: 10;
-  /* flex-direction: column; */
-  width: 80%;
-  height: 60%;
+  width: 75%;
+  height: 70%;
   background-color: rgb(255, 255, 255);
-  left: 10%;
+  background-image: url('../../images/starwars-background.jpg');
+  background-size: cover;
+  left: 20%;
+  margin-top: 40px;
+  padding-top: 80px;
 }
 
 .favorites-container.active {
@@ -78,7 +81,6 @@
 }
 
 .favorites-container:hover, .reset-btn:hover {
-    
     text-shadow: 2px 2px 2px yellow;
 }
 
@@ -100,4 +102,26 @@
   color: white;
   top: 300px;
   left: 20%;
+}
+
+.favorite-header {
+  position: fixed;
+  top: 16%;
+  left: 50%;
+  font-family: 'Poller One', cursive;
+  text-shadow:
+		-3px -3px 0 rgb(244, 217, 68),
+		2px -2px 0 rgb(244, 217, 68),
+		-2px 2px 0 rgb(244, 217, 68),
+		2px 2px 0 rgb(244, 217, 68);
+  font-size: 44px;
+  text-align: center;
+  color:black;
+}
+
+.hide-faves {
+  position: fixed;
+  left: 24%;
+  top: 16%;
+
 }
