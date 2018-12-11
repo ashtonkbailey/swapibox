@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../PeopleCard/peopleCard.css';
+<<<<<<< HEAD
 import lightsabers from '../../images/lightsabers.png';
 import luke from '../../images/luke.jpg';
 
@@ -34,6 +35,17 @@ const Vehicles = ({carouselIndex, addToFavorites}) => {
     }
     return (
     <article className={hiddenClass}>
+=======
+
+import lightsabers from '../../images/lightsabers.png';
+import luke from '../../images/luke.jpg';
+
+
+const Vehicles = () => {
+  const vehicleData = JSON.parse(localStorage.getItem('vehicles'));
+  const vehicleDisplay = vehicleData.map(vehicle => (
+    <article className="middle-card">
+>>>>>>> Begin implementing router
     <h3 className="name">
       {vehicle.name}
     </h3>
@@ -56,13 +68,21 @@ const Vehicles = ({carouselIndex, addToFavorites}) => {
     <img
       className="saber"
       src={lightsabers}
+<<<<<<< HEAD
       onClick={() => addToFavorites(vehicle)}
+=======
+      // onClick={() => addToFavorites({ card })}
+>>>>>>> Begin implementing router
       alt="click to add to favorites"
     />
   </article>
     )
+<<<<<<< HEAD
   })
   
+=======
+  )
+>>>>>>> Begin implementing router
 
 
   return (

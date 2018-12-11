@@ -4,6 +4,7 @@ import '../PeopleCard/peopleCard.css';
 import lightsabers from '../../images/lightsabers.png';
 import luke from '../../images/luke.jpg'
 
+<<<<<<< HEAD
 const Planets = ({carouselIndex, addToFavorites}) => {
   const planetData = JSON.parse(localStorage.getItem('planets'));
   let hiddenClass;
@@ -35,6 +36,12 @@ const Planets = ({carouselIndex, addToFavorites}) => {
     }
     return (
       <article className={hiddenClass}>
+=======
+const Planets = () => {
+  const planetData = JSON.parse(localStorage.getItem('planets'));
+  const planetDisplay = planetData.map(planet =>  (
+      <article className="middle-card">
+>>>>>>> Begin implementing router
         <h3 className="name">
           {planet.name}
         </h3>
@@ -62,11 +69,19 @@ const Planets = ({carouselIndex, addToFavorites}) => {
         <img
           className="saber"
           src={lightsabers}
+<<<<<<< HEAD
           onClick={() => addToFavorites(planet)}
           alt="click to add to favorites"
         />
       </article>
     )}
+=======
+          // onClick={() => addToFavorites({ planet })}
+          alt="click to add to favorites"
+        />
+      </article>
+  )
+>>>>>>> Begin implementing router
   );
   return (
     <div>
