@@ -121,13 +121,51 @@ class App extends Component {
     })
   }
 
+  updateFavePeople = (card) => {
+    const peopleData = JSON.parse(localStorage.getItem('people'));
+    const updatedFavorites = peopleData.map(personObj => {
+      if (card.name === personObj.name) {
+        personObj.favorite = true;
+      }
+      return personObj;
+    });
+    localStorage.setItem('people', JSON.stringify([...peopleData]));
+  }
+
+  updateFaveVehicles = (card) => {
+    const vehicleData = JSON.parse(localStorage.getItem('vehicles'));
+    const updatedFavorites = vehicleData.map(vehicleObj => {
+      if (card.name === vehicleObj.name) {
+        vehicleObj.favorite = true;
+      }
+      return vehicleObj;
+    });
+    localStorage.setItem('vehicles', JSON.stringify([...vehicleData]));
+  }
+
+  updateFavePlanets = (card) => {
+    const planetData = JSON.parse(localStorage.getItem('planets'));
+    const updatedFavorites = planetData.map(planetObj => {
+      if (card.name === planetObj.name) {
+        planetObj.favorite = true;
+      }
+      return planetObj;
+    });
+    localStorage.setItem('planets', JSON.stringify([...planetData]));
+  }
+
   addToFavorites = (favoritedCard) => {
     const { favorites } = this.state;
     const clickedCard = favoritedCard;
-    clickedCard.favorite = true;
     const allFavorites = favorites.map(favorite => favorite.name);
 
-    console.log(clickedCard)
+    if (clickedCard.homeworld) {
+      this.updateFavePeople(clickedCard);
+    } else if (clickedCard.model) {
+      this.updateFaveVehicles(clickedCard);
+    } else if (clickedCard.terrain) {
+      this.updateFavePlanets(clickedCard);
+    }
 
     if (allFavorites.includes(clickedCard.name)) {
       clickedCard.favorite = false;
