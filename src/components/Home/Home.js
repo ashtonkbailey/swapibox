@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import '../contentContainer/ContentContainer.css'
 
-const Home = () => {
-  const film = JSON.parse(localStorage.getItem('current film'));
+const Home = ({film}) => {
   return (
     <div className="content-container">
       <div>
@@ -19,6 +18,5 @@ const Home = () => {
     </div>
   )
 }
-
 
 export default Home;
