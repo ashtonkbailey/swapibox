@@ -66,6 +66,7 @@ const PeopleCard = ({
           src={lightsabers}
           onClick={() => addToFavorites({ card })}
           alt="click to add to favorites"
+          title="add to favorites"
         />
       </article>
     );
@@ -102,6 +103,7 @@ const PeopleCard = ({
           src={lightsabers}
           onClick={() => addToFavorites({ card })}
           alt="click to add to favorites"
+          title="add to favorites"
         />
       </article>
     );
@@ -133,6 +135,7 @@ const PeopleCard = ({
             src={lightsabers}
             onClick={() => addToFavorites({ card })}
             alt="click to add to favorites"
+            title="add to favorites"
           />
         </article>
       );

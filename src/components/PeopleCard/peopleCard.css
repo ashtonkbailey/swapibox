@@ -19,6 +19,7 @@ article>img {
   bottom: 16px;
   margin-top: 10px;
   filter: grayscale(40%);
+  outline: none;
 }
 
 .saber:hover {
