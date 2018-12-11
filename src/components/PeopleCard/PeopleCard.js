@@ -41,7 +41,9 @@ const PeopleCard = ({
   
   if (chosenContent === 'people') {
     return (
-      <article className={hiddenClass}>
+      <article className={`${hiddenClass} ${(card.favorite === true ? "fave" : "not-fave")}`}>
+      <star>
+      </star>
         <h3 className="name">
           {card.name}
         </h3>
@@ -72,7 +74,7 @@ const PeopleCard = ({
   }
   else if (chosenContent === 'planets') {
     return (
-      <article className={hiddenClass}>
+      <article className={`${hiddenClass} ${(card.favorite === true ? "fave" : "not-fave")}`}>
         <h3 className="name">
           {card.name}
         </h3>
@@ -108,7 +110,7 @@ const PeopleCard = ({
   }
     else if (chosenContent === 'vehicles') {
       return (
-        <article className={hiddenClass}>
+        <article className={`${hiddenClass} ${(card.favorite === true ? "fave" : "not-fave")}`}>
           <h3 className="name">
             {card.name}
           </h3>

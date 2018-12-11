@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import './Favorites.css';
 import lightsabers from '../../images/lightsabers.png';
 
-const Favorites = ({ faves, viewFavorites }) => (
+const Favorites = ({ faves, viewFavorites, showFavorites }) => (
+  <div>
   <div className="favorites-container">
     <div
       className="num-favorites"
@@ -23,6 +24,10 @@ const Favorites = ({ faves, viewFavorites }) => (
       view favorites
     </button>
   </div>
+  <div className={(showFavorites ? "favorite-cards" : "hidden" )}>
+    {}
+  </div>
+   </div>
 );
 
 Favorites.propTypes = {

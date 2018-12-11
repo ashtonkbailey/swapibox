@@ -125,7 +125,15 @@ article>img {
 
 p {
   margin: 10px;
-  color: black;
+  color: white;
   text-shadow: 
-  .5px .5px 0 rgb(238, 213, 19);
+  .5px .5px 0 black,
+  .5px 1px black
+}
+
+.middle-card.fave {
+  /* background: rgba(120, 196, 238, 0.4); */
+
+  background-color:rgb(120, 196, 238,);
+  /* font: 80px; */
 }

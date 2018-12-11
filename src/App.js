@@ -22,6 +22,7 @@ class App extends Component {
         year: '',
       },
       carouselIndex: 0,
+      showFavorites: false
     };
   }
 
@@ -116,7 +117,8 @@ class App extends Component {
 
   viewFavorites = () => {
     this.setState({
-      displayedContent: this.state.favorites
+      // displayedContent: this.state.favorites,
+      showFavorites: true
     })
   }
 
@@ -165,6 +167,7 @@ class App extends Component {
         <Favorites
           faves={favorites}
           viewFavorites={this.viewFavorites}
+          showFavorites={this.state.showFavorites}
         />
         <ContentContainer
           chosenContent={chosenContent}
