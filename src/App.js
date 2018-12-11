@@ -166,10 +166,10 @@ class App extends Component {
           displayChosenContent={this.displayChosenContent}
           returnHome={this.returnHome}
         />
-        {/* <Favorites
+        <Favorites
           faves={favorites}
           viewFavorites={this.viewFavorites}
-        /> */}
+        />
         {/* <ContentContainer
           chosenContent={chosenContent}
           film={currFilm}
@@ -179,7 +179,9 @@ class App extends Component {
           carouselIndex={carouselIndex}
           addToFavorites={this.addToFavorites}
         /> */}
-        <Main displayedContent = {this.state.displayedContent}/>
+        <Main displayedContent = {this.state.displayedContent}
+        incrementCarousel={this.incrementCarousel}
+        decrementCarousel={this.decrementCarousel}/>
       </div>
     );
   }

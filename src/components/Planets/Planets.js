@@ -6,6 +6,7 @@ import luke from '../../images/luke.jpg'
 
 const Planets = () => {
   const planetData = JSON.parse(localStorage.getItem('planets'));
+  let cardClass = "hidden";
   const planetDisplay = planetData.map(planet =>  (
       <article className="middle-card">
         <h3 className="name">

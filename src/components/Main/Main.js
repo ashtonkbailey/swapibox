@@ -6,27 +6,27 @@ import Vehicles from '../Vehicles/Vehicles';
 import Home from '../Home/Home';
 
 
-const Main = (props) => {
+const Main = ({incrementCarousel, decrementCarousel}) => {
   return (
   <main>
           <div className="component-container">
       <button
         type="button"
         className='arrow-button left-arrow'
-        // onClick={decrementCarousel}
+        onClick={decrementCarousel}
       >
         <i className="fas fa-arrow-left" />
       </button>
       <Switch>
       <Route exact path="/" component = {Home} />
-      <Route path="/people" render = {(props) => <People {...props} />} />
+      <Route path="/people" render = {({props}) => <People {...props} />} />
       <Route path="/planets" component = {Planets} />
       <Route path="/vehicles" component={Vehicles} />
       </Switch>
       <button
         type="button"
         className='arrow-button right-arrow'
-        // onClick={incrementCarousel}
+        onClick={incrementCarousel}
       >
         <i className="fas fa-arrow-right" />
       </button>
