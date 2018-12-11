@@ -1,35 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Favorites.css';
+import '../contentContainer/ContentContainer.css'
 import lightsabers from '../../images/lightsabers.png';
 import { Route, NavLink } from 'react-router-dom';
 
 
-const Favorites = ({ faves, viewFavorites }) => (
-  <div className="favorites-container">
-    <div
-      className="num-favorites"
-      onClick={viewFavorites}
-    >
-      {faves.length}
+const Favorites = ({ favorites }) => {
+
+  const allFavorites = favorites.map(fave => {
+    return (
+      <article className="fave-card" key={fave.name}>
+        <h3 className="name">
+          {fave.name}
+        </h3>
+        {/* <img
+          src={luke}
+          alt="character"
+        /> */}
+        <p>
+          species:
+          {fave.species || fave.terrain}
+        </p>
+        <p>
+          homeworld:
+          {/* {fave.homeworld} */}
+        </p>
+        <p>
+          population:
+          {fave.population}
+        </p>
+        <img
+          className="saber"
+          src={lightsabers}
+          // onClick={() => addToFavorites( fave )}
+          alt="click to add to favorites"
+        />
+      </article>
+    )
+  });
+  return (
+    <div className="faves-display">
+       <NavLink to='/people' className="nav-button hide-faves" >
+          X
+        </NavLink>
+      <h1> FAVORITES </h1>
+      {allFavorites}
     </div>
-    <img
-      className="lightsaber"
-      src={lightsabers}
-      alt="favorites"
-    />
-    {/* <button
-      type="button"
-      className="favorites-button"
-      onClick={viewFavorites}
-    > */}
-      <NavLink to='/favorites' className="favorites-button" >
-      
-      view favorites
-      </NavLink>
-    {/* </button> */}
-  </div>
-);
+  )
+};
 
 Favorites.propTypes = {
   faves: PropTypes.array.isRequired,

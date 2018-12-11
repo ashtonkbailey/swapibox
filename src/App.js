@@ -205,11 +205,12 @@ class App extends Component {
         <Navigation 
           displayChosenContent={this.displayChosenContent}
           returnHome={this.returnHome}
+          favorites={favorites}
         />
-        <Favorites
+        {/* <Favorites
           faves={favorites}
           viewFavorites={this.viewFavorites}
-        />
+        /> */}
         <Main 
           displayedContent = {displayedContent}
           incrementCarousel={this.incrementCarousel}
@@ -217,6 +218,8 @@ class App extends Component {
           carouselIndex={carouselIndex}
           addToFavorites={this.addToFavorites}
           film={currFilm}
+          favorites={favorites}
+          viewFavorites={this.viewFavorites}
         />
       </div>
     );
