@@ -44,11 +44,7 @@
   font-weight: 200;
 }
 
-.reset-btn:hover {
-  
-}
-
 .active {
-  display: flex;
-  background-color: rgb(138, 130, 81);
+  background-color: rgb(74, 182, 240);
+  text-decoration: underline;
 }
