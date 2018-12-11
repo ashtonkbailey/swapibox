@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../PeopleCard/peopleCard.css';
+import './people.css';
 import lightsabers from '../../images/lightsabers.png';
 import contentImages from '../../contentImages.js';
 
@@ -38,7 +38,6 @@ const People = ({carouselIndex, addToFavorites}) => {
 
     let images = Object.entries(contentImages);
     let matchingImage = images.find(image => person.name === image[0]);
-    console.log(matchingImage[1])
     let imagePath = matchingImage[1];
 
     return (
@@ -63,7 +62,7 @@ const People = ({carouselIndex, addToFavorites}) => {
           {person.population}
         </p>
         <img
-          className="saber"
+          className={`saber ${person.favorite}`}
           src={lightsabers}
           onClick={() => addToFavorites( person )}
           alt="click to add to favorites"

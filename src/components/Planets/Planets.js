@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+
 import '../PeopleCard/peopleCard.css';
 import lightsabers from '../../images/lightsabers.png';
-import luke from '../../images/luke.jpg'
+import contentImages from '../../contentImages.js';
 
 const Planets = ({carouselIndex, addToFavorites}) => {
   const planetData = JSON.parse(localStorage.getItem('planets'));
@@ -18,6 +19,7 @@ const Planets = ({carouselIndex, addToFavorites}) => {
   if (carouselIndex === 8) {
     rightCardIndex = carouselIndex - 8;
   }
+
   const planetDisplay = planetData.map(planet =>  {
     switch (planet.index) {
       case middleCardIndex:
@@ -32,13 +34,18 @@ const Planets = ({carouselIndex, addToFavorites}) => {
       default:
         hiddenClass = 'hidden';
     }
+
+    let images = Object.entries(contentImages);
+    let matchingImage = images.find(image => planet.name === image[0]);
+    let imagePath = matchingImage[1];
+
     return (
       <article className={hiddenClass}>
         <h3 className="name">
           {planet.name}
         </h3>
         <img
-          src={luke}
+          src={imagePath}
           className="luke"
           alt="planet"
         />
