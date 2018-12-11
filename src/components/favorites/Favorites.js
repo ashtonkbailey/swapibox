@@ -7,6 +7,7 @@ const Favorites = ({ faves, viewFavorites }) => (
   <div className="favorites-container">
     <div
       className="num-favorites"
+      onClick={viewFavorites}
     >
       {faves.length}
     </div>
@@ -18,7 +19,6 @@ const Favorites = ({ faves, viewFavorites }) => (
     <button
       type="button"
       className="favorites-button"
-      onClick={viewFavorites}
     >
       view favorites
     </button>

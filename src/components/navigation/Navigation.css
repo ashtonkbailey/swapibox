@@ -13,6 +13,7 @@
     background-color: rgb(244, 217, 68);
     box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.25), inset 15px 5px 3px rgba(255, 255, 255, 0.25);
     z-index: 4;
+    outline: none;
 }
 
 .nav-button:hover {

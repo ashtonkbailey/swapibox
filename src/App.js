@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom';
+
 import './App.css';
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
@@ -84,9 +85,10 @@ class App extends Component {
   displayChosenContent =  (e) => {
     const contentName = e.target.name;
     const data = JSON.parse(localStorage.getItem(contentName));
+    
     this.setState({
       displayedContent: data,
-      chosenContent: contentName
+      chosenContent: contentName,
     });
   }
 

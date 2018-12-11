@@ -22,7 +22,7 @@
 }
 
 .favorites-button:hover, .reset-btn:hover {
-    cursor: pointer;
+    
     text-shadow: 2px 2px 2px yellow;
 }
 
@@ -32,6 +32,7 @@
 }
 
 .num-favorites {
+    cursor: pointer;
     color: #F3E355;
     font-size: 60px;
     position: absolute;
