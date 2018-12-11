@@ -78,6 +78,7 @@ const PeopleCard = ({
         </h3>
         <img
           src={luke}
+          className="luke"
           alt="planet"
         />
         <p>

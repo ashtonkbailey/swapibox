@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 const Navigation = props => (
   <div className="nav-container">
+    <button className="reset-btn" onClick={props.returnHome}> home </button>
     <button
       type="button"
       className="nav-button people"

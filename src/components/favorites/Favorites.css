@@ -8,7 +8,7 @@
     z-index: 6;
 }
 
-.favorites-button {
+.favorites-button, .reset-btn {
     background: none;
     border: none;
     color: #F3E355;
@@ -21,7 +21,7 @@
     font-weight: 200;
 }
 
-.favorites-button:hover {
+.favorites-button:hover, .reset-btn:hover {
     cursor: pointer;
     text-shadow: 2px 2px 2px yellow;
 }
