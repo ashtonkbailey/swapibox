@@ -4,7 +4,6 @@ import { Route, NavLink } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
-// import ContentContainer from './components/contentContainer/ContentContainer';
 import People from './components/Helpers/People';
 import Planets from './components/Helpers/Planets';
 import Vehicles from './components/Helpers/Vehicles';
@@ -171,20 +170,14 @@ class App extends Component {
           faves={favorites}
           viewFavorites={this.viewFavorites}
         />
-        {/* <ContentContainer
-          chosenContent={chosenContent}
-          film={currFilm}
-          contents={displayedContent}
+        <Main 
+          displayedContent = {displayedContent}
           incrementCarousel={this.incrementCarousel}
           decrementCarousel={this.decrementCarousel}
           carouselIndex={carouselIndex}
           addToFavorites={this.addToFavorites}
           film={currFilm}
         />
-        /> */}
-        <Main displayedContent = {this.state.displayedContent}
-        incrementCarousel={this.incrementCarousel}
-        decrementCarousel={this.decrementCarousel}/>
       </div>
     );
   }
