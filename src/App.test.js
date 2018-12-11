@@ -114,6 +114,7 @@ describe('App', () => {
   describe('fetchPropertyObj', () => {
     it('calls fetch with the correct parameter', async () => {
       // Setup
+      
       // Execution
       // Expectation
     });
