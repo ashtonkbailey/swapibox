@@ -4,10 +4,7 @@ import { Route, NavLink } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
-<<<<<<< HEAD
-=======
 // import ContentContainer from './components/contentContainer/ContentContainer';
->>>>>>> Begin implementing router
 import People from './components/Helpers/People';
 import Planets from './components/Helpers/Planets';
 import Vehicles from './components/Helpers/Vehicles';
@@ -170,31 +167,24 @@ class App extends Component {
           displayChosenContent={this.displayChosenContent}
           returnHome={this.returnHome}
         />
-        {/* <Favorites
+        <Favorites
           faves={favorites}
           viewFavorites={this.viewFavorites}
-<<<<<<< HEAD
         />
-        <Main 
-          displayedContent = {displayedContent}
-=======
-        /> */}
         {/* <ContentContainer
           chosenContent={chosenContent}
           film={currFilm}
           contents={displayedContent}
->>>>>>> Begin implementing router
           incrementCarousel={this.incrementCarousel}
           decrementCarousel={this.decrementCarousel}
           carouselIndex={carouselIndex}
           addToFavorites={this.addToFavorites}
-<<<<<<< HEAD
           film={currFilm}
         />
-=======
         /> */}
-        <Main displayedContent = {this.state.displayedContent}/>
->>>>>>> Begin implementing router
+        <Main displayedContent = {this.state.displayedContent}
+        incrementCarousel={this.incrementCarousel}
+        decrementCarousel={this.decrementCarousel}/>
       </div>
     );
   }

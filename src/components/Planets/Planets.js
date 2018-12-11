@@ -39,6 +39,7 @@ const Planets = ({carouselIndex, addToFavorites}) => {
 =======
 const Planets = () => {
   const planetData = JSON.parse(localStorage.getItem('planets'));
+  let cardClass = "hidden";
   const planetDisplay = planetData.map(planet =>  (
       <article className="middle-card">
 >>>>>>> Begin implementing router
