@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../PeopleCard/peopleCard.css';
 import lightsabers from '../../images/lightsabers.png';
-import luke from '../../images/luke.jpg'
+import luke from '../../images/luke.jpg';
+
 
 const People = ({carouselIndex, addToFavorites}) => {
   let hiddenClass;
