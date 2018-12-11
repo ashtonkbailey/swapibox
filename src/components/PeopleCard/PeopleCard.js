@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import lightsabers from '../../images/lightsabers.png';
 import './peopleCard.css';
-import luke from '../../images/luke.jpg';
+import contentImages from '../../contentImages.js';
 
 const PeopleCard = ({
   card,
@@ -11,6 +11,9 @@ const PeopleCard = ({
   addToFavorites,
   chosenContent
 }) => {
+  let images = Object.entries(contentImages);
+  let matchingImage = images.find(image => card.name === image[0]);
+  let imagePath = matchingImage[1];
   let hiddenClass;
   const leftCardIndex = carouselIndex;
   let middleCardIndex = carouselIndex + 1;
@@ -46,7 +49,7 @@ const PeopleCard = ({
           {card.name}
         </h3>
         <img
-          src={luke}
+          src={imagePath}
           alt="character"
         />
         <p>
@@ -78,7 +81,7 @@ const PeopleCard = ({
           {card.name}
         </h3>
         <img
-          src={luke}
+          src={imagePath}
           className="luke"
           alt="planet"
         />
@@ -115,7 +118,7 @@ const PeopleCard = ({
             {card.name}
           </h3>
           <img
-            src={luke}
+            src={imagePath}
             alt="vehicle"
           />
           <p>
