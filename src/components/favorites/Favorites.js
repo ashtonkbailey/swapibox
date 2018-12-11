@@ -21,14 +21,10 @@ const Favorites = ({ faves, viewFavorites }) => (
     {/* <button
       type="button"
       className="favorites-button"
-<<<<<<< HEAD
-    >
-=======
       onClick={viewFavorites}
     > */}
       <NavLink to='/favorites' className="favorites-button" >
       
->>>>>>> Begin implementing route to favorites
       view favorites
       </NavLink>
     {/* </button> */}
