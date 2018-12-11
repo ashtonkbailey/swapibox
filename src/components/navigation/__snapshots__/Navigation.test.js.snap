@@ -21,9 +21,15 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <button
+          className="reset-btn"
+        >
+           home 
+        </button>,
+        <button
           className="nav-button people"
           name="people"
           onClick={[MockFunction]}
+          type="button"
         >
           people
         </button>,
@@ -31,6 +37,7 @@ ShallowWrapper {
           className="nav-button planets"
           name="planets"
           onClick={[MockFunction]}
+          type="button"
         >
           planets
         </button>,
@@ -38,6 +45,7 @@ ShallowWrapper {
           className="nav-button vehicles"
           name="vehicles"
           onClick={[MockFunction]}
+          type="button"
         >
           vehicles
         </button>,
@@ -51,10 +59,24 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "children": " home ",
+          "className": "reset-btn",
+          "onClick": undefined,
+        },
+        "ref": null,
+        "rendered": " home ",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
           "children": "people",
           "className": "nav-button people",
           "name": "people",
           "onClick": [MockFunction],
+          "type": "button",
         },
         "ref": null,
         "rendered": "people",
@@ -69,6 +91,7 @@ ShallowWrapper {
           "className": "nav-button planets",
           "name": "planets",
           "onClick": [MockFunction],
+          "type": "button",
         },
         "ref": null,
         "rendered": "planets",
@@ -83,6 +106,7 @@ ShallowWrapper {
           "className": "nav-button vehicles",
           "name": "vehicles",
           "onClick": [MockFunction],
+          "type": "button",
         },
         "ref": null,
         "rendered": "vehicles",
@@ -99,9 +123,15 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <button
+            className="reset-btn"
+          >
+             home 
+          </button>,
+          <button
             className="nav-button people"
             name="people"
             onClick={[MockFunction]}
+            type="button"
           >
             people
           </button>,
@@ -109,6 +139,7 @@ ShallowWrapper {
             className="nav-button planets"
             name="planets"
             onClick={[MockFunction]}
+            type="button"
           >
             planets
           </button>,
@@ -116,6 +147,7 @@ ShallowWrapper {
             className="nav-button vehicles"
             name="vehicles"
             onClick={[MockFunction]}
+            type="button"
           >
             vehicles
           </button>,
@@ -129,10 +161,24 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": " home ",
+            "className": "reset-btn",
+            "onClick": undefined,
+          },
+          "ref": null,
+          "rendered": " home ",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
             "children": "people",
             "className": "nav-button people",
             "name": "people",
             "onClick": [MockFunction],
+            "type": "button",
           },
           "ref": null,
           "rendered": "people",
@@ -147,6 +193,7 @@ ShallowWrapper {
             "className": "nav-button planets",
             "name": "planets",
             "onClick": [MockFunction],
+            "type": "button",
           },
           "ref": null,
           "rendered": "planets",
@@ -161,6 +208,7 @@ ShallowWrapper {
             "className": "nav-button vehicles",
             "name": "vehicles",
             "onClick": [MockFunction],
+            "type": "button",
           },
           "ref": null,
           "rendered": "vehicles",
