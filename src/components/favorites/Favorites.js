@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Favorites.css';
 import lightsabers from '../../images/lightsabers.png';
+import { Route, NavLink } from 'react-router-dom';
+
 
 const Favorites = ({ faves, viewFavorites }) => (
   <div className="favorites-container">
@@ -16,12 +18,16 @@ const Favorites = ({ faves, viewFavorites }) => (
       src={lightsabers}
       alt="favorites"
     />
-    <button
+    {/* <button
       type="button"
       className="favorites-button"
-    >
+      onClick={viewFavorites}
+    > */}
+      <NavLink to='/favorites' className="favorites-button" >
+      
       view favorites
-    </button>
+      </NavLink>
+    {/* </button> */}
   </div>
 );
 

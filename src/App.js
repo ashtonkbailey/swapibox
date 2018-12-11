@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
-
 import './App.css';
 import Navigation from './components/navigation/Navigation';
 import Favorites from './components/favorites/Favorites';
-import ContentContainer from './components/contentContainer/ContentContainer';
 import People from './components/Helpers/People';
 import Planets from './components/Helpers/Planets';
 import Vehicles from './components/Helpers/Vehicles';
+import Main from './components/Main/Main';
 
 class App extends Component {
   constructor() {
@@ -125,17 +124,19 @@ class App extends Component {
   addToFavorites = (favoritedCard) => {
     const { favorites } = this.state;
     const clickedCard = favoritedCard;
-    clickedCard.card.favorite = true;
-
-    if (favorites.includes(clickedCard.card)) {
-      clickedCard.card.favorite = false;
-      const newFavorites = favorites.filter(favorite => favorite.favorite);
+    clickedCard.favorite = true;
+    const allFavorites = favorites.map(favorite => favorite.name);
+    if (allFavorites.includes(clickedCard.name)) {
+      clickedCard.favorite = false;
+      const newFavorites = favorites.filter(favoriteCard => {
+        return (favoriteCard.name !== clickedCard.name)
+      })
       this.setState({
-        favorites: newFavorites,
+        favorites: newFavorites
       });
     } else {
       this.setState({
-        favorites: [...favorites, clickedCard.card],
+        favorites: [...favorites, clickedCard]
       });
     }
   }
@@ -152,7 +153,6 @@ class App extends Component {
   render() {
     const {
       favorites,
-      chosenContent,
       currFilm,
       displayedContent,
       carouselIndex,
@@ -161,21 +161,21 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="header"> SWAPIBOX </h1>
-        <Navigation displayChosenContent={this.displayChosenContent} 
-        returnHome={this.returnHome}
+        <Navigation 
+          displayChosenContent={this.displayChosenContent}
+          returnHome={this.returnHome}
         />
         <Favorites
           faves={favorites}
           viewFavorites={this.viewFavorites}
         />
-        <ContentContainer
-          chosenContent={chosenContent}
-          film={currFilm}
-          contents={displayedContent}
+        <Main 
+          displayedContent = {displayedContent}
           incrementCarousel={this.incrementCarousel}
           decrementCarousel={this.decrementCarousel}
           carouselIndex={carouselIndex}
           addToFavorites={this.addToFavorites}
+          film={currFilm}
         />
       </div>
     );

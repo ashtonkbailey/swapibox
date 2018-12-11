@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import './ContentContainer.css';
 import PeopleCard from '../PeopleCard/PeopleCard';
-import PlanetCard from '../PlanetCard/PlanetCard';
 
 const ContentContainer = ({
   carouselIndex,
