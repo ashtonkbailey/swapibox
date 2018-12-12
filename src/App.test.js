@@ -2,15 +2,18 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import App from './App';
+import People from './components/People/People'
 
 describe('App', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(<App />);
   });
+
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
   describe('cleanFilm', () => {
     it('should clean up film when cleanFilm is called', () => {
       const film = {
@@ -27,6 +30,7 @@ describe('App', () => {
       expect(result).toEqual(expected);
     });
   });
+
   describe('generateRandomNum', () => {
     it('should generate a random number between 1 and 7', () => {
       // Setup
@@ -38,12 +42,33 @@ describe('App', () => {
       expect(expected).toEqual(result);
     });
   });
-  describe('fetchCurrFilm', () => {
-    let generateRandomNum;
-    let mockCurrFilm;
+
+  describe('componentDidMount', () => {
+    it('calls fetchRandomFilm', () => {
+      // Setup
+      let mockFetchRandomFilm = jest.fn();
+      wrapper.instance().fetchRandomFilm = mockFetchRandomFilm;
+      // Execution
+      wrapper.instance().componentDidMount();
+      // Expectation
+      expect(mockFetchRandomFilm).toHaveBeenCalled();
+    });
+
+    it('calls fetchChosenContent', () => {
+      // Setup
+      let mockFetchChosenContent = jest.fn();
+      wrapper.instance().fetchChosenContent = mockFetchChosenContent;
+      // Execution
+      wrapper.instance().componentDidMount();
+      // Expectation
+      expect(mockFetchChosenContent).toHaveBeenCalled();
+    });
+  });
+
+  describe('fetchRandomFilm', () => {
     beforeEach(() => {
       Math.random = jest.fn().mockImplementation(() => 0.4);
-      mockCurrFilm = {
+      let mockCurrFilm = {
         title: '',
         crawl: '',
         year: '',
@@ -53,129 +78,185 @@ describe('App', () => {
         json: () => Promise.resolve(mockCurrFilm),
       }));
     });
+
     it('calls generateRandomNum', () => {
       // Setup
       const mockGenerateRandomNum = jest.fn();
       wrapper.instance().generateRandomNum = mockGenerateRandomNum;
       // Execution
-      wrapper.instance().fetchCurrFilm();
+      wrapper.instance().fetchRandomFilm();
       // Expectation
       expect(mockGenerateRandomNum).toHaveBeenCalled();
     });
+
+    it('calls fetch with the correct parameters', () => {
+      // Setup
+      const expected = 'https://swapi.co/api/films/3';
+      // Execution
+      wrapper.instance().fetchRandomFilm();
+      // Expectation
+      expect(window.fetch).toHaveBeenCalledWith(expected);
+    });
+
     it('should call cleanFilm', async () => {
       // Setup
       const mockCleanFilm = jest.fn();
       wrapper.instance().cleanFilm = mockCleanFilm;
       // Execution
-      await wrapper.instance().fetchCurrFilm();
+      await wrapper.instance().fetchRandomFilm();
       // Expectation
       expect(mockCleanFilm).toHaveBeenCalled();
     });
-    it('calls fetch with the correct parameters', () => {
-      // Setup
-      const expected = 'https://swapi.co/api/films/3';
-      // Execution
-      wrapper.instance().fetchCurrFilm();
-      // Expectation
-      expect(window.fetch).toHaveBeenCalledWith(expected);
-    });
+
     it('should setState', async () => {
       // Setup
       const mockCleanFilm = jest.fn(() => ({ title: 'blahtitle', crawl: 'blahcrawl', year: 1770 }));
       const expected = { title: 'blahtitle', crawl: 'blahcrawl', year: 1770 };
       wrapper.instance().cleanFilm = mockCleanFilm;
       // Execution
-      await wrapper.instance().fetchCurrFilm();
+      await wrapper.instance().fetchRandomFilm();
       // Expectation
       expect(wrapper.state().currFilm).toEqual(expected);
     });
+
     it('on fetch error, errorStatus is set', async () => {
       // Setup
       window.fetch = jest.fn().mockImplementation(() => Promise.reject({
         message: 'mock failure',
       }));
       // Execution
-      await wrapper.instance().fetchCurrFilm();
+      await wrapper.instance().fetchRandomFilm();
       // Expectation
       expect(wrapper.state().errorStatus).toEqual('Error: mock failure');
     });
+
+    it('should set localStorage', () => {
+      // Setup
+      const currFilm = {
+        title: '',
+        crawl: '',
+        year: '',
+      };
+      // Execution
+      localStorage.setItem('current film', JSON.stringify(currFilm));
+      // Expectation
+      expect(wrapper.state().currFilm).toEqual(currFilm);
+    });
   });
+
+  // describe('fetchPropertyObj', () => {
+  //   it('calls fetch with the correct parameter', async () => {
+  //     // Setup
+  //     const expected = 'https://swapi.co/api/films/3';
+  //     // Execution
+  //     // Expectation
+  //   });
+  //   it('returns the property object', async () => {
+  //     // Setup
+  //     // Execution
+  //     // Expectation
+  //   });
+  // });
+
+  // describe('getDataFromStorage', () => {
+  //   it('should ')
+  // });
+
+  describe('fetchChosenContent', () => {
+    // let mockCleanedPeople;
+
+    // beforeEach(() => {
+    //   mockCleanedPeople = [];
+    //   window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+    //     ok: true,
+    //     json: () => Promise.resolve(mockCleanedPeople),
+    //   }));
+    // });
+
+    it.skip('instantiates new People', async () => {
+      // Setup
+      jest.mock('./components/People/People');
+      const mockPeopleData = await new People();
+      // Execution
+      await wrapper.instance().fetchChosenContent();
+      // Expectation
+      expect(People).toHaveBeenCalledTimes(1);
+    });
+
+    it('instantiates new Planets', async () => {
+      // Setup
+      // Execution
+      // Expectation
+    });
+
+    it('instantiates new Vehicles', async () => {
+      // Setup
+      // Execution
+      // Expectation
+    });
+  });
+
   describe('displayChosenContent', () => {
-    it.skip('should call fetchChosenContent', () => {
+    it.skip('gets localStorage', () => {
       // Setup
       const mockEvent = { preventDefault: () => {} };
-      const mockFetchChosenContent = jest.fn();
+      const mockStorage = {
+        displayedContent: [{}, {}],
+        chosenContent: 'blah',
+      };
+      const expected = {
+        displayedContent: [{}, {}],
+        chosenContent: 'blah',
+      }
       // Execution
       wrapper.instance().displayChosenContent(mockEvent);
+      JSON.parse(localStorage.getItem(mockStorage));
       // Expectation
-      expect(mockFetchChosenContent).toHaveBeenCalled();
+      expect(wrapper.state().displayedContent).toEqual(expected);
     });
   });
-  describe('fetchPropertyObj', () => {
-    it('calls fetch with the correct parameter', async () => {
-      // Setup
-      
-      // Execution
-      // Expectation
-    });
-    it('returns the property object', async () => {
-      // Setup
-      // Execution
-      // Expectation
-    });
-  });
-  describe('cleanPeopleData', () => {
-    it('returns a Promise array', () => {
-      // Setup
-      // Execution
-      // Expectation
-    });
-    it('calls fetchPropertyObj', async () => {
-      // Setup
-      // Execution
-      // Expectation
-    });
-  });
-  describe('fetchChosenContent', () => {
-    let mockCleanedPeople;
-    beforeEach(() => {
-      mockCleanedPeople = [];
-      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(mockCleanedPeople),
-      }));
-    });
-    it('calls fetch with the correct parameters', async () => {
-      // Setup
-      const expected = 'https://swapi.co/api/people/';
-      // Execution
-      await wrapper.instance().fetchPropertyObj(expected);
-      // Expectation
-      expect(window.fetch).toHaveBeenCalledWith(expected);
-    });
-    it('calls cleanPeopleData', async () => {
-      // Setup
-      // Execution
-      // Expectation
-    });
-    it('updates state', async () => {
-      // Setup
-      // Execution
-      // Expectation
-    });
-  });
+  
   describe('incrementCarousel', () => {
     it('updates state', () => {
       // Setup
+      const expected = 1;
       // Execution
+      wrapper.instance().incrementCarousel();
       // Expectation
+      expect(wrapper.state().carouselIndex).toEqual(expected);
     });
   });
+
   describe('decrementCarousel', () => {
     it('updates state', () => {
       // Setup
+      const expected = 9;
       // Execution
+      wrapper.instance().decrementCarousel();
       // Expectation
+      expect(wrapper.state().carouselIndex).toEqual(expected);
+    });
+  });
+
+  describe('addFavePeople', () => {
+    it.skip('should update localStorage', () => {
+      // Setup
+      const peopleData = [
+        {name: "Luke Skywalker", homeworld: "Tatooine", population: "200000", species: "Human", index: 0,},
+        {name: "C-3PO", homeworld: "Tatooine", population: "200000", species: "Droid", index: 1,},
+      ];
+      // Execution
+      wrapper.instance().addFavePeople();
+      const itemsInStorage = JSON.parse(localStorage.getItem('people')).length;
+      // Expectation
+      expect(itemsInStorage).toEqual(2)
+    });
+  });
+
+  describe('addToFavorites', () => {
+    it('maps over favorites', () => {
+      // Setup
+
     });
   });
 });

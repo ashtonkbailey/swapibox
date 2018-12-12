@@ -74,6 +74,7 @@ const Planets = ({carouselIndex, addToFavorites}) => {
       </article>
     )}
   );
+  
   return (
     <div>
       {planetDisplay}
