@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { NavLink , Route, Switch} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import Planets from '../Planets/Planets';
 import People from '../People/People';
 import Vehicles from '../Vehicles/Vehicles';
 import Home from '../Home/Home';
-import Favorites from '../favorites/Favorites.js'
+import Favorites from '../favorites/Favorites.js';
+import PropTypes from 'prop-types';
+
 
 const Main = ({incrementCarousel, decrementCarousel, carouselIndex, addToFavorites, film, favorites}) => {
   return (
@@ -32,9 +34,17 @@ const Main = ({incrementCarousel, decrementCarousel, carouselIndex, addToFavorit
       <i className="fas fa-arrow-right" />
     </button>
     </div>
-    )
   </main>
   )
+}
+
+Main.propTypes = {
+  incrementCarousel: PropTypes.func,
+  decrementCarousel: PropTypes.func,
+  carouselIndex: PropTypes.number,
+  addToFavorites: PropTypes.func,
+  film: PropTypes.object.isRequired,
+  favorites: PropTypes.array
 }
 
 export default Main;
