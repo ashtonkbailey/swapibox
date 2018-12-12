@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch} from 'react-router-dom';
 import Planets from '../Planets/Planets';
 import People from '../People/People';
@@ -38,7 +38,7 @@ const Main = ({incrementCarousel, decrementCarousel, carouselIndex, addToFavorit
   )
 }
 
-Main.PropTypes = {
+Main.propTypes = {
   incrementCarousel: PropTypes.func,
   decrementCarousel: PropTypes.func,
   carouselIndex: PropTypes.number,

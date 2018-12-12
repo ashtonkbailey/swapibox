@@ -48,33 +48,30 @@
 }
 
 .people-container {
-  display: grid;
-  /* grid-template-columns: .6fr 1fr .6fr; */
-  height: 60vh;
-  /* grid-template-rows: 1fr; */
   align-items: center;
+  display: grid;
+  height: 60vh;
   margin: 20px 80px 50px 80px;
   min-width: 800px;
 }
 
 .component-container {
-  /* display: flex; */
-  justify-content: space-between;
-  flex-direction: row;
   align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .arrow-button {
+  background-color: rgb(244, 217, 68);
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.25), inset 15px 5px 3px rgba(255, 255, 255, 0.25);
+  font-family: 'Poller One', cursive;
+  font-size: 20px;
   height: 40px;
-  width: 40px;
   margin: 50px 20px 0 20px;
   position: absolute;
-  border-radius: 20px;
-  font-size: 20px;
-  font-family: 'Poller One', cursive;
-  background-color: rgb(244, 217, 68);
-  box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.25), inset 15px 5px 3px rgba(255, 255, 255, 0.25);
   top: 50%;
+  width: 40px;
 }
 
 .left-arrow{

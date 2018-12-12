@@ -1,6 +1,5 @@
 import React from 'react';
 import './Navigation.css';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import lightsabers from '../../images/lightsabers.png';
 import PropTypes from 'prop-types';

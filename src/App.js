@@ -63,6 +63,7 @@ class App extends Component {
 
   fetchChosenContent = async () => {
     const peopleData = await new People();
+    console.log(peopleData)
     localStorage.setItem('people', JSON.stringify([...peopleData]));
 
     const planetData = await new Planets();
@@ -247,10 +248,6 @@ class App extends Component {
           returnHome={this.returnHome}
           favorites={favorites}
         />
-        {/* <Favorites
-          faves={favorites}
-          viewFavorites={this.viewFavorites}
-        /> */}
         <Main 
           displayedContent = {displayedContent}
           incrementCarousel={this.incrementCarousel}

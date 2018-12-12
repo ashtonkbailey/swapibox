@@ -1,3 +1,719 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`people matches the snpashot with all parameters passed in 1`] = `undefined`;
+exports[`people matches the snapshot with all parameters passed in 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <People
+    addToFavorites={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <article
+          className="hidden"
+        >
+          <h3
+            className="name"
+          >
+            Luke Skywalker
+          </h3>
+          <img
+            alt="character"
+            className="picture"
+            src="./luke.jpg"
+          />
+          <p>
+            species:
+            Human
+          </p>
+          <p>
+            homeworld:
+            Tatooine
+          </p>
+          <p>
+            population:
+            200000
+          </p>
+          <img
+            alt="click to add to favorites"
+            className="saber false"
+            onClick={[Function]}
+            src="lightsabers.png"
+          />
+        </article>,
+        <article
+          className="hidden"
+        >
+          <h3
+            className="name"
+          >
+            R2-D2
+          </h3>
+          <img
+            alt="character"
+            className="picture"
+            src="./R2D2.jpeg"
+          />
+          <p>
+            species:
+            Droid
+          </p>
+          <p>
+            homeworld:
+            Naboo
+          </p>
+          <p>
+            population:
+            4500000000
+          </p>
+          <img
+            alt="click to add to favorites"
+            className="saber false"
+            onClick={[Function]}
+            src="lightsabers.png"
+          />
+        </article>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Luke Skywalker",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3
+              className="name"
+            >
+              Luke Skywalker
+            </h3>,
+            <img
+              alt="character"
+              className="picture"
+              src="./luke.jpg"
+            />,
+            <p>
+              species:
+              Human
+            </p>,
+            <p>
+              homeworld:
+              Tatooine
+            </p>,
+            <p>
+              population:
+              200000
+            </p>,
+            <img
+              alt="click to add to favorites"
+              className="saber false"
+              onClick={[Function]}
+              src="lightsabers.png"
+            />,
+          ],
+          "className": "hidden",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Luke Skywalker",
+              "className": "name",
+            },
+            "ref": null,
+            "rendered": "Luke Skywalker",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "character",
+              "className": "picture",
+              "src": "./luke.jpg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "species:",
+                "Human",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "species:",
+              "Human",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "homeworld:",
+                "Tatooine",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "homeworld:",
+              "Tatooine",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "population:",
+                "200000",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "population:",
+              "200000",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "click to add to favorites",
+              "className": "saber false",
+              "onClick": [Function],
+              "src": "lightsabers.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+        ],
+        "type": "article",
+      },
+      Object {
+        "instance": null,
+        "key": "R2-D2",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3
+              className="name"
+            >
+              R2-D2
+            </h3>,
+            <img
+              alt="character"
+              className="picture"
+              src="./R2D2.jpeg"
+            />,
+            <p>
+              species:
+              Droid
+            </p>,
+            <p>
+              homeworld:
+              Naboo
+            </p>,
+            <p>
+              population:
+              4500000000
+            </p>,
+            <img
+              alt="click to add to favorites"
+              className="saber false"
+              onClick={[Function]}
+              src="lightsabers.png"
+            />,
+          ],
+          "className": "hidden",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "R2-D2",
+              "className": "name",
+            },
+            "ref": null,
+            "rendered": "R2-D2",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "character",
+              "className": "picture",
+              "src": "./R2D2.jpeg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "species:",
+                "Droid",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "species:",
+              "Droid",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "homeworld:",
+                "Naboo",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "homeworld:",
+              "Naboo",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "population:",
+                "4500000000",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "population:",
+              "4500000000",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "click to add to favorites",
+              "className": "saber false",
+              "onClick": [Function],
+              "src": "lightsabers.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+        ],
+        "type": "article",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <article
+            className="hidden"
+          >
+            <h3
+              className="name"
+            >
+              Luke Skywalker
+            </h3>
+            <img
+              alt="character"
+              className="picture"
+              src="./luke.jpg"
+            />
+            <p>
+              species:
+              Human
+            </p>
+            <p>
+              homeworld:
+              Tatooine
+            </p>
+            <p>
+              population:
+              200000
+            </p>
+            <img
+              alt="click to add to favorites"
+              className="saber false"
+              onClick={[Function]}
+              src="lightsabers.png"
+            />
+          </article>,
+          <article
+            className="hidden"
+          >
+            <h3
+              className="name"
+            >
+              R2-D2
+            </h3>
+            <img
+              alt="character"
+              className="picture"
+              src="./R2D2.jpeg"
+            />
+            <p>
+              species:
+              Droid
+            </p>
+            <p>
+              homeworld:
+              Naboo
+            </p>
+            <p>
+              population:
+              4500000000
+            </p>
+            <img
+              alt="click to add to favorites"
+              className="saber false"
+              onClick={[Function]}
+              src="lightsabers.png"
+            />
+          </article>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Luke Skywalker",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3
+                className="name"
+              >
+                Luke Skywalker
+              </h3>,
+              <img
+                alt="character"
+                className="picture"
+                src="./luke.jpg"
+              />,
+              <p>
+                species:
+                Human
+              </p>,
+              <p>
+                homeworld:
+                Tatooine
+              </p>,
+              <p>
+                population:
+                200000
+              </p>,
+              <img
+                alt="click to add to favorites"
+                className="saber false"
+                onClick={[Function]}
+                src="lightsabers.png"
+              />,
+            ],
+            "className": "hidden",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Luke Skywalker",
+                "className": "name",
+              },
+              "ref": null,
+              "rendered": "Luke Skywalker",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "character",
+                "className": "picture",
+                "src": "./luke.jpg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "species:",
+                  "Human",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "species:",
+                "Human",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "homeworld:",
+                  "Tatooine",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "homeworld:",
+                "Tatooine",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "population:",
+                  "200000",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "population:",
+                "200000",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "click to add to favorites",
+                "className": "saber false",
+                "onClick": [Function],
+                "src": "lightsabers.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+          ],
+          "type": "article",
+        },
+        Object {
+          "instance": null,
+          "key": "R2-D2",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3
+                className="name"
+              >
+                R2-D2
+              </h3>,
+              <img
+                alt="character"
+                className="picture"
+                src="./R2D2.jpeg"
+              />,
+              <p>
+                species:
+                Droid
+              </p>,
+              <p>
+                homeworld:
+                Naboo
+              </p>,
+              <p>
+                population:
+                4500000000
+              </p>,
+              <img
+                alt="click to add to favorites"
+                className="saber false"
+                onClick={[Function]}
+                src="lightsabers.png"
+              />,
+            ],
+            "className": "hidden",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "R2-D2",
+                "className": "name",
+              },
+              "ref": null,
+              "rendered": "R2-D2",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "character",
+                "className": "picture",
+                "src": "./R2D2.jpeg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "species:",
+                  "Droid",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "species:",
+                "Droid",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "homeworld:",
+                  "Naboo",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "homeworld:",
+                "Naboo",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "population:",
+                  "4500000000",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "population:",
+                "4500000000",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "click to add to favorites",
+                "className": "saber false",
+                "onClick": [Function],
+                "src": "lightsabers.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+          ],
+          "type": "article",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
