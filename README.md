@@ -26,3 +26,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### People Page
 ![People page wireframe](wireframe_people.png)
+
+## Runtime Shots
+
+#### Loading Page
+![Loading page](filmShot.jpg.png)
+
+#### People Page
+![People page](peopleShot.jpg.png)
