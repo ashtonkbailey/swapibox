@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import './people.css';
+import PropTypes from 'prop-types';
 import lightsabers from '../../images/lightsabers.png';
 import contentImages from '../../contentImages.js';
 
@@ -48,6 +48,7 @@ const People = ({carouselIndex, addToFavorites}) => {
         <img
           src={imagePath}
           alt="character"
+          className="picture"
         />
         <p>
           species:
@@ -77,5 +78,11 @@ const People = ({carouselIndex, addToFavorites}) => {
      </div>   
   );
 }
+
+People.propTypes = {
+  carouselIndex: PropTypes.number,
+  addToFavorites: PropTypes.func
+}
+
 
 export default People;
