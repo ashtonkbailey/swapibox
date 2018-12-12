@@ -24,7 +24,7 @@ const Planets = ({ carouselIndex, addToFavorites }) => {
   const planetDisplay = planetData.map((planet) => {
     switch (planet.index) {
       case middleCardIndex:
-        hiddenClass = 'middle-card';
+        hiddenClass = 'planet middle-card';
         break;
       case leftCardIndex:
         hiddenClass = 'left-card small-card';
@@ -86,7 +86,7 @@ const Planets = ({ carouselIndex, addToFavorites }) => {
 };
 
 Planets.propTypes = {
-  carouselIndex: PropTypes.func.isRequired,
+  carouselIndex: PropTypes.number.isRequired,
   addToFavorites: PropTypes.func.isRequired,
 };
 

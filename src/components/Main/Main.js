@@ -59,6 +59,7 @@ Main.propTypes = {
   addToFavorites: PropTypes.func,
   film: PropTypes.object.isRequired,
   favorites: PropTypes.array
+}
 
 export default Main;
 
