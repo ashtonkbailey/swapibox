@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import './people.css';
 import lightsabers from '../../images/lightsabers.png';
 import contentImages from '../../contentImages.js';
-import luke from '../../images/luke.jpg';
-
 
 const People = ({carouselIndex, addToFavorites}) => {
   let hiddenClass;

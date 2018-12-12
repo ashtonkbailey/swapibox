@@ -25,18 +25,15 @@ ShallowWrapper {
         </h1>,
         <Navigation
           displayChosenContent={[Function]}
+          favorites={Array []}
           returnHome={[Function]}
         />,
-        <Favorites
-          faves={Array []}
-          viewFavorites={[Function]}
-        />,
-        <ContentContainer
+        <Main
           addToFavorites={[Function]}
           carouselIndex={0}
-          chosenContent=""
-          contents={Array []}
           decrementCarousel={[Function]}
+          displayedContent={Array []}
+          favorites={Array []}
           film={
             Object {
               "crawl": "",
@@ -45,6 +42,7 @@ ShallowWrapper {
             }
           }
           incrementCarousel={[Function]}
+          viewFavorites={[Function]}
         />,
       ],
       "className": "App",
@@ -69,19 +67,8 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "displayChosenContent": [Function],
+          "favorites": Array [],
           "returnHome": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "faves": Array [],
-          "viewFavorites": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -94,15 +81,16 @@ ShallowWrapper {
         "props": Object {
           "addToFavorites": [Function],
           "carouselIndex": 0,
-          "chosenContent": "",
-          "contents": Array [],
           "decrementCarousel": [Function],
+          "displayedContent": Array [],
+          "favorites": Array [],
           "film": Object {
             "crawl": "",
             "title": "",
             "year": "",
           },
           "incrementCarousel": [Function],
+          "viewFavorites": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -125,18 +113,15 @@ ShallowWrapper {
           </h1>,
           <Navigation
             displayChosenContent={[Function]}
+            favorites={Array []}
             returnHome={[Function]}
           />,
-          <Favorites
-            faves={Array []}
-            viewFavorites={[Function]}
-          />,
-          <ContentContainer
+          <Main
             addToFavorites={[Function]}
             carouselIndex={0}
-            chosenContent=""
-            contents={Array []}
             decrementCarousel={[Function]}
+            displayedContent={Array []}
+            favorites={Array []}
             film={
               Object {
                 "crawl": "",
@@ -145,6 +130,7 @@ ShallowWrapper {
               }
             }
             incrementCarousel={[Function]}
+            viewFavorites={[Function]}
           />,
         ],
         "className": "App",
@@ -169,19 +155,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "displayChosenContent": [Function],
+            "favorites": Array [],
             "returnHome": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "faves": Array [],
-            "viewFavorites": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -194,15 +169,16 @@ ShallowWrapper {
           "props": Object {
             "addToFavorites": [Function],
             "carouselIndex": 0,
-            "chosenContent": "",
-            "contents": Array [],
             "decrementCarousel": [Function],
+            "displayedContent": Array [],
+            "favorites": Array [],
             "film": Object {
               "crawl": "",
               "title": "",
               "year": "",
             },
             "incrementCarousel": [Function],
+            "viewFavorites": [Function],
           },
           "ref": null,
           "rendered": null,

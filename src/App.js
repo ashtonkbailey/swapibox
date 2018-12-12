@@ -62,21 +62,23 @@ class App extends Component {
   }
 
 
-  fetchPropertyObj = async (url) => {
-    const response = await fetch(url);
-    const propertyObj = await response.json();
-    return propertyObj;
-  }
+  // fetchPropertyObj = async (url) => {
+  //   const response = await fetch(url);
+  //   const propertyObj = await response.json();
+  //   return propertyObj;
+  // }
 
-  getDataFromStorage = (name) => {
-    const data = JSON.parse(localStorage.getItem(name));
-  }
+  // getDataFromStorage = (name) => {
+  //   const data = JSON.parse(localStorage.getItem(name));
+  // }
 
   fetchChosenContent = async () => {
     const peopleData = await new People();
     localStorage.setItem('people', JSON.stringify([...peopleData]));
+
     const planetData = await new Planets();
     localStorage.setItem('planets', JSON.stringify([...planetData]));
+    
     const vehicleData = await new Vehicles();
     localStorage.setItem('vehicles', JSON.stringify([...vehicleData]));
   }
