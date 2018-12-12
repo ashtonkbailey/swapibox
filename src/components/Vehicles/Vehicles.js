@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../People/people.css';
 import lightsabers from '../../images/lightsabers.png';
-import contentImages from '../../contentImages.js';
+import contentImages from '../../contentImages';
 
-const Vehicles = ({carouselIndex, addToFavorites}) => {
+const Vehicles = ({ carouselIndex, addToFavorites }) => {
   const vehicleData = JSON.parse(localStorage.getItem('vehicles'));
   let hiddenClass;
   const leftCardIndex = carouselIndex;
@@ -20,7 +21,7 @@ const Vehicles = ({carouselIndex, addToFavorites}) => {
     rightCardIndex = carouselIndex - 8;
   }
 
-  const vehicleDisplay = vehicleData.map(vehicle => {
+  const vehicleDisplay = vehicleData.map((vehicle) => {
     switch (vehicle.index) {
       case middleCardIndex:
         hiddenClass = 'middle-card';
@@ -35,47 +36,53 @@ const Vehicles = ({carouselIndex, addToFavorites}) => {
         hiddenClass = 'hidden';
     }
 
-    let images = Object.entries(contentImages);
-    let matchingImage = images.find(image => vehicle.name === image[0]);
-    let imagePath = matchingImage[1];
+    const images = Object.entries(contentImages);
+    const matchingImage = images.find(image => vehicle.name === image[0]);
+    const imagePath = matchingImage[1];
 
     return (
-    <article className={hiddenClass} key={vehicle.name}>
-    <h3 className="name">
-      {vehicle.name}
-    </h3>
-    <img
-      src={imagePath}
-      alt="vehicle"
-    />
-    <p>
-      model:
-      {vehicle.model}
-    </p>
-    <p>
-      class:
-      {vehicle.class}
-    </p>
-    <p>
-      passengers:
-      {vehicle.passengers}
-    </p>
-    <img
-      className={`saber ${vehicle.favorite}`}
-      src={lightsabers}
-      onClick={() => addToFavorites(vehicle)}
-      alt="click to add to favorites"
-    />
-    </article>
-      )
-    });
+      <article className={hiddenClass} key={vehicle.name}>
+        <h3 className="name">
+          {vehicle.name}
+        </h3>
+        <img
+          src={imagePath}
+          alt="vehicle"
+        />
+        <p>
+          model:
+          {vehicle.model}
+        </p>
+        <p>
+          class:
+          {vehicle.class}
+        </p>
+        <p>
+          passengers:
+          {vehicle.passengers}
+        </p>
+        <img
+          className={`saber ${vehicle.favorite}`}
+          src={lightsabers}
+          onClick={() => addToFavorites(vehicle)}
+          onKeyDown={() => addToFavorites(vehicle)}
+          alt="click to add to favorites"
+          title="add to favorites"
+        />
+      </article>
+    );
+  });
 
   return (
     <div>
       {vehicleDisplay}
     </div>
-  )
-}
+  );
+};
 
+Vehicles.propTypes = {
+  carouselIndex: PropTypes.func.isRequired,
+  addToFavorites: PropTypes.func.isRequired,
+};
 
 export default Vehicles;
