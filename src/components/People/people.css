@@ -1,33 +1,46 @@
 article {
+  align-items: center;
   color:  #FBF230;
-  font-size: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-size: 16px;
   padding: 6px;
   transition: background-color, opacity .6s ease-in-out;
 }
 
-article>img {
+.picture {
+  border-radius: 20px;
+  border: solid 1px white;
+  margin: 10px;
   margin: 1em;
+  max-height: 200px;
+}
+
+.middle-card>.picture {
+  width: 40%;
+  height: 200px;
+}
+
+.middle-card>.picture {
+  width: 40%;
+  height: 200px;
 }
 
 .saber {
-  height: 60px;
-  width: 18%;
-  position: relative;
   bottom: 16px;
-  margin-top: 10px;
   filter: grayscale(40%);
+  height: 60px;
+  margin-top: 10px;
   outline: none;
+  position: relative;
+  width: 18%;
 }
 
 .saber:hover {
-  /* opacity: 30; */
   cursor: pointer;
-  transition: .3s ease-in-out;
-  transform: scale(1.1);
   filter: constrast(200%);
+  transform: scale(1.1);
+  transition: .3s ease-in-out;
 }
 
 .saber.true {
@@ -35,12 +48,12 @@ article>img {
 }
 
 .name {
-  margin: 0;
-  font-family: Roboto;
-  font-style: normal;
-  font-size: 40px;
-  text-align: center;
   color: black;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  margin: 0;
+  text-align: center;
   text-shadow:
   -1px -1px 0 rgb(238, 213, 19),  
   1px -1px 0 rgb(238, 213, 19),
@@ -53,14 +66,11 @@ article>img {
 }
 
 .small-card {
-  height: 500px;
-  transition: background-color, opacity .6s ease-in-out;
   background: rgba(227, 218, 135, 0.2);
-  /* max-width: 300px; */
-  /* width: 80%; */
-  /* padding-top: 20px; */
+  height: 500px;
   margin-top: 60px;
   pointer-events: none;
+  transition: background-color, opacity .6s ease-in-out;
 }
 
 .small-card>.saber {
@@ -68,43 +78,31 @@ article>img {
 }
 
 .left-card {
-  /* grid-column: 1/2; */
-  opacity: .5;
-  grid-row: 1;
-  position: fixed;
-  /* bottom: 210px; */
-  width: 22%;
   left: 5%;
+  opacity: .5;
+  position: fixed;
+  width: 22%;
 }
 
 .right-card {
-  grid-column: 3/4;
   opacity: .5;
-  /* grid-row: 1; */
   position: fixed;
-  width: 22%;
-  /* bottom: 210px; */
   right: 5%;
+  width: 22%;
 }
 
 
 .middle-card {
-  /* grid-column: 2/3; */
-  position: fixed;
-  left: 32%;
-  font-size: 24px;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-  /* min-width: 300px; */
-  width: 34%;
-  height: 500px;
   background: rgba(227, 218, 135, 0.4);
-  border: 4px solid #EDE748;
-  /* box-sizing: border-box; */
-  box-shadow: 0px 4px 40px rgb(227, 218, 135);
   border-radius: 40px;
+  border: 4px solid #EDE748;
+  box-shadow: 0px 4px 40px rgb(227, 218, 135);
+  font-size: 24px;
+  height: 60%;
+  left: 32%;
   margin: 20px;
-  /* padding: 5px; */
-  /* grid-row: 1; */
+  position: fixed;
+  width: 34%;
 }
 
 .small-card>img {
@@ -112,27 +110,27 @@ article>img {
 }
 
 .middle-card>.saber {
-  width: 16%;
   height: 16%;
+  width: 16%;
 }
 
 .luke {
-  border: solid 1px black;
   border-radius: 20px;
+  border: solid 1px black;
   box-shadow: 2px 2px  black;
   margin: 2px;
 }
 
 .left-card, .right-card {
-  height: 400px;
   background: rgba(0, 0, 0, 0.66);
-  border: 2px solid #EDE748;
   border-radius: 40px;
+  border: 2px solid #EDE748;
+  height: 400px;
 }
 
 p {
-  margin: 10px;
   color: black;
+  margin: 10px;
   text-shadow: 
   .5px .5px 0 rgb(238, 213, 19);
 }

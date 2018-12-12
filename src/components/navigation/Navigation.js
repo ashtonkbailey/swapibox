@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import './Navigation.css';
 import lightsabers from '../../images/lightsabers.png';
 
+
 const Navigation = ({ favorites }) => (
   <div className="nav-container">
     <NavLink to="/people" className="nav-button people">
@@ -19,7 +20,6 @@ const Navigation = ({ favorites }) => (
     <NavLink to="/favorites" className="favorites-container">
       <div
         className="num-favorites"
-          // onClick={viewFavorites}
       >
         {favorites.length}
       </div>

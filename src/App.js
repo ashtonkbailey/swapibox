@@ -60,20 +60,8 @@ class App extends Component {
         errorStatus: `Error: ${error.message}`,
       });
     }
-
-    localStorage.setItem('current film', JSON.stringify(currFilm));
   }
-
-  // fetchPropertyObj = async (url) => {
-  //   const response = await fetch(url);
-  //   const propertyObj = await response.json();
-  //   return propertyObj;
-  // }
-
-  // getDataFromStorage = (name) => {
-  //   const data = JSON.parse(localStorage.getItem(name));
-  // }
-
+  
   fetchChosenContent = async () => {
     const peopleData = await new People();
     localStorage.setItem('people', JSON.stringify([...peopleData]));
@@ -260,12 +248,8 @@ class App extends Component {
           returnHome={this.returnHome}
           favorites={favorites}
         />
-        {/* <Favorites
-          faves={favorites}
-          viewFavorites={this.viewFavorites}
-        /> */}
-        <Main
-          displayedContent={displayedContent}
+        <Main 
+          displayedContent = {displayedContent}
           incrementCarousel={this.incrementCarousel}
           decrementCarousel={this.decrementCarousel}
           carouselIndex={carouselIndex}

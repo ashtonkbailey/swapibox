@@ -40,7 +40,6 @@ const Main = ({
         <i className="fas fa-arrow-right" />
       </button>
     </div>
-    )
   </main>
 );
 
@@ -53,4 +52,13 @@ Main.propTypes = {
   favorites: PropTypes.array.isRequired,
 };
 
+Main.propTypes = {
+  incrementCarousel: PropTypes.func,
+  decrementCarousel: PropTypes.func,
+  carouselIndex: PropTypes.number,
+  addToFavorites: PropTypes.func,
+  film: PropTypes.object.isRequired,
+  favorites: PropTypes.array
+
 export default Main;
+

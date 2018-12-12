@@ -73,6 +73,7 @@ const Vehicles = ({ carouselIndex, addToFavorites }) => {
     );
   });
 
+
   return (
     <div>
       {vehicleDisplay}

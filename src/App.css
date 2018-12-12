@@ -1,26 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Poller+One');
 
 .App {
-  text-align: center;
   background-image: url('./images/starwars.jpg');
   background-size: cover;
   height: 100vh;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 .header {
-  font-family: 'Poller One', cursive;
-  margin-top: 0;
+  color:black;
+  font-size: 88px;
   margin-bottom: 0;
+  margin-top: 0;
   padding: 40px;
+  text-align: center;font-family: 'Poller One', cursive;
   text-shadow:
 		-3px -3px 0 rgb(244, 217, 68),
 		2px -2px 0 rgb(244, 217, 68),
 		-2px 2px 0 rgb(244, 217, 68),
 		2px 2px 0 rgb(244, 217, 68);
-  font-size: 88px;
-  text-align: center;
-  color:black;
-  /* border: 4px solid #000000; */
 }
+

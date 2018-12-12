@@ -47,7 +47,7 @@ const Planets = ({ carouselIndex, addToFavorites }) => {
         </h3>
         <img
           src={imagePath}
-          className="luke"
+          className="picture"
           alt="planet"
         />
         <p>
@@ -89,5 +89,6 @@ Planets.propTypes = {
   carouselIndex: PropTypes.func.isRequired,
   addToFavorites: PropTypes.func.isRequired,
 };
+
 
 export default Planets;

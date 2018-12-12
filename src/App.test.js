@@ -145,35 +145,7 @@ describe('App', () => {
     });
   });
 
-  // describe('fetchPropertyObj', () => {
-  //   it('calls fetch with the correct parameter', async () => {
-  //     // Setup
-  //     const expected = 'https://swapi.co/api/films/3';
-  //     // Execution
-  //     // Expectation
-  //   });
-  //   it('returns the property object', async () => {
-  //     // Setup
-  //     // Execution
-  //     // Expectation
-  //   });
-  // });
-
-  // describe('getDataFromStorage', () => {
-  //   it('should ')
-  // });
-
   describe('fetchChosenContent', () => {
-    // let mockCleanedPeople;
-
-    // beforeEach(() => {
-    //   mockCleanedPeople = [];
-    //   window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-    //     ok: true,
-    //     json: () => Promise.resolve(mockCleanedPeople),
-    //   }));
-    // });
-
     it.skip('instantiates new People', async () => {
       // Setup
       jest.mock('./components/People/People');

@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import '../contentContainer/ContentContainer.css';
 import './Favorites.css';
@@ -32,7 +32,9 @@ const Favorites = ({ favorites }) => {
     }
 
     return (
-      <article className="fave-card" key={fave.name}>
+      <article 
+        className="fave-card" 
+        key={fave.name}>
         <h3 className="name">
           {fave.name}
         </h3>
@@ -46,10 +48,10 @@ const Favorites = ({ favorites }) => {
           {stat3}
         </p>
         <img
-          className="saber"
-          src={lightsabers}
-          // onClick={() => addToFavorites( fave )}
-          alt="click to add to favorites"
+        className="saber"
+        src={lightsabers}
+        // onClick={() => addToFavorites( fave )}
+        alt="click to add to favorites"
         />
       </article>
     );
