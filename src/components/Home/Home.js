@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-// import '../contentContainer/ContentContainer.css';
+import PropTypes from 'prop-types';
 import './Home.css';
 
 const Home = ({film}) => {
-  // const film = JSON.parse(localStorage.getItem('current film'));
   return (
     <div className="content-container">
       <div>
@@ -19,6 +18,10 @@ const Home = ({film}) => {
       </div>
     </div>
   )
+}
+
+Home.propTypes = {
+  film: PropTypes.object.isRequired
 }
 
 export default Home;

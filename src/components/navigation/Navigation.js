@@ -3,6 +3,8 @@ import './Navigation.css';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import lightsabers from '../../images/lightsabers.png';
+import PropTypes from 'prop-types';
+
 
 const Navigation = ({favorites}) => (
   <div className="nav-container" >
@@ -18,7 +20,6 @@ const Navigation = ({favorites}) => (
     <NavLink to="/favorites" className="favorites-container" >
           <div
               className="num-favorites"
-              // onClick={viewFavorites}
             >
               {favorites.length}
             </div>
