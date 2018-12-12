@@ -2,10 +2,21 @@
 
 Swapibox is an exercise in fetching data from an api and rendering it using React. Key goals included writing dry code with minimal stateful components, cleaning incoming data, optimizing UX/UI, and implementing React Router, ES6, & ES7.
 
-Project Partners:
-Cole Vanacore & Ashton Bailey
+#### Project Partners:
+Cole Vanacore: https://github.com/colev1
+Ashton Bailey: https://github.com/ashtonkbailey
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+#### Tech:
+React.js
+JSX
+Jest/Enzyme
+React Router
+Fetch/API Calls
+CSS
+
 
 ## Wireframes:
 
@@ -15,3 +26,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### People Page
 ![People page wireframe](wireframe_people.png)
+
+authors: 
