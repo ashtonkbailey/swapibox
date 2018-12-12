@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Switch} from 'react-router-dom';
 import Planets from '../Planets/Planets';
 import People from '../People/People';

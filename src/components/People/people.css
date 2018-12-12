@@ -21,6 +21,11 @@ article {
   height: 200px;
 }
 
+.middle-card>.picture {
+  width: 40%;
+  height: 200px;
+}
+
 .saber {
   bottom: 16px;
   filter: grayscale(40%);
@@ -61,7 +66,6 @@ article {
 }
 
 .small-card {
-  transition: background-color, opacity .6s ease-in-out;
   background: rgba(227, 218, 135, 0.2);
   height: 500px;
   margin-top: 60px;
