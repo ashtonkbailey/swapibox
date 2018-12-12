@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './people.css';
-import PropTypes from 'prop-types';
 import lightsabers from '../../images/lightsabers.png';
 import contentImages from '../../contentImages';
 

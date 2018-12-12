@@ -134,3 +134,7 @@ p {
   text-shadow: 
   .5px .5px 0 rgb(238, 213, 19);
 }
+
+.planet {
+  font-size: 20px;
+}

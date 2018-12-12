@@ -82,7 +82,7 @@ const Vehicles = ({ carouselIndex, addToFavorites }) => {
 };
 
 Vehicles.propTypes = {
-  carouselIndex: PropTypes.func.isRequired,
+  carouselIndex: PropTypes.number.isRequired,
   addToFavorites: PropTypes.func.isRequired,
 };
 
