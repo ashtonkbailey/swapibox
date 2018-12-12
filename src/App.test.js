@@ -2,10 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import App from './App';
-import People from './components/People/People'
+import People from './components/People/People';
 
 describe('App', () => {
   let wrapper;
+
   beforeEach(() => {
     wrapper = shallow(<App />);
   });
@@ -46,7 +47,7 @@ describe('App', () => {
   describe('componentDidMount', () => {
     it('calls fetchRandomFilm', () => {
       // Setup
-      let mockFetchRandomFilm = jest.fn();
+      const mockFetchRandomFilm = jest.fn();
       wrapper.instance().fetchRandomFilm = mockFetchRandomFilm;
       // Execution
       wrapper.instance().componentDidMount();
@@ -56,7 +57,7 @@ describe('App', () => {
 
     it('calls fetchChosenContent', () => {
       // Setup
-      let mockFetchChosenContent = jest.fn();
+      const mockFetchChosenContent = jest.fn();
       wrapper.instance().fetchChosenContent = mockFetchChosenContent;
       // Execution
       wrapper.instance().componentDidMount();
@@ -68,7 +69,7 @@ describe('App', () => {
   describe('fetchRandomFilm', () => {
     beforeEach(() => {
       Math.random = jest.fn().mockImplementation(() => 0.4);
-      let mockCurrFilm = {
+      const mockCurrFilm = {
         title: '',
         crawl: '',
         year: '',
@@ -179,7 +180,7 @@ describe('App', () => {
       const expected = {
         displayedContent: [{}, {}],
         chosenContent: 'blah',
-      }
+      };
       // Execution
       wrapper.instance().displayChosenContent(mockEvent);
       JSON.parse(localStorage.getItem(mockStorage));
@@ -187,7 +188,7 @@ describe('App', () => {
       expect(wrapper.state().displayedContent).toEqual(expected);
     });
   });
-  
+
   describe('incrementCarousel', () => {
     it('updates state', () => {
       // Setup
@@ -214,14 +215,26 @@ describe('App', () => {
     it.skip('should update localStorage', () => {
       // Setup
       const peopleData = [
-        {name: "Luke Skywalker", homeworld: "Tatooine", population: "200000", species: "Human", index: 0,},
-        {name: "C-3PO", homeworld: "Tatooine", population: "200000", species: "Droid", index: 1,},
+        {
+          name: 'Luke Skywalker',
+          homeworld: 'Tatooine',
+          population: '200000',
+          species: 'Human',
+          index: 0,
+        },
+        {
+          name: 'C-3PO',
+          homeworld: 'Tatooine',
+          population: '200000',
+          species: 'Droid',
+          index: 1,
+        },
       ];
       // Execution
       wrapper.instance().addFavePeople();
       const itemsInStorage = JSON.parse(localStorage.getItem('people')).length;
       // Expectation
-      expect(itemsInStorage).toEqual(2)
+      expect(itemsInStorage).toEqual(2);
     });
   });
 

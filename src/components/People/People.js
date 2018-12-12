@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import './people.css';
 import PropTypes from 'prop-types';
 import lightsabers from '../../images/lightsabers.png';
-import contentImages from '../../contentImages.js';
+import contentImages from '../../contentImages';
 
-const People = ({carouselIndex, addToFavorites}) => {
+const People = ({ carouselIndex, addToFavorites }) => {
   let hiddenClass;
   const leftCardIndex = carouselIndex;
   let middleCardIndex = carouselIndex + 1;
@@ -18,10 +20,10 @@ const People = ({carouselIndex, addToFavorites}) => {
   if (carouselIndex === 8) {
     rightCardIndex = carouselIndex - 8;
   }
-  
+
   const peopleData = JSON.parse(localStorage.getItem('people'));
 
-  const peopleDisplay = peopleData.map(person => {
+  const peopleDisplay = peopleData.map((person) => {
     switch (person.index) {
       case middleCardIndex:
         hiddenClass = 'middle-card';
@@ -34,11 +36,11 @@ const People = ({carouselIndex, addToFavorites}) => {
         break;
       default:
         hiddenClass = 'hidden';
-    };
+    }
 
-    let images = Object.entries(contentImages);
-    let matchingImage = images.find(image => person.name === image[0]);
-    let imagePath = matchingImage[1];
+    const images = Object.entries(contentImages);
+    const matchingImage = images.find(image => person.name === image[0]);
+    const imagePath = matchingImage[1];
 
     return (
       <article className={hiddenClass} key={person.name}>
@@ -65,19 +67,26 @@ const People = ({carouselIndex, addToFavorites}) => {
         <img
           className={`saber ${person.favorite}`}
           src={lightsabers}
-          onClick={() => addToFavorites( person )}
+          onClick={() => addToFavorites(person)}
+          onKeyDown={() => addToFavorites(person)}
           alt="click to add to favorites"
+          title="add to favorites"
         />
       </article>
     );
   });
-  
+
   return (
-     <div>
-       {peopleDisplay}
-     </div>   
+    <div>
+      {peopleDisplay}
+    </div>
   );
-}
+};
+
+People.propTypes = {
+  carouselIndex: PropTypes.func.isRequired,
+  addToFavorites: PropTypes.func.isRequired,
+};
 
 People.propTypes = {
   carouselIndex: PropTypes.number,

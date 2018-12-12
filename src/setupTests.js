@@ -21,4 +21,4 @@ class LocalStorage {
   }
 }
 
-global.localStorage = new LocalStorage;
+global.localStorage = new LocalStorage();

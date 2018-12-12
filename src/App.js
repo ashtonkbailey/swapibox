@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
 import './App.css';
+
 import Navigation from './components/navigation/Navigation';
-import Favorites from './components/favorites/Favorites';
 import People from './components/Helpers/People';
 import Planets from './components/Helpers/Planets';
 import Vehicles from './components/Helpers/Vehicles';
@@ -41,11 +40,14 @@ class App extends Component {
   }
 
   fetchRandomFilm = async () => {
+    const { currFilm } = this.state;
     const randomNum = this.generateRandomNum();
+
     try {
       const response = await fetch(`https://swapi.co/api/films/${randomNum}`);
       const film = await response.json();
       const cleanFilm = await this.cleanFilm(film);
+
       this.setState({
         currFilm: {
           title: cleanFilm.title,
@@ -58,25 +60,23 @@ class App extends Component {
         errorStatus: `Error: ${error.message}`,
       });
     }
-    localStorage.setItem('current film', JSON.stringify(this.state.currFilm));
   }
-
+  
   fetchChosenContent = async () => {
     const peopleData = await new People();
-    console.log(peopleData)
     localStorage.setItem('people', JSON.stringify([...peopleData]));
 
     const planetData = await new Planets();
     localStorage.setItem('planets', JSON.stringify([...planetData]));
-    
+
     const vehicleData = await new Vehicles();
     localStorage.setItem('vehicles', JSON.stringify([...vehicleData]));
   }
 
-  displayChosenContent =  (e) => {
+  displayChosenContent = (e) => {
     const contentName = e.target.name;
     const data = JSON.parse(localStorage.getItem(contentName));
-    
+
     this.setState({
       displayedContent: data,
       chosenContent: contentName,
@@ -108,84 +108,84 @@ class App extends Component {
   }
 
   viewFavorites = () => {
+    const { favorites } = this.state;
+
     this.setState({
-      displayedContent: this.state.favorites
-    })
+      displayedContent: favorites,
+    });
   }
 
   addFavePeople = (card) => {
     const peopleData = JSON.parse(localStorage.getItem('people'));
-    const updatedFavorites = peopleData.map(personObj => {
+    const updatedFavorites = peopleData.map((personObj) => {
       if (card.name === personObj.name) {
         personObj.favorite = true;
       }
       return personObj;
     });
-    localStorage.setItem('people', JSON.stringify([...peopleData]));
+    localStorage.setItem('people', JSON.stringify([...updatedFavorites]));
   }
 
   addFaveVehicles = (card) => {
     const vehicleData = JSON.parse(localStorage.getItem('vehicles'));
-    const updatedFavorites = vehicleData.map(vehicleObj => {
+    const updatedFavorites = vehicleData.map((vehicleObj) => {
       if (card.name === vehicleObj.name) {
         vehicleObj.favorite = true;
       }
       return vehicleObj;
     });
-    localStorage.setItem('vehicles', JSON.stringify([...vehicleData]));
+    localStorage.setItem('vehicles', JSON.stringify([...updatedFavorites]));
   }
 
   addFavePlanets = (card) => {
     const planetData = JSON.parse(localStorage.getItem('planets'));
-    const updatedFavorites = planetData.map(planetObj => {
+    const updatedFavorites = planetData.map((planetObj) => {
       if (card.name === planetObj.name) {
         planetObj.favorite = true;
       }
       return planetObj;
     });
-    localStorage.setItem('planets', JSON.stringify([...planetData]));
+    localStorage.setItem('planets', JSON.stringify([...updatedFavorites]));
   }
 
   deleteFavePeople = (card) => {
     const peopleData = JSON.parse(localStorage.getItem('people'));
-    const updatedFavorites = peopleData.map(personObj => {
+    const updatedFavorites = peopleData.map((personObj) => {
       if (card.name === personObj.name) {
         personObj.favorite = false;
       }
       return personObj;
     });
-    localStorage.setItem('people', JSON.stringify([...peopleData]));
+    localStorage.setItem('people', JSON.stringify([...updatedFavorites]));
   }
 
   deleteFaveVehicles = (card) => {
     const vehicleData = JSON.parse(localStorage.getItem('vehicles'));
-    const updatedFavorites = vehicleData.map(vehicleObj => {
+    const updatedFavorites = vehicleData.map((vehicleObj) => {
       if (card.name === vehicleObj.name) {
         vehicleObj.favorite = false;
       }
       return vehicleObj;
     });
-    localStorage.setItem('vehicles', JSON.stringify([...vehicleData]));
+    localStorage.setItem('vehicles', JSON.stringify([...updatedFavorites]));
   }
 
   deleteFavePlanets = (card) => {
     const planetData = JSON.parse(localStorage.getItem('planets'));
-    const updatedFavorites = planetData.map(planetObj => {
+    const updatedFavorites = planetData.map((planetObj) => {
       if (card.name === planetObj.name) {
         planetObj.favorite = false;
       }
       return planetObj;
     });
-    localStorage.setItem('planets', JSON.stringify([...planetData]));
+    localStorage.setItem('planets', JSON.stringify([...updatedFavorites]));
   }
 
   updateStateFaves = (card, favorites) => {
     card.favorite = false;
-    const newFavorites = favorites.filter(favoriteCard => {
-      return (favoriteCard.name !== card.name)
-    })
+    const newFavorites = favorites.filter(favoriteCard => (favoriteCard.name !== card.name));
     this.setState({
-      favorites: newFavorites
+      favorites: newFavorites,
     });
   }
 
@@ -197,17 +197,17 @@ class App extends Component {
     if (clickedCard.homeworld) {
       this.addFavePeople(clickedCard);
       this.setState({
-        favorites: [...favorites, clickedCard]
+        favorites: [...favorites, clickedCard],
       });
     } else if (clickedCard.model) {
       this.addFaveVehicles(clickedCard);
       this.setState({
-        favorites: [...favorites, clickedCard]
+        favorites: [...favorites, clickedCard],
       });
     } else if (clickedCard.terrain) {
       this.addFavePlanets(clickedCard);
       this.setState({
-        favorites: [...favorites, clickedCard]
+        favorites: [...favorites, clickedCard],
       });
     }
 
@@ -224,10 +224,10 @@ class App extends Component {
   }
 
   returnHome = async () => {
-     this.fetchRandomFilm();
-     this.setState({
-      chosenContent: ""
-    })
+    this.fetchRandomFilm();
+    this.setState({
+      chosenContent: '',
+    });
   }
 
   generateRandomNum = () => Math.floor(Math.random() * 6) + 1;
@@ -243,7 +243,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="header"> SWAPIBOX </h1>
-        <Navigation 
+        <Navigation
           displayChosenContent={this.displayChosenContent}
           returnHome={this.returnHome}
           favorites={favorites}

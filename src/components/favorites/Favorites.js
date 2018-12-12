@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 import '../contentContainer/ContentContainer.css';
 import './Favorites.css';
 import lightsabers from '../../images/lightsabers.png';
@@ -10,10 +11,12 @@ const Favorites = ({ favorites }) => {
   let stat1;
   let stat2;
   let stat3;
+
   if (favorites.length === 0) {
-    favoritesMessage = "You do not have any favorites!";
+    favoritesMessage = 'You do not have any favorites!';
   }
-  const allFavorites = favorites.map(fave => {
+
+  const allFavorites = favorites.map((fave) => {
     if (fave.species) {
       stat1 = `species: ${fave.species}`;
       stat2 = `homeworld: ${fave.homeworld}`;
@@ -27,6 +30,7 @@ const Favorites = ({ favorites }) => {
       stat2 = `class: ${fave.class}`;
       stat3 = `passengers: ${fave.passengers}`;
     }
+
     return (
       <article 
         className="fave-card" 
@@ -50,24 +54,24 @@ const Favorites = ({ favorites }) => {
         alt="click to add to favorites"
         />
       </article>
-    )
+    );
   });
   return (
     <div className="faves-display">
-       <NavLink to='/people' className="nav-button hide-faves" >
-          X
-        </NavLink>
+      <NavLink to="/people" className="nav-button hide-faves">
+        X
+      </NavLink>
       <h1 className="favorite-header"> FAVORITES </h1>
-      <span className="favorites-message">  {favoritesMessage} </span>
+      <span className="favorites-message">
+        {favoritesMessage}
+      </span>
       {allFavorites}
     </div>
-  )
+  );
 };
 
 Favorites.propTypes = {
-  faves: PropTypes.array.isRequired,
-  viewFavorites: PropTypes.func.isRequired,
-  favorites: PropTypes.array
+  favorites: PropTypes.array.isRequired,
 };
 
 export default Favorites;
