@@ -61,17 +61,6 @@ class App extends Component {
     localStorage.setItem('current film', JSON.stringify(this.state.currFilm));
   }
 
-
-  // fetchPropertyObj = async (url) => {
-  //   const response = await fetch(url);
-  //   const propertyObj = await response.json();
-  //   return propertyObj;
-  // }
-
-  // getDataFromStorage = (name) => {
-  //   const data = JSON.parse(localStorage.getItem(name));
-  // }
-
   fetchChosenContent = async () => {
     const peopleData = await new People();
     localStorage.setItem('people', JSON.stringify([...peopleData]));

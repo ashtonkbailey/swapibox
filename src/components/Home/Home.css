@@ -19,75 +19,74 @@
 }
 
 .content-container {
-position:absolute;
-top:-300px;
-bottom:0;
-left:0;
-right:0;
-overflow:hidden;
-transform-origin:50% 100%;
-transform:perspective(400px) rotateX(20deg);
-color: yellow;
+  position:absolute;
+  top:-300px;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow:hidden;
+  transform-origin:50% 100%;
+  transform:perspective(400px) rotateX(20deg);
+  color: yellow;
 }
 
 .title {
-position:absolute;
-bottom:0;
-left:0;
-right:0;
+  background: rgba(0,0,0,.6);
+  position:absolute;
+  bottom:0;
+  left:100px;
+  right:0;
 }
 
 /* People, Planets, Vehicles Cards */
 
 
 @keyframes autoscroll{
-to {
-  margin-top:-50000px;
-}    
+  to {
+    margin-top:-50000px;
+  }    
 }
 
-
-
 .people-container {
-display: grid;
-/* grid-template-columns: .6fr 1fr .6fr; */
-height: 60vh;
-/* grid-template-rows: 1fr; */
-align-items: center;
-margin: 20px 80px 50px 80px;
-min-width: 800px;
+  display: grid;
+  /* grid-template-columns: .6fr 1fr .6fr; */
+  height: 60vh;
+  /* grid-template-rows: 1fr; */
+  align-items: center;
+  margin: 20px 80px 50px 80px;
+  min-width: 800px;
 }
 
 .component-container {
-/* display: flex; */
-justify-content: space-between;
-flex-direction: row;
-align-items: center;
+  /* display: flex; */
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }
 
 .arrow-button {
-height: 40px;
-width: 40px;
-margin: 50px 20px 0 20px;
-position: absolute;
-border-radius: 20px;
-font-size: 20px;
-font-family: 'Poller One', cursive;
-background-color: rgb(244, 217, 68);
-box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.25), inset 15px 5px 3px rgba(255, 255, 255, 0.25);
-top: 50%;
+  height: 40px;
+  width: 40px;
+  margin: 50px 20px 0 20px;
+  position: absolute;
+  border-radius: 20px;
+  font-size: 20px;
+  font-family: 'Poller One', cursive;
+  background-color: rgb(244, 217, 68);
+  box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.25), inset 15px 5px 3px rgba(255, 255, 255, 0.25);
+  top: 50%;
 }
 
 .left-arrow{
-left: 0;
+  left: 0;
 }
 
 .right-arrow {
-right: 0;
+  right: 0;
 }
 
 .arrow-button:hover {
-background-color:  rgb(220, 210, 158);
+  background-color:  rgb(220, 210, 158);
   cursor: pointer;
 }
 
