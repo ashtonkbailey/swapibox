@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import '../People/people.css';
 import lightsabers from '../../images/lightsabers.png';
 import contentImages from '../../contentImages.js';
@@ -47,6 +47,7 @@ const Vehicles = ({carouselIndex, addToFavorites}) => {
     <img
       src={imagePath}
       alt="vehicle"
+      className="picture"
     />
     <p>
       model:
@@ -75,6 +76,11 @@ const Vehicles = ({carouselIndex, addToFavorites}) => {
       {vehicleDisplay}
     </div>
   )
+}
+
+Vehicles.propTypes = {
+  carouselIndex: PropTypes.number,
+  addToFavorites: PropTypes.func
 }
 
 

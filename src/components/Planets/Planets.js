@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import '../People/people.css';
 import lightsabers from '../../images/lightsabers.png';
 import contentImages from '../../contentImages.js';
@@ -46,7 +46,7 @@ const Planets = ({carouselIndex, addToFavorites}) => {
         </h3>
         <img
           src={imagePath}
-          className="luke"
+          className="picture"
           alt="planet"
         />
         <p>
@@ -82,5 +82,9 @@ const Planets = ({carouselIndex, addToFavorites}) => {
   )
 }
 
+Planets.propTypes = {
+  carouselIndex: PropTypes.number,
+  addToFavorites: PropTypes.func.isRequired
+}
 
 export default Planets;

@@ -1,37 +1,36 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import '../contentContainer/ContentContainer.css'
+import '../contentContainer/ContentContainer.css';
 import './Favorites.css';
 import lightsabers from '../../images/lightsabers.png';
-import { Route, NavLink } from 'react-router-dom';
-
 
 const Favorites = ({ favorites }) => {
   let favoritesMessage;
   let stat1;
   let stat2;
   let stat3;
-  if(favorites.length === 0) {
+  if (favorites.length === 0) {
     favoritesMessage = "You do not have any favorites!";
   }
-
   const allFavorites = favorites.map(fave => {
-      if (fave.species) {
-        stat1 = `species: ${fave.species}`;
-        stat2 = `homeworld: ${fave.homeworld}`;
-        stat2 = `population: ${fave.population}`;
-      } else if (fave.terrain) {
-        stat1 = `terrain: ${fave.terrain}`;
-        stat2 = `climate: ${fave.climate}`;
-        stat3 = `population: ${fave.population}`
-      } else {
-        stat1 = `model: ${fave.model}`;
-        stat2 = `class: ${fave.class}`;
-        stat3 = `passengers: ${fave.passengers}`
-      }
-
+    if (fave.species) {
+      stat1 = `species: ${fave.species}`;
+      stat2 = `homeworld: ${fave.homeworld}`;
+      stat2 = `population: ${fave.population}`;
+    } else if (fave.terrain) {
+      stat1 = `terrain: ${fave.terrain}`;
+      stat2 = `climate: ${fave.climate}`;
+      stat3 = `population: ${fave.population}`;
+    } else {
+      stat1 = `model: ${fave.model}`;
+      stat2 = `class: ${fave.class}`;
+      stat3 = `passengers: ${fave.passengers}`;
+    }
     return (
-      <article className="fave-card" key={fave.name}>
+      <article 
+        className="fave-card" 
+        key={fave.name}>
         <h3 className="name">
           {fave.name}
         </h3>
@@ -45,10 +44,10 @@ const Favorites = ({ favorites }) => {
           {stat3}
         </p>
         <img
-          className="saber"
-          src={lightsabers}
-          // onClick={() => addToFavorites( fave )}
-          alt="click to add to favorites"
+        className="saber"
+        src={lightsabers}
+        // onClick={() => addToFavorites( fave )}
+        alt="click to add to favorites"
         />
       </article>
     )
@@ -68,6 +67,7 @@ const Favorites = ({ favorites }) => {
 Favorites.propTypes = {
   faves: PropTypes.array.isRequired,
   viewFavorites: PropTypes.func.isRequired,
+  favorites: PropTypes.array
 };
 
 export default Favorites;
