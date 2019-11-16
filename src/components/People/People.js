@@ -22,64 +22,71 @@ const People = ({ carouselIndex, addToFavorites }) => {
 
   const peopleData = JSON.parse(localStorage.getItem('people'));
 
-  const peopleDisplay = peopleData.map((person) => {
-    switch (person.index) {
-      case middleCardIndex:
-        hiddenClass = 'middle-card';
-        break;
-      case leftCardIndex:
-        hiddenClass = 'left-card small-card';
-        break;
-      case rightCardIndex:
-        hiddenClass = 'right-card small-card';
-        break;
-      default:
-        hiddenClass = 'hidden';
-    }
+  if (peopleData && peopleData.length > 0) {
+    const peopleDisplay = peopleData.map((person) => {
+      switch (person.index) {
+        case middleCardIndex:
+          hiddenClass = 'middle-card';
+          break;
+        case leftCardIndex:
+          hiddenClass = 'left-card small-card';
+          break;
+        case rightCardIndex:
+          hiddenClass = 'right-card small-card';
+          break;
+        default:
+          hiddenClass = 'hidden';
+      }
 
-    const images = Object.entries(contentImages);
-    const matchingImage = images.find(image => person.name === image[0]);
-    const imagePath = matchingImage[1];
+      const images = Object.entries(contentImages);
+      const matchingImage = images.find(image => person.name === image[0]);
+      const imagePath = matchingImage[1];
+
+      return (
+        <article className={hiddenClass} key={person.name}>
+          <h3 className="name">
+            {person.name}
+          </h3>
+          <img
+            src={imagePath}
+            alt="character"
+            className="picture"
+          />
+          <p>
+            species:
+            {person.species}
+          </p>
+          <p>
+            homeworld:
+            {person.homeworld}
+          </p>
+          <p>
+            population:
+            {person.population}
+          </p>
+          <img
+            className={`saber ${person.favorite}`}
+            src={lightsabers}
+            onClick={() => addToFavorites(person)}
+            onKeyDown={() => addToFavorites(person)}
+            alt="click to add to favorites"
+            title="add to favorites"
+          />
+        </article>
+      );
+    });
 
     return (
-      <article className={hiddenClass} key={person.name}>
-        <h3 className="name">
-          {person.name}
-        </h3>
-        <img
-          src={imagePath}
-          alt="character"
-          className="picture"
-        />
-        <p>
-          species:
-          {person.species}
-        </p>
-        <p>
-          homeworld:
-          {person.homeworld}
-        </p>
-        <p>
-          population:
-          {person.population}
-        </p>
-        <img
-          className={`saber ${person.favorite}`}
-          src={lightsabers}
-          onClick={() => addToFavorites(person)}
-          onKeyDown={() => addToFavorites(person)}
-          alt="click to add to favorites"
-          title="add to favorites"
-        />
-      </article>
-    );
-  });
-
-  return (
-    <div>
-      {peopleDisplay}
-    </div>
-  );
+      <div>
+        {peopleDisplay}
+      </div>
+  )} else {
+      return (
+        <div style={{backgroundColor:"black",color:"white",position: "fixed",width: 100+"%",height: 100+"%",top: 0+"px",left: 0+"px",zIndex: 1000}}>
+          <h2>It seems that cookies were deleted. Kindly refresh the page .</h2>
+        </div>
+      )
+  } 
 };
 
 People.propTypes = {

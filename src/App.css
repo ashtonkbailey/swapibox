@@ -23,3 +23,11 @@
 		2px 2px 0 rgb(244, 217, 68);
 }
 
+.alert-refresh {
+  background-image: url(/static/media/starwars.9ce80ecb.jpg);
+}
+
+.alert-refresh > h2 {
+  color: white;
+  background-color: red;
+}

@@ -21,6 +21,7 @@ class App extends Component {
         year: '',
       },
       carouselIndex: 0,
+      cookieLoaded: false
     };
   }
 
@@ -71,6 +72,7 @@ class App extends Component {
 
     const vehicleData = await new Vehicles();
     localStorage.setItem('vehicles', JSON.stringify([...vehicleData]));
+    this.setState({cookieLoaded: true});
   }
 
   displayChosenContent = (e) => {
