@@ -21,6 +21,7 @@ const Vehicles = ({ carouselIndex, addToFavorites }) => {
     rightCardIndex = carouselIndex - 8;
   }
 
+if (vehicleData && vehicleData.length > 0) {
   const vehicleDisplay = vehicleData.map((vehicle) => {
     switch (vehicle.index) {
       case middleCardIndex:
@@ -35,7 +36,6 @@ const Vehicles = ({ carouselIndex, addToFavorites }) => {
       default:
         hiddenClass = 'hidden';
     }
-
     const images = Object.entries(contentImages);
     const matchingImage = images.find(image => vehicle.name === image[0]);
     const imagePath = matchingImage[1];
@@ -73,12 +73,17 @@ const Vehicles = ({ carouselIndex, addToFavorites }) => {
     );
   });
 
-
   return (
     <div>
       {vehicleDisplay}
     </div>
-  );
+  )} else {
+      return (
+        <div className="alert-refresh">
+          <h2>It seems that cookies were deleted. Kindly refresh the page .</h2>
+        </div>
+    )
+  } 
 };
 
 Vehicles.propTypes = {
